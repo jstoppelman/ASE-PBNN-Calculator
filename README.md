@@ -4,8 +4,8 @@ This code computes the energy and force for a given structure using the "PB/NN" 
 line 46 to "ase_md.run_md(1000)", or however many simulation steps you would like to take. 
 
 Dependencies:
-  OpenMM
-  NumPy
-  ASE
-  PyTorch
+  OpenMM  
+  NumPy  
+  ASE  
+  PyTorch  
   SchNetPack (download custom version from https://github.com/jstoppelman/schnetpack as this contains the code needed to run AP-Net)
