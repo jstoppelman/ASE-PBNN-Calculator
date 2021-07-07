@@ -44,6 +44,7 @@ def main():
     ase_md = ASE_MD("input.xyz", './full_test', saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, nn_atoms, shift=shift)
     ase_md.create_system("traj", time_step=0.5, store=2)
     energy, force = ase_md.calculate_single_point()
+    print("Energy", energy, "eV")
 
 if __name__ == "__main__":
     main()
