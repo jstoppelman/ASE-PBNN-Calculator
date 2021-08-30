@@ -1,0 +1,4 @@
+Simple test to ensure energy conservation remains unchanged
+from previous versions of the code. xyz file contains a 
+[EMIM+][OAc-] dimer, and the png file demonstrates the 
+energy conservation observed over a 10 ps trajectory. 

@@ -4,6 +4,7 @@ from simtk.openmm import *
 from simtk.unit import *
 from sys import stdout
 import numpy as np
+import time 
 
 #**********************************************
 # this routine uses OpenMM to evaluate energies of SAPT-FF force field
@@ -20,16 +21,34 @@ class SAPT_ForceField:
         # of Topology, so even though PDBFile creates its own topology object, these bond definitions will be applied...
         Topology().loadBondDefinitions(residuexml)
         self.pdb = PDBFile(pdbtemplate)  # this is used for topology, coordinates are not used...
-        self.integrator = DrudeSCFIntegrator(0.0005*picoseconds) # Use the SCF integrator to optimize Drude positions    
+        self.integrator = DrudeSCFIntegrator(0.0005*picoseconds) # Use the SCF integrator to optimize Drude positions  
+        #self.integrator = VerletIntegrator(0.0005*picoseconds)
         self.integrator.setMinimizationErrorTolerance(0.01)
         self.modeller = Modeller(self.pdb.topology, self.pdb.positions)
         self.forcefield = ForceField(saptxml)
         self.modeller.addExtraParticles(self.forcefield)  # add Drude oscillators
         self.exclude_intra_res = exclude_intra_res 
+        
+        cell_vectors = self.pdb.topology.getPeriodicBoxVectors()
+        if cell_vectors is not None: self.has_periodic_box = True
+        else: self.has_periodic_box = False
 
-        # by default, no cutoff is used, so all interactions are computed.  This is what we want for gas phase PES...no Ewald!!
-        self.system = self.forcefield.createSystem(self.modeller.topology, constraints=None, rigidWater=True)
-
+        if self.has_periodic_box:
+            self.system = self.forcefield.createSystem(self.modeller.topology, nonbondedCutoff=1.0*nanometer, constraints=None, rigidWater=False)
+        else:
+            # by default, no cutoff is used, so all interactions are computed.  This is what we want for gas phase PES...no Ewald!!
+            self.system = self.forcefield.createSystem(self.modeller.topology, constraints=None, rigidWater=False)
+        nbondedForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == NonbondedForce][0]
+        customNonbondedForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == CustomNonbondedForce][0]
+        customBondForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == CustomBondForce][0]
+        if self.has_periodic_box:
+            customBondForce.setUsesPeriodicBoundaryConditions(True)
+            nbondedForce.setNonbondedMethod(NonbondedForce.PME)
+        else:
+            nbondedForce.setNonbondedMethod(NonbondedForce.NoCutoff)
+        customNonbondedForce.setNonbondedMethod(min(nbondedForce.getNonbondedMethod(),NonbondedForce.CutoffPeriodic))
+        customNonbondedForce.setUseLongRangeCorrection(True)
+        
         # Obtain a list of real atoms excluding Drude particles for obtaining forces later
         # Also set particle mass to 0 in order to optimize Drude positions without affecting atom positions
         self.realAtoms = []
@@ -53,6 +72,9 @@ class SAPT_ForceField:
             self.simulation = Simulation(self.modeller.topology, self.system, self.integrator, self.platform)
         elif platformtype == 'Reference': 
             self.simulation = Simulation(self.modeller.topology, self.system, self.integrator, self.platform)
+        elif platformtype == 'CUDA':
+            self.properties = {'CudaPrecision': 'double'}
+            self.simulation = Simulation(self.modeller.topology, self.system, self.integrator, self.platform, self.properties)
         elif platformtype == 'OpenCL':
             self.properties = {'OpenCLPrecision': 'double'}
             self.simulation = Simulation(self.modeller.topology, self.system, self.integrator, self.platform, self.properties)
@@ -70,6 +92,7 @@ class SAPT_ForceField:
             for i in range(len(res._atoms)):
                 c_res.append(res._atoms[i].index)
             real_atom_res_list.append(c_res)
+        self.real_atom_res_list = real_atom_res_list
         
         if self.exclude_intra_res is not None:
             self.exclude_atom_list = [z for i in self.exclude_intra_res for z in all_atom_res_list[i]]
@@ -80,6 +103,8 @@ class SAPT_ForceField:
 
         state = self.simulation.context.getState(getEnergy=False,getForces=False,getVelocities=False,getPositions=True)
         self.positions = state.getPositions()
+
+        PDBFile.writeFile(self.simulation.topology, self.positions, open('start_drudes.pdb', 'w'))
 
     #***********************************
     # this method excludes all intra-molecular non-bonded interactions in the system
@@ -176,7 +201,7 @@ class SAPT_ForceField:
                                 drudej = particleMap[indj]
                                 drudeForce.addScreenedPair(drudei, drudej, 2.0)
             current_res += 1
-
+        
         # now reinitialize to make sure changes are stored in context
         state = self.simulation.context.getState(getEnergy=False,getForces=False,getVelocities=False,getPositions=True)
         positions = state.getPositions()
@@ -193,6 +218,7 @@ class SAPT_ForceField:
         hyper.addGlobalParameter('khyper', 100.0)
         hyper.addGlobalParameter('rhyper', 0.02)
         hyper.addGlobalParameter('powh', 6)
+        hyper.setUsesPeriodicBoundaryConditions(True)
         self.system.addForce(hyper)
 
         for i in range(drudeForce.getNumParticles()):
@@ -239,10 +265,10 @@ class SAPT_ForceField:
         self.positions = self.modeller.positions
 
     def set_xyz(self, xyz):
-        self.xyz_pos = xyz
+        self.xyz_pos = xyz/10
         self.initial_positions = self.simulation.context.getState(getPositions=True).getPositions()
         for i in range(len(self.realAtoms)):
-            self.positions[self.realAtoms[i]] = Vec3(self.xyz_pos[i][0]/10 , self.xyz_pos[i][1]/10, self.xyz_pos[i][2]/10)*nanometer
+            self.positions[self.realAtoms[i]] = Vec3(self.xyz_pos[i][0], self.xyz_pos[i][1], self.xyz_pos[i][2])*nanometer
         self.drudeDisplacement()
         self.simulation.context.setPositions(self.positions)
 
@@ -256,14 +282,18 @@ class SAPT_ForceField:
     # as the template pdb file
     def compute_energy(self): 
 
-        # integrate one step to optimize Drude positions.  Note that atoms won't move if masses are set to zero
+        # integrate one step to optimize Drude positions. Note that parent atoms won't move if masses are set to zero
         self.simulation.step(1)
-        self.positions = self.simulation.context.getState(getPositions=True).getPositions()
-        
+
         # get energy
         state = self.simulation.context.getState(getEnergy=True,getForces=True,getPositions=True)
+        self.positions = state.getPositions()
         eSAPTFF = state.getPotentialEnergy()/kilojoule_per_mole
         SAPTFF_forces = state.getForces(asNumpy=True)[self.realAtoms]/kilojoule_per_mole*nanometers
-
+        
+        # if you want energy decomposition, uncomment these lines...
+        #for j in range(self.system.getNumForces()):
+        #    f = self.system.getForce(j)
+        #    print(type(f), str(self.simulation.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
+        
         return np.asarray(eSAPTFF), SAPTFF_forces/10.0
-

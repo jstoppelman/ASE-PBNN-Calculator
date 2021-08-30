@@ -1,7 +1,13 @@
 import schnetpack as sch
 import time 
 from schnetpack import AtomsData, Properties
-from schnetpack.environment import APNetEnvironmentProvider, APModEnvironmentProvider
+from schnetpack.environment import (
+    APNetEnvironmentProvider,
+    APModEnvironmentProvider,
+    APNetPBCEnvironmentProvider, 
+    APModPBCEnvironmentProvider,
+    TorchEnvironmentProvider
+)
 from schnetpack.data import AtomsConverter
 import schnetpack.train as trn
 from schnetpack.md import MDUnits
@@ -21,17 +27,18 @@ from ase.md.velocitydistribution import (
     ZeroRotation,
 )
 from ase.optimize import QuasiNewton
+from ase.geometry import find_mic
 
 def write_forces(fnm, xyz, forces, frame):
     out = open(fnm, 'a')
     sym = xyz.get_chemical_symbols()
     out.write("Frame {}\n".format(frame))
-    for i in range(len(forces)):
+    for i in range(0, 26):
         out.write(" {0}  {1:13.10f}  {2:13.10f}  {3:13.10f}\n".format(sym[i], forces[i][0], forces[i][1], forces[i][2]))
     out.write("\n")
     out.close()
 
-def pos_diabat2(positions):
+def pos_diabat2(atoms, positions):
     """
     Reorder diabat 1 positions to be in the same order as diabat 2.
     Hard-coded in for now to work for EMIM+/acetate 
@@ -50,13 +57,8 @@ def pos_diabat2(positions):
         have been modified in comparison to the old positions.
     """
     inds = [i for i in range(len(positions))]
-    p_o1 = positions[19]
-    p_o2 = positions[20]
-    h = positions[3]
-    dist1 = p_o1 - h
-    dist2 = p_o2 - h
-    dist1 = np.power(np.dot(dist1, dist1), 1/2)
-    dist2 = np.power(np.dot(dist2, dist2), 1/2)
+    dists = atoms.get_distances(3, [19, 20], mic=True)
+    dist1, dist2 = dists[0], dists[1]
     if dist1 < dist2:
         inds.insert(25, inds.pop(3))
         h_atom = positions[3]
@@ -98,13 +100,93 @@ def reorder(coords, inds):
     reord_list = [inds.index(i) for i in range(len(inds))]
     return coords[reord_list]
 
+def shift_atoms(xyz, box, res_list):
+    """Function used in OpenMM to shift
+    center of mass of each molecule to 
+    the principal box; not currently used
+    """
+    for mol in res_list:
+        center = np.sum(xyz[mol], axis=0)
+        center *= 1.0/len(mol)
+        diff = np.asarray([0.0, 0.0, 0.0], dtype=np.float32)
+        diff += box[2] * np.floor(abs(center[2]/box[2][2]))
+        diff += box[1] * np.floor(abs((center[1] - diff[1])/box[1][1]))
+        diff += box[0] * np.floor(abs((center[0] - diff[0])/box[0][0]))
+        xyz[mol] -= diff
+    return xyz
+
+def shift_reacting_atom(xyz, box, res_list, react_atom):
+    """
+    OpenMM Drude oscillators don't work with PBCs, so 
+    molecules cannot be broken up by a periodic boundary.
+    This function ensures the reacting atom is shifted to be on the same 
+    side of the box as the residue its bonded to in a diabatic state.
+
+    Parameters
+    -----------
+    xyz : np.ndarray
+        array containing 3*N positions 
+    box : ASE cell object
+        Cell object from ASE, which contains the box vectors
+    res_list : list
+        list containing the indices of the atoms of the monomer
+        which the reacting atom is contained in 
+    react_atom : int
+        index of the reacting atom in the complex
+
+    Returns
+    -----------
+    xyz : np.ndarray
+        array containing the shifted position of the reacting atom 
+
+    """
+    disp = xyz[res_list[0]] - xyz[react_atom]
+    diff = np.asarray([0.0, 0.0, 0.0], dtype=np.float32)
+    diff += box[2] * -np.sign(disp[2]) * np.floor(abs(disp[2]/box[2][2])+0.5)
+    diff += box[1] * -np.sign(disp[1]) * np.floor(abs(disp[1]/box[1][1])+0.5)
+    diff += box[0] * -np.sign(disp[0]) * np.floor(abs(disp[0]/box[0][0])+0.5)
+    xyz[react_atom] -= diff
+    return xyz
+
+def make_molecule_whole(xyz, box, res_list):
+    """
+    Atoms are wrapped to stay inside of the periodic box. 
+    This function ensures molecules are not broken up by 
+    a periodic boundary, as OpenMM electrostatics will be 
+    incorrect if all atoms in a molecule are not on the 
+    same side of the periodic box.
+
+    Parameters
+    -----------
+    xyz : np.ndarray
+        array containing 3*N positions
+    box : ASE cell object
+        Cell object from ASE, which contains the box vectors
+    res_list : list
+        list containing the indices of the atoms of the monomer
+        which the reacting atom is contained in
+
+    Returns
+    -----------
+    xyz : np.ndarray
+        array containing the shifted positions
+
+    """
+    shifts = np.zeros_like(xyz)
+    for mol in res_list:
+        mol_coords = xyz[mol]
+        disp_0 = np.subtract(mol_coords[0], mol_coords[1:])
+        diff = box[0][0] * -np.sign(disp_0) * np.floor(abs(disp_0/box[0][0])+0.5)
+        shifts[mol[1:]] += diff
+    return shifts
+
 class Diabat_NN:
     """
     Class for obtaining the energies and forces from SchNetPack
     neural networks. This computes energies and forces from the
     intra- and intermolecular neural networks for the diabatic states.
     """
-    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list):
+    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list, periodic_boundary):
         """
         Parameters
         -----------
@@ -116,13 +198,20 @@ class Diabat_NN:
             location of the neural network for the dimer
         res_list : dictionary
             dictionary containing the indices of the monomers in the diabat
+        periodic_boundary : bool
+            bool indicating whether periodic boundaries are being used. 
         """
         self.nn_monA = torch.load(nn_monA)
         self.nn_monB = torch.load(nn_monB)
         self.nn_dimer = torch.load(nn_dimer)
         self.res_list = res_list
-        self.converter = AtomsConverter(device='cuda')
-        self.inter_converter = AtomsConverter(device='cuda', environment_provider=APNetEnvironmentProvider(), res_list=res_list)
+        if periodic_boundary:
+            self.converter = AtomsConverter(device='cuda', environment_provider=TorchEnvironmentProvider(8., device='cuda'))
+            self.inter_converter = AtomsConverter(device='cuda', environment_provider=APNetPBCEnvironmentProvider(), res_list=res_list)
+        else:
+            self.converter = AtomsConverter(device='cuda')
+            self.inter_converter = AtomsConverter(device='cuda', environment_provider=APNetEnvironmentProvider(), res_list=res_list)
+
 
     def compute_energy_intra(self, xyz):
         """
@@ -180,22 +269,57 @@ class Diabat_NN:
 
         energy = result['energy'].detach().cpu().numpy()[0][0]
         forces = result['forces'].detach().cpu().numpy()[0]
-        #Derivative of Fermi-Dirac functions is infinite from PyTorch autograd
-        #once the bond has stretched too far. This line recognizes whether inf is present
-        #in the forces array, and sets each element to 0 if this occurs.
         forces[forces != forces] = 0.0
         return np.asarray(energy), np.asarray(forces)
 
-class PBNN_Hamiltonian(Calculator):
+class Harmonic_Bias:
+    """
+    Adds harmonic bias to the Hamiltonian, based on the ASE Harmonic calculator
+    """
+    def __init__(self, spring_constant, r0, index1, index2):
+        self.k = spring_constant
+        self.r0 = r0
+        self.index1 = index1
+        self.index2 = index2
+
+    def compute_energy_force(self, atoms, output_file):
+        if not isinstance(self.index1, list) and not isinstance(self.index2, list):
+            dist = atoms.get_distance(self.index1, self.index2, mic=True)
+            index1 = self.index1
+            index2 = self.index2
+        elif isinstance(self.index1, list):
+            dists = atoms.get_distances(self.index2, self.index1, mic=True)
+            dist = np.min(dists)
+            index1 = self.index1[np.argmin(dists)]
+            index2 = self.index2
+        elif isinstance(self.index2, list):
+            dists = atoms.get_distances(self.index1, self.index2, mic=True)
+            dist = np.min(dists)
+            index1 = self.index1
+            index2 = self.index2[np.argmin(dists)]
+
+        forces = np.zeros_like(atoms.positions)
+        disps = atoms.positions[index1, :] - atoms.positions[index2, :]
+        disps = disps.reshape(1, -1)
+        D, D_len = find_mic(disps, atoms.get_cell(), pbc=True)
+        disps = D[0]
+
+        energy = 0.5 * self.k * (dist - self.r0)**2
+        forces[index1, :] += -self.k * (dist - self.r0) * disps/dist
+        forces[index2, :] -= -self.k * (dist - self.r0) * disps/dist
+        output_file.write("{}   ".format(dist))
+        return energy, forces
+
+class EVB_Hamiltonian(Calculator):
     """ 
-    ASE Calculator for running PBNN simulations using OpenMM forcefields 
+    ASE Calculator for running EVB simulations using OpenMM forcefields 
     and SchNetPack neural networks. Modeled after SchNetPack calculator.
     """
     energy = "energy"
     forces = "forces"
     implemented_properties = [energy, forces]
 
-    def __init__(self, saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, tmpdir, nn_atoms, shift=0, **kwargs):
+    def __init__(self, saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, tmpdir, nn_atoms, res_list, periodic_box, shift=0, bias_dicts=[], **kwargs):
         """
         Parameters
         -----------
@@ -222,12 +346,34 @@ class PBNN_Hamiltonian(Calculator):
         self.off_diag = off_diag
         self.shift = shift
         self.nn_atoms = nn_atoms
+        self.has_periodic_box = periodic_box
 
-        self.converter = AtomsConverter(device='cuda', environment_provider=APModEnvironmentProvider(), collect_triples=True)
+        self.ff_time = 0
+        if self.has_periodic_box:
+            self.converter = AtomsConverter(device='cuda', environment_provider=APModPBCEnvironmentProvider(), collect_triples=True)
+        else:
+            self.converter = AtomsConverter(device='cuda', environment_provider=APModEnvironmentProvider(), collect_triples=True)
         self.energy_units = units.kJ / units.mol
         self.forces_units = units.kJ / units.mol / units.Angstrom
         self.frame = 0
         self.debug_forces = False
+        self.res_list = res_list
+
+        self.previous_positions = None 
+        self.react_res_d1 = self.res_list[0]
+        self.react_atom_d1 = self.react_res_d1[3]
+        
+        res_list_d2 = self.saptff_d2.res_list()
+        self.react_res_d2 = res_list_d2[1]
+        self.react_atom_d2 = self.react_res_d2[7]
+        
+        self.bias_potentials = []
+        for bias in bias_dicts:
+            self.bias_potentials.append(Harmonic_Bias(bias['k'], bias['r0'], bias['index1'], bias['index2']))
+
+        if bias_dicts:
+            self.bias_file = open("{}/umbrella_log.txt".format(tmpdir), 'w')
+            self.bias_file.close()
 
         if os.path.isfile("diabat1_forces_ff.txt"): os.remove("diabat1_forces_ff.txt")
         if os.path.isfile("diabat1_forces_intrann.txt"): os.remove("diabat1_forces_intrann.txt")
@@ -261,6 +407,8 @@ class PBNN_Hamiltonian(Calculator):
             Forces in kJ/mol/A
         """
         pos_d1 = xyz.get_positions()
+        if self.has_periodic_box:
+            pos_d1 = shift_reacting_atom(pos_d1, xyz.get_cell(), self.react_res_d1, self.react_atom_d1)
         self.saptff_d1.set_xyz(pos_d1)
         energy, forces = self.saptff_d1.compute_energy()
         if self.debug_forces:
@@ -285,11 +433,14 @@ class PBNN_Hamiltonian(Calculator):
         forces : np.ndarray
             Forces in kJ/mol/A
         """
-
-        pos, reord_inds = pos_diabat2(xyz.get_positions())
+        
+        pos, reord_inds = pos_diabat2(xyz, xyz.get_positions())
+        if self.has_periodic_box:
+            pos = shift_reacting_atom(pos, xyz.get_cell(), self.react_res_d2, self.react_atom_d2)
         self.saptff_d2.set_xyz(pos)
         energy, forces = self.saptff_d2.compute_energy()
         forces = reorder(forces, reord_inds)
+        
         if self.debug_forces:
             print("FF D2", energy)
             write_forces("diabat2_forces_ff.txt", xyz, forces, self.frame)
@@ -344,8 +495,8 @@ class PBNN_Hamiltonian(Calculator):
 
         symb = xyz.get_chemical_symbols()
         symb.insert(25, symb.pop(3))
-        pos, reord_inds = pos_diabat2(xyz.get_positions())
-        tmp_Atoms = Atoms(symb, positions=pos)
+        pos, reord_inds = pos_diabat2(xyz, xyz.get_positions())
+        tmp_Atoms = Atoms(symb, positions=pos, cell=xyz.get_cell(), pbc=xyz.pbc)
         intra_eng, intra_forces = self.nn_d2.compute_energy_intra(tmp_Atoms)
         inter_eng, inter_forces = self.nn_d2.compute_energy_inter(tmp_Atoms)
         total_eng = intra_eng + inter_eng
@@ -420,34 +571,39 @@ class PBNN_Hamiltonian(Calculator):
         system_changes : list
             List of changes for ASE
         """
-        Calculator.calculate(self, atoms)
+        
         result = {}
+        
+        if self.has_periodic_box:
+            atoms.wrap()
+            shifts = make_molecule_whole(atoms.get_positions(), atoms.get_cell(), self.res_list)
+            atoms.positions -= shifts
+        
+        Calculator.calculate(self, atoms)
 
         symbs = atoms.get_chemical_symbols()
         symbs = [symbs[i] for i in self.nn_atoms]
-        nn_atoms = Atoms(symbols=symbs, positions=atoms.positions[self.nn_atoms])
+        nn_atoms = Atoms(symbols=symbs, positions=atoms.positions[self.nn_atoms], cell=atoms.get_cell(), pbc=atoms.pbc)
 
         ff_energy_d1, ff_forces_d1 = self.saptff_energy_force_d1(atoms)
         ff_energy_d2, ff_forces_d2 = self.saptff_energy_force_d2(atoms)
-        
         nn_energy_d1, nn_forces_d1 = self.nn_energy_force_d1(nn_atoms)
         nn_energy_d2, nn_forces_d2 = self.nn_energy_force_d2(nn_atoms)
 
         diabat1_energy = ff_energy_d1 + nn_energy_d1
         diabat2_energy = ff_energy_d2 + nn_energy_d2 + self.shift
+
         ff_forces_d1[self.nn_atoms] += nn_forces_d1
         ff_forces_d2[self.nn_atoms] += nn_forces_d2
+
         diabat1_forces = ff_forces_d1
         diabat2_forces = ff_forces_d2
 
         inp = self.converter(nn_atoms)
         off_diag = self.off_diag(inp)
-        
+       
         h12_energy = off_diag['energy'].detach().cpu().numpy()[0][0]
         h12_forces = off_diag['forces'].detach().cpu().numpy()[0]
-        #Derivative of Fermi-Dirac functions is infinite from PyTorch autograd
-        #once the bond has stretched too far. This line recognizes whether inf is present
-        #in the forces array, and sets each element to 0 if this occurs.
         h12_forces[h12_forces != h12_forces] = 0.0
 
         zero_forces = np.zeros_like(ff_forces_d1)
@@ -468,8 +624,21 @@ class PBNN_Hamiltonian(Calculator):
             write_forces("diabat1_total_forces.txt", atoms, diabat1_forces, self.frame)
             write_forces("diabat2_total_forces.txt", atoms, diabat2_forces, self.frame)
 
+        if self.bias_potentials:
+            self.bias_file = open(self.bias_file.name, 'a+')
+            self.bias_file.write("{}   ".format(self.frame))
+
+        for bias in self.bias_potentials:
+            bias_energy, bias_force = bias.compute_energy_force(atoms, self.bias_file)
+            energy += bias_energy
+            forces += bias_force
+
+        if self.bias_potentials:
+            self.bias_file.write("\n")
+            self.bias_file.close()
+        
         self.frame += 1
-       
+        
         result["energy"] = energy.reshape(-1) * self.energy_units
         result["forces"] = forces.reshape((len(atoms), 3)) * self.forces_units
 
@@ -477,9 +646,9 @@ class PBNN_Hamiltonian(Calculator):
 
 class ASE_MD:
     """
-    Setups and runs the MD simulation. Serves as an interface to the PBNN Hamiltonian class and ASE.
+    Setups and runs the MD simulation. Serves as an interface to the EVB Hamiltonian class and ASE.
     """
-    def __init__(self, ase_atoms, tmp, calc_omm_d1, calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, nn_atoms, shift=0, frame=-1):
+    def __init__(self, ase_atoms, tmp, calc_omm_d1, calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, nn_atoms, res_list, shift=0, frame=-1, bias_dicts=[]):
         """
         Parameters
         -----------
@@ -508,16 +677,13 @@ class ASE_MD:
         
         self.mol = read(ase_atoms, index="{}".format(frame))
         self.mol.set_masses(calc_omm_d1.get_masses())
-        
         self.calc_omm_d1 = calc_omm_d1
-        self.calc_omm_d2 = calc_omm_d2
-
         self.calc_omm_d1.set_initial_positions(self.mol.get_positions())
-        
-        d2_pos, reord_inds = pos_diabat2(self.mol.get_positions())
+        d2_pos, reord_inds = pos_diabat2(self.mol, self.mol.get_positions())
+        self.calc_omm_d2 = calc_omm_d2
         self.calc_omm_d2.set_initial_positions(d2_pos)
-
-        calculator = PBNN_Hamiltonian(self.calc_omm_d1, self.calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, self.tmp, nn_atoms, shift)
+        periodic_box = self.calc_omm_d1.has_periodic_box
+        calculator = EVB_Hamiltonian(self.calc_omm_d1, self.calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, self.tmp, nn_atoms, res_list, periodic_box, shift, bias_dicts)
         self.mol.set_calculator(calculator)
         self.md = False
 
@@ -577,6 +743,23 @@ class ASE_MD:
         path = os.path.join(self.tmp, "{}.{}".format(name, ftype))
         write(path, self.mol, format=ftype, append=append)
 
+    def calculate_single_point(self):
+        """
+        Perform a single point computation of the energies and forces and
+        store them to the working directory. The format used is the extended
+        xyz format. This functionality is mainly intended to be used for
+        interfaces.
+        """
+        self.calc_omm_d1.set_initial_positions(self.mol.get_positions())
+        d2_pos, reord_inds = pos_diabat2(self.mol, self.mol.get_positions())
+        self.calc_omm_d2.set_initial_positions(d2_pos)
+
+        energy = self.mol.get_potential_energy()
+        forces = self.mol.get_forces()
+        self.mol.energy = energy
+        self.mol.forces = forces
+        return energy, forces
+
     def run_md(self, steps):
         """
         Run MD simulation.
@@ -586,23 +769,6 @@ class ASE_MD:
             Number of MD steps
         """
         self.md.run(steps)
-
-    def calculate_single_point(self):
-        """
-        Perform a single point computation of the energies and forces and
-        store them to the working directory. The format used is the extended
-        xyz format. This functionality is mainly intended to be used for
-        interfaces.
-        """
-        self.calc_omm_d1.set_initial_positions(self.mol.get_positions())
-        d2_pos, reord_inds = pos_diabat2(self.mol.get_positions())
-        self.calc_omm_d2.set_initial_positions(d2_pos)
-
-        energy = self.mol.get_potential_energy()
-        forces = self.mol.get_forces()
-        self.mol.energy = energy
-        self.mol.forces = forces
-        return energy, forces
 
     def optimize(self, fmax=1.0e-2, steps=1000):
         """

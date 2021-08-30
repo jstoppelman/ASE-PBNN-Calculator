@@ -10,77 +10,77 @@
   <Reference></Reference>
  </Info>
  <AtomTypes>
-  <Type name="EMIM-NI1" class="NI1" element="N" mass="13.6067"/>
-  <Type name="EMIM-DN1" class="Sh" mass="0.4"/>
-  <Type name="EMIM-NI" class="NI" element="N" mass="13.6067"/>
-  <Type name="EMIM-DN11" class="Sh" mass="0.4"/>
-  <Type name="EMIM-CI" class="CI" element="C" mass="11.611"/>
-  <Type name="EMIM-DC1" class="Sh" mass="0.4"/>
+  <Type name="EMIM-NI1" class="NI1" element="N" mass="14.0067"/>
+  <Type name="EMIM-DN1" class="Sh" mass="0.0"/>
+  <Type name="EMIM-NI" class="NI" element="N" mass="14.0067"/>
+  <Type name="EMIM-DN11" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CI" class="CI" element="C" mass="12.011"/>
+  <Type name="EMIM-DC1" class="Sh" mass="0.0"/>
   <Type name="EMIM-HI" class="HI" element="H" mass="1.008"/>
-  <Type name="EMIM-CWI" class="CWI" element="C" mass="11.611"/>
-  <Type name="EMIM-DC2" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CWI" class="CWI" element="C" mass="12.011"/>
+  <Type name="EMIM-DC2" class="Sh" mass="0.0"/>
   <Type name="EMIM-HWI" class="HWI" element="H" mass="1.008"/>
-  <Type name="EMIM-CWI1" class="CWI1" element="C" mass="11.611"/>
-  <Type name="EMIM-DC21" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CWI1" class="CWI1" element="C" mass="12.011"/>
+  <Type name="EMIM-DC21" class="Sh" mass="0.0"/>
   <Type name="EMIM-HWI1" class="HWI1" element="H" mass="1.008"/>
-  <Type name="EMIM-CMI" class="CMI" element="C" mass="11.611"/>
-  <Type name="EMIM-DC3" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CMI" class="CMI" element="C" mass="12.011"/>
+  <Type name="EMIM-DC3" class="Sh" mass="0.0"/>
   <Type name="EMIM-HMI1" class="HMI" element="H" mass="1.008"/>
   <Type name="EMIM-HMI2" class="HMI" element="H" mass="1.008"/>
   <Type name="EMIM-HMI3" class="HMI" element="H" mass="1.008"/>
-  <Type name="EMIM-CAI" class="CAI" element="C" mass="11.611"/>
-  <Type name="EMIM-DC4" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CAI" class="CAI" element="C" mass="12.011"/>
+  <Type name="EMIM-DC4" class="Sh" mass="0.0"/>
   <Type name="EMIM-HAI1" class="HAI" element="H" mass="1.008"/>
   <Type name="EMIM-HAI2" class="HAI" element="H" mass="1.008"/>
-  <Type name="EMIM-CTI" class="CTI" element="C" mass="11.611"/>
-  <Type name="EMIM-DC5" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CTI" class="CTI" element="C" mass="12.011"/>
+  <Type name="EMIM-DC5" class="Sh" mass="0.0"/>
   <Type name="EMIM-HTI1" class="HTI" element="H" mass="1.008"/>
   <Type name="EMIM-HTI2" class="HTI" element="H" mass="1.008"/>
   <Type name="EMIM-HTI3" class="HTI" element="H" mass="1.008"/>
-  <Type name="EHC-NI1" class="CN1" element="N" mass="13.6067"/>
-  <Type name="EHC-DN1" class="Sh" mass="0.4"/>
-  <Type name="EHC-NI" class="CNI" element="N" mass="13.6067"/>
-  <Type name="EHC-DN11" class="Sh" mass="0.4"/>
-  <Type name="EHC-CI" class="CCI" element="C" mass="11.611"/>
-  <Type name="EHC-DC1" class="Sh" mass="0.4"/>
-  <Type name="EHC-CWI" class="CCWI" element="C" mass="11.611"/>
-  <Type name="EHC-DC2" class="Sh" mass="0.4"/>
+  <Type name="EHC-NI1" class="CN1" element="N" mass="14.0067"/>
+  <Type name="EHC-DN1" class="Sh" mass="0.0"/>
+  <Type name="EHC-NI" class="CNI" element="N" mass="14.0067"/>
+  <Type name="EHC-DN11" class="Sh" mass="0.0"/>
+  <Type name="EHC-CI" class="CCI" element="C" mass="12.011"/>
+  <Type name="EHC-DC1" class="Sh" mass="0.0"/>
+  <Type name="EHC-CWI" class="CCWI" element="C" mass="12.011"/>
+  <Type name="EHC-DC2" class="Sh" mass="0.0"/>
   <Type name="EHC-HWI" class="CHWI" element="H" mass="1.008"/>
-  <Type name="EHC-CWI1" class="CCW1" element="C" mass="11.611"/>
-  <Type name="EHC-DC21" class="Sh" mass="0.4"/>
+  <Type name="EHC-CWI1" class="CCW1" element="C" mass="12.011"/>
+  <Type name="EHC-DC21" class="Sh" mass="0.0"/>
   <Type name="EHC-HWI1" class="CHW1" element="H" mass="1.008"/>
-  <Type name="EHC-CMI" class="CCMI" element="C" mass="11.611"/>
-  <Type name="EHC-DC3" class="Sh" mass="0.4"/>
+  <Type name="EHC-CMI" class="CCMI" element="C" mass="12.011"/>
+  <Type name="EHC-DC3" class="Sh" mass="0.0"/>
   <Type name="EHC-HMI1" class="CHMI" element="H" mass="1.008"/>
   <Type name="EHC-HMI2" class="CHMI" element="H" mass="1.008"/>
   <Type name="EHC-HMI3" class="CHMI" element="H" mass="1.008"/>
-  <Type name="EHC-CAI" class="CCAI" element="C" mass="11.611"/>
-  <Type name="EHC-DC4" class="Sh" mass="0.4"/>
+  <Type name="EHC-CAI" class="CCAI" element="C" mass="12.011"/>
+  <Type name="EHC-DC4" class="Sh" mass="0.0"/>
   <Type name="EHC-HAI1" class="CHAI" element="H" mass="1.008"/>
   <Type name="EHC-HAI2" class="CHAI" element="H" mass="1.008"/>
-  <Type name="EHC-CTI" class="CCTI" element="C" mass="11.611"/>
-  <Type name="EHC-DC5" class="Sh" mass="0.4"/>
+  <Type name="EHC-CTI" class="CCTI" element="C" mass="12.011"/>
+  <Type name="EHC-DC5" class="Sh" mass="0.0"/>
   <Type name="EHC-HTI1" class="CHTI" element="H" mass="1.008"/>
   <Type name="EHC-HTI2" class="CHTI" element="H" mass="1.008"/>
   <Type name="EHC-HTI3" class="CHTI" element="H" mass="1.008"/>
-  <Type name="AET-O1" class="O1" element="O" mass="15.59943"/>
-  <Type name="AET-DO1" class="Sh" mass="0.4"/>
-  <Type name="AET-O2" class="O1" element="O" mass="15.59943"/>
-  <Type name="AET-DO2" class="Sh" mass="0.4"/>
-  <Type name="AET-CT" class="CT" element="C" mass="11.611"/>
-  <Type name="AET-DCT" class="Sh" mass="0.4"/>
-  <Type name="AET-Ca" class="Ca" element="C" mass="11.611"/>
-  <Type name="AET-DCa" class="Sh" mass="0.4"/>
+  <Type name="AET-O1" class="O1" element="O" mass="15.99943"/>
+  <Type name="AET-DO1" class="Sh" mass="0.0"/>
+  <Type name="AET-O2" class="O1" element="O" mass="15.99943"/>
+  <Type name="AET-DO2" class="Sh" mass="0.0"/>
+  <Type name="AET-CT" class="CT" element="C" mass="12.011"/>
+  <Type name="AET-DCT" class="Sh" mass="0.0"/>
+  <Type name="AET-Ca" class="Ca" element="C" mass="12.011"/>
+  <Type name="AET-DCa" class="Sh" mass="0.0"/>
   <Type name="AET-HT" class="HT" element="H" mass="1.008"/>
   <Type name="AET-M" class="AM" mass="0.0000"/>
-  <Type name="ACI-OH" class="AOH" element="O" mass="15.59943"/>
-  <Type name="ACI-DOH" class="Sh" mass="0.4"/>
-  <Type name="ACI-O1" class="AO1" element="O" mass="15.59943"/>
-  <Type name="ACI-DO1" class="Sh" mass="0.4"/>
-  <Type name="ACI-Ca" class="ACa" element="C" mass="11.611"/>
-  <Type name="ACI-DCa" class="Sh" mass="0.4"/>
-  <Type name="ACI-CT" class="ACT" element="C" mass="11.611"/>
-  <Type name="ACI-DCT" class="Sh" mass="0.4"/>
+  <Type name="ACI-OH" class="AOH" element="O" mass="15.99943"/>
+  <Type name="ACI-DOH" class="Sh" mass="0.0"/>
+  <Type name="ACI-O1" class="AO1" element="O" mass="15.99943"/>
+  <Type name="ACI-DO1" class="Sh" mass="0.0"/>
+  <Type name="ACI-Ca" class="ACa" element="C" mass="12.011"/>
+  <Type name="ACI-DCa" class="Sh" mass="0.0"/>
+  <Type name="ACI-CT" class="ACT" element="C" mass="12.011"/>
+  <Type name="ACI-DCT" class="Sh" mass="0.0"/>
   <Type name="ACI-HT" class="AHT" element="H" mass="1.008"/>
   <Type name="ACI-HO" class="AHO" element="H" mass="1.008"/>
   <Type name="BF4-B" class="B" element="B" mass="10.411"/>
@@ -108,6 +108,17 @@
   <Type name="PF6-F6" class="FI" element="F" mass="18.5984"/>
   <Type name="PF6-DF6" class="Sh" mass="0.4"/>
   <Type name="LI-Li" class="LI" element="Li" mass="6.941"/>
+  <!-- acetonitrile uses dispersion parameters scaled down to account for 3-body dispersion, hence "s" extension on class type    -->
+  <Type name="acnt-CT" class="CTs" element="C" mass="12.011"/>
+  <Type name="acnt-DCT" class="Sh" mass="0.0"/>
+  <Type name="acnt-CZ" class="CZs" element="C" mass="12.011"/>
+  <Type name="acnt-DCZ" class="Sh" mass="0.0"/>
+  <Type name="acnt-NZ" class="NZs" element="N" mass="14.0067"/>
+  <Type name="acnt-DNZ" class="Sh" mass="0.0"/>
+  <Type name="acnt-HZ" class="HZs" element="H" mass="1.0080"/>
+  <Type name="acnt-HZ1" class="HZs" element="H" mass="1.0080"/>
+  <Type name="acnt-HZ2" class="HZs" element="H" mass="1.0080"/>
+  <!-- end acetonitrile   -->
  </AtomTypes>
  <Residues>
   <Residue name="EMIM">
@@ -287,6 +298,22 @@
   <Residue name="LI">
    <Atom name="Li" type="LI-Li"/>
   </Residue>
+  <Residue name="ACNT">
+   <Atom name="CT" type="acnt-CT"/>
+   <Atom name="CZ" type="acnt-CZ"/>
+   <Atom name="NZ" type="acnt-NZ"/>
+   <Atom name="HZ" type="acnt-HZ"/>
+   <Atom name="HZ1" type="acnt-HZ1"/>
+   <Atom name="HZ2" type="acnt-HZ2"/>
+   <Atom name="DCT" type="acnt-DCT"/>
+   <Atom name="DCZ" type="acnt-DCZ"/>
+   <Atom name="DNZ" type="acnt-DNZ"/>
+   <Bond from="0" to="1"/>
+   <Bond from="1" to="2"/>
+   <Bond from="0" to="3"/>
+   <Bond from="0" to="4"/>
+   <Bond from="0" to="5"/>
+  </Residue>
  </Residues>
  <HarmonicBondForce>
   <Bond class1="CI" class2="NI1" length="0.1315" k="399153.6"/>
@@ -334,6 +361,9 @@
   <Bond class1="CCSI" class2="CHSI" length="0.1087" k="284512.0"/>
   <Bond class1="B" class2="FI" length="0.139" k="121300.0"/>
   <Bond class1="P" class2="FI" length="0.160" k="79500.0"/>
+  <Bond class1="CTs" class2="CZs" length="0.14700" k="326352.0"/>
+  <Bond class1="CZs" class2="NZs" length="0.11570" k="543920.0"/>
+  <Bond class1="CTs" class2="HZs" length="0.1087" k="284512.0"/>
  </HarmonicBondForce>
  <HarmonicAngleForce>
   <Angle class1="HMI" class2="CMI" class3="HMI" angle="1.91637151868977" k="276.144"/>
@@ -428,6 +458,9 @@
   <Angle type1="PF6-F1" type2="PF6-P" type3="PF6-F6" angle="3.141592654" k="335.0" />
   <Angle type1="PF6-F2" type2="PF6-P" type3="PF6-F5" angle="3.141592654" k="335.0" />
   <Angle type1="PF6-F3" type2="PF6-P" type3="PF6-F4" angle="3.141592654" k="335.0" />
+  <Angle class1="HZs" class2="CTs" class3="CZs" angle="1.89368223841385" k="292.880"/>
+  <Angle class1="HZs" class2="CTs" class3="HZs" angle="1.91462618943778" k="276.144"/>
+  <Angle class1="CTs" class2="CZs" class3="NZs" angle="3.14159265358979" k="1255.200"/>
  </HarmonicAngleForce>
  <PeriodicTorsionForce>
   <Improper class1="NI" class2="" class3="" class4="" periodicity1="2" phase1="3.14159265358979" k1="4.1840"/>
@@ -633,16 +666,16 @@
   <Atom type="AET-DO1" charge="-0.8931" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="AET-O2" charge="-0.0053" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="AET-DO2" charge="-0.8931" sigma="1.0000" epsilon="0.00000"/>
-  <Atom type="AET-DCa" charge="-0.7097" sigma="1.0000" epsilon="0.0000"/>
   <Atom type="AET-Ca" charge="2.5958" sigma="1.0000" epsilon="0.00000"/>
+  <Atom type="AET-DCa" charge="-0.7097" sigma="1.0000" epsilon="0.0000"/>
   <Atom type="AET-CT" charge="0.6422" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="AET-DCT" charge="-1.0838" sigma="1.0000" epsilon="0.0000"/>
   <Atom type="AET-HT" charge="0.0544" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="AET-M" charge="-0.8109" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="ACI-Ca" charge="1.4938" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="ACI-DCa" charge="-0.7097" sigma="1.0000" epsilon="0.00000"/>
-  <Atom type="ACI-DCT" charge="-1.2523" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="ACI-CT" charge="0.9509" sigma="1.0000" epsilon="0.00000"/>
+  <Atom type="ACI-DCT" charge="-1.2523" sigma="1.0000" epsilon="0.00000"/>
   <Atom type="ACI-OH" charge="0.3562" sigma="1.0000" epsilon="0.0000"/>
   <Atom type="ACI-DOH" charge="-0.9514" sigma="1.0000" epsilon="0.0000"/>
   <Atom type="ACI-O1" charge="0.3250" sigma="1.0000" epsilon="0.0000"/>
@@ -674,6 +707,15 @@
   <Atom type="PF6-DF5" charge="-0.7930" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="PF6-F6" charge="0.3326" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="PF6-DF6" charge="-0.7930" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-CT" charge="1.263" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-DCT" charge="-1.252" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-CZ" charge="1.004" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-DCZ" charge="-0.716" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-NZ" charge="0.554" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-DNZ" charge="-1.015" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-HZ" charge="0.054" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-HZ1" charge="0.054" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="acnt-HZ2" charge="0.054" sigma="1.00000" epsilon="0.00000"/>
  </NonbondedForce>
  <DrudeForce>
   <Particle type1="BMIM-DC3" type2="BMIM-C3" charge="-1.0838" polarizability="0.00174068" thole="1"/>
@@ -722,6 +764,9 @@
   <Particle type1="PF6-DF5" type2="PF6-F5" charge="-0.7930" polarizability="0.000931897" thole="1"/>
   <Particle type1="PF6-DF6" type2="PF6-F6" charge="-0.7930" polarizability="0.000931897" thole="1"/>
   <Particle type1="PF6-DP" type2="PF6-P" charge="-0.6120" polarizability="0.000555" thole="1"/>
+  <Particle type1="acnt-DCZ" type2="acnt-CZ" charge="-0.716" polarizability="0.000760" thole="1"/>
+  <Particle type1="acnt-DCT" type2="acnt-CT" charge="-1.252" polarizability="0.002324" thole="1"/>
+  <Particle type1="acnt-DNZ" type2="acnt-NZ" charge="-1.015" polarizability="0.001527" thole="1"/>
  </DrudeForce>
  <CustomNonbondedForce energy="A*exBr - f6*C6/(r^6) - f8*C8/(r^8) - f10*C10/(r^10) - f12*C12/(r^12);
     A=Aex-Ael-Ain-Adh;
@@ -791,6 +836,12 @@
   <Atom class="AHO" Aexch="1182.0" Aelec="428.0" Aind="92.0" Adhf="223.0" Bexp="37.776" C6="9.379e-05" C8="2.607e-06" C10="4.151e-07" C12="0.000"/>  <Atom class="B" Aexch="11862.8" Aelec="0.0" Aind="0.0" Adhf="0.0" Bexp="29.518" C6="0.0009733" C8="5.3191e-05" C10="5.3711e-06" C12="3.301846e-07"/>
   <Atom class="P" Aexch="0.0" Aelec="0.0" Aind="0.0" Adhf="0.0" Bexp="33.184" C6="0.0035821" C8="0.000300625" C10="1.180089e-05" C12="0"/>
   <Atom class="FI" Aexch="180128.4" Aelec="80998.3" Aind="0.0" Adhf="13995.8" Bexp="35.961" C6="0.0007953" C8="5.754e-05" C10="2.75526e-06" C12="8.57594e-08"/>
+  <!-- the dispersion parameters for acetonitrile are scaled down by ~2.5 % to implicitly account for 3-body dispersion    -->
+  <Atom class="CTs" Aexch="304938.7" Aelec="117598.0" Aind="11.7" Adhf="2837.1" Bexp="34.384" C6="0.0013208" C8="5.563e-05" C10="1.764e-06" C12="5.08036e-08"/>
+  <Atom class="CZs" Aexch="159315.3" Aelec="58811.2" Aind="7955.3" Adhf="4305.8" Bexp="34.384" C6="0.0009836" C8="4.5752e-05" C10="3.08927e-06" C12="1.39371e-07"/>
+  <Atom class="NZs" Aexch="491703.6" Aelec="172626.6" Aind="4148.3" Adhf="28670.5" Bexp="35.904" C6="0.0015419" C8="9.589e-05" C10="1.035016e-05" C12="0"/>
+  <Atom class="HZs" Aexch="10685.8" Aelec="1260.2" Aind="1023.9" Adhf="1312.8" Bexp="37.794" C6="0.0001262" C8="6.627e-06" C10="4.8711e-07" C12="0"/>
+  <!-- end acetonitrile    -->
  </CustomNonbondedForce>
  <CustomBondForce energy="D*(1 - exp(-a*(r - r0)))^2">
   <PerBondParameter name="D"/>
