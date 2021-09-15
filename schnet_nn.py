@@ -186,7 +186,7 @@ class Diabat_NN:
     neural networks. This computes energies and forces from the
     intra- and intermolecular neural networks for the diabatic states.
     """
-    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list, periodic_boundary):
+    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list, periodic_boundary, device='cuda'):
         """
         Parameters
         -----------
@@ -200,18 +200,19 @@ class Diabat_NN:
             dictionary containing the indices of the monomers in the diabat
         periodic_boundary : bool
             bool indicating whether periodic boundaries are being used. 
+        device : str
+            String indicating where the neural networks will be run. Default is cuda.
         """
         self.nn_monA = torch.load(nn_monA)
         self.nn_monB = torch.load(nn_monB)
         self.nn_dimer = torch.load(nn_dimer)
         self.res_list = res_list
         if periodic_boundary:
-            self.converter = AtomsConverter(device='cuda', environment_provider=TorchEnvironmentProvider(8., device='cuda'))
-            self.inter_converter = AtomsConverter(device='cuda', environment_provider=APNetPBCEnvironmentProvider(), res_list=res_list)
+            self.converter = AtomsConverter(device=torch.device(device), environment_provider=TorchEnvironmentProvider(8., device=torch.device(device)))
+            self.inter_converter = AtomsConverter(device=torch.device(device), environment_provider=APNetPBCEnvironmentProvider(), res_list=res_list)
         else:
-            self.converter = AtomsConverter(device='cuda')
-            self.inter_converter = AtomsConverter(device='cuda', environment_provider=APNetEnvironmentProvider(), res_list=res_list)
-
+            self.converter = AtomsConverter(device=torch.device(device))
+            self.inter_converter = AtomsConverter(device=torch.device(device), environment_provider=APNetEnvironmentProvider(), res_list=res_list)
 
     def compute_energy_intra(self, xyz):
         """
@@ -319,7 +320,7 @@ class EVB_Hamiltonian(Calculator):
     forces = "forces"
     implemented_properties = [energy, forces]
 
-    def __init__(self, saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, tmpdir, nn_atoms, res_list, periodic_box, shift=0, bias_dicts=[], **kwargs):
+    def __init__(self, saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, tmpdir, nn_atoms, res_list, periodic_box, shift=0, bias_dicts=[], device='cuda', **kwargs):
         """
         Parameters
         -----------
@@ -335,6 +336,10 @@ class EVB_Hamiltonian(Calculator):
             Model for predicting H12 energy and forces.
         shift : float
             Diabat 2 energy shift to diabat 1 reference.
+        bias_dicts : list
+            list of dictionaries containing information for bias potentials
+        device : str
+            device where the neural networks will be run. Default is cuda.
         **kwargs : dict
             additional args for ASE base calculator.
         """
@@ -350,9 +355,9 @@ class EVB_Hamiltonian(Calculator):
 
         self.ff_time = 0
         if self.has_periodic_box:
-            self.converter = AtomsConverter(device='cuda', environment_provider=APModPBCEnvironmentProvider(), collect_triples=True)
+            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModPBCEnvironmentProvider(), collect_triples=True)
         else:
-            self.converter = AtomsConverter(device='cuda', environment_provider=APModEnvironmentProvider(), collect_triples=True)
+            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModEnvironmentProvider(), collect_triples=True)
         self.energy_units = units.kJ / units.mol
         self.forces_units = units.kJ / units.mol / units.Angstrom
         self.frame = 0
@@ -648,7 +653,7 @@ class ASE_MD:
     """
     Setups and runs the MD simulation. Serves as an interface to the EVB Hamiltonian class and ASE.
     """
-    def __init__(self, ase_atoms, tmp, calc_omm_d1, calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, nn_atoms, res_list, shift=0, frame=-1, bias_dicts=[]):
+    def __init__(self, ase_atoms, tmp, calc_omm_d1, calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, nn_atoms, res_list, shift=0, frame=-1, bias_dicts=[], device='cuda'):
         """
         Parameters
         -----------
@@ -683,7 +688,7 @@ class ASE_MD:
         self.calc_omm_d2 = calc_omm_d2
         self.calc_omm_d2.set_initial_positions(d2_pos)
         periodic_box = self.calc_omm_d1.has_periodic_box
-        calculator = EVB_Hamiltonian(self.calc_omm_d1, self.calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, self.tmp, nn_atoms, res_list, periodic_box, shift, bias_dicts)
+        calculator = EVB_Hamiltonian(self.calc_omm_d1, self.calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, self.tmp, nn_atoms, res_list, periodic_box, shift, bias_dicts, device)
         self.mol.set_calculator(calculator)
         self.md = False
 

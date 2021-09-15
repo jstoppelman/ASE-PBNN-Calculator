@@ -3,7 +3,7 @@ import numpy as np
 from copy import deepcopy
 from ase.io import read, write
 from SAPTFF_OpenMM import SAPT_ForceField
-from schnet_nn_test import *
+from schnet_nn import *
 import torch
 import sys, time
 
@@ -29,18 +29,19 @@ def main():
     #Constuct residue list in order to partition total dimer positions into separate monomer
     #positions for the intramolecular neural networks included in the Diabat_NN classes
     res_list1 = saptff_d1.res_list()
-    nn_d1 = Diabat_NN("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet_new", res_list1, saptff_d1.has_periodic_box)
+    nn_d1 = Diabat_NN("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet", res_list1, saptff_d1.has_periodic_box)
 
     res_list2 = saptff_d2.res_list()
-    nn_d2 = Diabat_NN("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet_new", res_list2, saptff_d1.has_periodic_box)
+    nn_d2 = Diabat_NN("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet", res_list2, saptff_d1.has_periodic_box)
     
     #Model for predicting the H12 energy and force
-    off_diag = torch.load("ff_files/h12_model_628")
+    off_diag = torch.load("ff_files/h12_model")
 
     #Main class for MD simulation inside of ASE
     nn_atoms = saptff_d1.get_nn_atoms()
-    ase_md = ASE_MD("equil_test_nopbc.xyz", './eng_cons_pol', saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, nn_atoms, res_list1, shift=shift)
+    ase_md = ASE_MD("input.xyz", './test', saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, nn_atoms, res_list1, shift=shift)
     energy, force = ase_md.calculate_single_point()
+    print(energy)
 
 if __name__ == "__main__":
     main()
