@@ -242,8 +242,7 @@ class Diagonal:
         saptff_forces[self.nn_atoms] += nn_forces
         
         forces = saptff_forces
-        print(forces)
-        sys.exit()
+        
         return energy, forces
 
 class Coupling: 
@@ -526,6 +525,7 @@ class PBNN_Hamiltonian(Calculator):
         hamiltonian_force = np.zeros((num_states, num_states), dtype=np.ndarray)
         for i, force in enumerate(diabat_forces):
             hamiltonian_force[i, i] = force
+
         for i, force in enumerate(coupling_forces):
             j = i + 1
             hamiltonian_force[i, j] = force
@@ -583,8 +583,6 @@ class PBNN_Hamiltonian(Calculator):
         
         energy, ci = self.diagonalize(diabat_energies, coupling_energies)
         forces = self.calculate_forces(diabat_forces, coupling_forces, ci)
-        print(forces)
-        sys.exit()
 
         if self.debug_forces:
             print(ci[0]**2, ci[1]**2)
