@@ -245,6 +245,11 @@ class SAPT_ForceField:
     def get_nn_atoms(self):
         return self.nnRealAtoms
 
+    def set_react_res(self, react_res, react_atom):
+        res_list = self.res_list()
+        self.react_res = res_list[react_res]
+        self.react_atom = self.react_res[react_atom]
+
     def get_drude_pairs(self):
         drudeForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == DrudeForce][0]
         self.drudePairs = []
@@ -271,6 +276,7 @@ class SAPT_ForceField:
             self.positions[self.realAtoms[i]] = Vec3(self.xyz_pos[i][0], self.xyz_pos[i][1], self.xyz_pos[i][2])*nanometer
         self.drudeDisplacement()
         self.simulation.context.setPositions(self.positions)
+        PDBFile.writeFile(self.modeller.topology, self.positions, open("test.pdb", "w"))
 
     def drudeDisplacement(self):
         for i in range(len(self.drudePairs)):

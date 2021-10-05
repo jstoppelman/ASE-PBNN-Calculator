@@ -23,23 +23,36 @@ def main():
     xml_ff_file = "ff_files/pb.xml"
     xml_res_file = "ff_files/pb_residues.xml"
 
-    saptff_d1 = SAPT_ForceField(pdbtemplate_d1, xml_res_file, xml_ff_file, Drude_hyper_force=True, exclude_intra_res=[0, 1], platformtype='OpenCL')
-    saptff_d2 = SAPT_ForceField(pdbtemplate_d2, xml_res_file, xml_ff_file, Drude_hyper_force=True, exclude_intra_res=[0, 1], platformtype='OpenCL')
-    
+    diabat1_saptff = SAPT_ForceField(pdbtemplate_d1, xml_res_file, xml_ff_file, Drude_hyper_force=True, exclude_intra_res=[0, 1], platformtype='OpenCL')
+    diabat1_saptff.set_react_res(0, 3)
+    nn_atoms = diabat1_saptff.get_nn_atoms()
+
     #Constuct residue list in order to partition total dimer positions into separate monomer
     #positions for the intramolecular neural networks included in the Diabat_NN classes
-    res_list1 = saptff_d1.res_list()
-    nn_d1 = Diabat_NN("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet", res_list1, saptff_d1.has_periodic_box)
+    res_list1 = diabat1_saptff.res_list()
+    diabat1_nn = Diabat_NN("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet", res_list1, diabat1_saptff.has_periodic_box)
 
-    res_list2 = saptff_d2.res_list()
-    nn_d2 = Diabat_NN("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet", res_list2, saptff_d1.has_periodic_box)
+    nn_indices_diabat1 = np.arange(0, len(nn_atoms), 1).tolist()
+    diabat1 = Diagonal(diabat1_saptff, diabat1_nn, nn_atoms, nn_indices_diabat1, return_positions)
+
+    diabat2_saptff = SAPT_ForceField(pdbtemplate_d2, xml_res_file, xml_ff_file, Drude_hyper_force=True, exclude_intra_res=[0, 1], platformtype='OpenCL')
+    diabat2_saptff.set_react_res(1, 7)
     
+    res_list2 = diabat2_saptff.res_list()
+    diabat2_nn = Diabat_NN("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet", res_list2, diabat1_saptff.has_periodic_box)
+    
+    nn_indices_diabat2 = np.arange(0, len(nn_atoms), 1).tolist()
+    nn_indices_diabat2.insert(25, nn_indices_diabat2.pop(3))
+    diabat2 = Diagonal(diabat2_saptff, diabat2_nn, nn_atoms, nn_indices_diabat2, pos_diabat2, shift=shift)
+    diabats = [diabat1, diabat2]
+
     #Model for predicting the H12 energy and force
-    off_diag = torch.load("ff_files/h12_model")
+    h12 = Coupling("ff_files/h12_model", diabat1_saptff.has_periodic_box)
+
+    coupling = [h12]
 
     #Main class for MD simulation inside of ASE
-    nn_atoms = saptff_d1.get_nn_atoms()
-    ase_md = ASE_MD("input.xyz", './test', saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, nn_atoms, res_list1, shift=shift)
+    ase_md = ASE_MD("input.xyz", './test', diabats, coupling, nn_atoms)
     energy, force = ase_md.calculate_single_point()
     print(energy)
 

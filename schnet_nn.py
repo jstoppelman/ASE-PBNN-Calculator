@@ -79,6 +79,10 @@ def pos_diabat2(atoms, positions):
         positions = new_pos
     return positions, inds
 
+def return_positions(atoms, positions):
+    inds = [i for i in range(len(positions))]
+    return positions, inds
+
 def reorder(coords, inds):
     """
     Reorder the input (positions or forces from diabat 2)
@@ -180,25 +184,112 @@ def make_molecule_whole(xyz, box, res_list):
         shifts[mol[1:]] += diff
     return shifts
 
+class Diagonal:
+    """
+    Contains the SAPT-FF and Diabat_NN classes for a diabatic state and uses
+    them to compute the diabatic energy for a system.
+    """
+    def __init__(self, saptff, nn, nn_atoms, nn_indices, reorder_func, shift=0):
+        """
+        Parameters
+        -----------
+        saptff : Object
+            Instance of SAPT_ForceField class
+        nn : Object
+            Instance of Diabat_NN class
+        nn_atoms : list
+            List containing the indices of the atoms the neural network is applied to
+        nn_indices : list
+            List containing reordered indices for the neural network atoms, specific to each diabat
+        reorder : function
+            Function to reorder positions, see return_positions and pos_diabat2 above
+        shift : float
+            Shift in the diabatic energy
+        """
+        self.saptff = saptff
+        self.nn = nn
+        self.nn_atoms = nn_atoms
+        self.nn_indices = nn_indices
+        self.reorder_func = reorder_func
+        self.shift = shift
+
+    def setup_saptff(self, atoms, positions):
+        positions, inds = self.reorder_func(atoms, positions)
+        self.saptff.set_initial_positions(positions)
+
+    def compute_energy_force(self, atoms, nn_atoms):
+        saptff_positions = atoms.get_positions()
+        saptff_positions, reorder_inds = self.reorder_func(atoms, saptff_positions)
+        if self.saptff.has_periodic_box:
+            saptff_positions = shift_reacting_atom(saptff_positions, atoms.get_cell(), self.saptff.react_res, self.saptff.react_atom)
+        self.saptff.set_xyz(saptff_positions)
+        saptff_energy, saptff_forces = self.saptff.compute_energy()
+
+        symbols = nn_atoms.get_chemical_symbols()
+        new_symbols = [symbols[i] for i in self.nn_indices]
+        nn_positions, junk_inds = self.reorder_func(nn_atoms, nn_atoms.get_positions())
+        reorder_Atoms = Atoms(new_symbols, positions=nn_positions, cell=nn_atoms.get_cell(), pbc=nn_atoms.pbc)
+        
+        nn_intra_energy, nn_intra_forces = self.nn.compute_energy_intra(reorder_Atoms)
+        nn_inter_energy, nn_inter_forces = self.nn.compute_energy_inter(reorder_Atoms)
+
+        energy = saptff_energy + nn_intra_energy + nn_inter_energy + self.shift
+        
+        saptff_forces[self.nn_atoms] += nn_intra_forces + nn_inter_forces
+        
+        forces = reorder(saptff_forces, reorder_inds)
+
+        return energy, forces
+
+class Coupling: 
+    """
+    Class used to compute the coupling between two diabatic states
+    """
+    def __init__(self, nn, periodic, device='cuda'):
+        """
+        Parameters
+        -----------
+        nn : str
+            location of the neural network used to compute the coupling term
+        periodic : bool
+            bool indicating whether periodic bundaries are being used.
+        device : str
+            String indicating where the neural networks will be run. Default is cuda.
+        """
+        self.nn = torch.load(nn)
+        if periodic:
+            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModPBCEnvironmentProvider(), collect_triples=True)
+        else:
+            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModEnvironmentProvider(), collect_triples=True)
+
+    def compute_energy_force(self, nn_atoms):
+        inputs = self.converter(nn_atoms)
+        result = self.nn(inputs)
+
+        energy = result['energy'].detach().cpu().numpy()[0][0]
+        forces = result['forces'].detach().cpu().numpy()[0]
+        forces[forces != forces] = 0.0
+        return np.asarray(energy), np.asarray(forces)
+
 class Diabat_NN:
     """
     Class for obtaining the energies and forces from SchNetPack
     neural networks. This computes energies and forces from the
     intra- and intermolecular neural networks for the diabatic states.
     """
-    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list, periodic_boundary, device='cuda'):
+    def __init__(self, nn_monA, nn_monB, nn_dimer, res_list, periodic, device='cuda'):
         """
         Parameters
         -----------
         nn_monA : str
-            location of the neural network for monomer A in the diabat
+            location of the neural network for monomer A in the diabat   
         nn_monB : str
             location of the neural network for monomer B in the diabat
         nn_dimer : str
             location of the neural network for the dimer
         res_list : dictionary
             dictionary containing the indices of the monomers in the diabat
-        periodic_boundary : bool
+        periodic : bool
             bool indicating whether periodic boundaries are being used. 
         device : str
             String indicating where the neural networks will be run. Default is cuda.
@@ -207,20 +298,20 @@ class Diabat_NN:
         self.nn_monB = torch.load(nn_monB)
         self.nn_dimer = torch.load(nn_dimer)
         self.res_list = res_list
-        if periodic_boundary:
+        if periodic:
             self.converter = AtomsConverter(device=torch.device(device), environment_provider=TorchEnvironmentProvider(8., device=torch.device(device)))
             self.inter_converter = AtomsConverter(device=torch.device(device), environment_provider=APNetPBCEnvironmentProvider(), res_list=res_list)
         else:
             self.converter = AtomsConverter(device=torch.device(device))
             self.inter_converter = AtomsConverter(device=torch.device(device), environment_provider=APNetEnvironmentProvider(), res_list=res_list)
 
-    def compute_energy_intra(self, xyz):
+    def compute_energy_intra(self, atoms):
         """
         Compute the energy for the intramolecular components of the dimer
 
         Parameters
         -----------
-        xyz : ASE Atoms Object
+        atoms : ASE Atoms Object
             ASE Atoms Object used as the input for the neural networks.
         
         Returns
@@ -233,13 +324,13 @@ class Diabat_NN:
         monA = self.res_list[0]
         monB = self.res_list[1]
         
-        xyzA = xyz[monA]
-        xyzB = xyz[monB]
+        atomsA = atoms[monA]
+        atomsB = atoms[monB]
 
-        inputA = self.converter(xyzA)
-        inputB = self.converter(xyzB)
-        resultA = self.nn_monA(inputA)
-        resultB = self.nn_monB(inputB)
+        inputsA = self.converter(atomsA)
+        inputsB = self.converter(atomsB)
+        resultA = self.nn_monA(inputsA)
+        resultB = self.nn_monB(inputsB)
 
         energyA = resultA['energy'].detach().cpu().numpy()[0][0]
         forcesA = resultA['forces'].detach().cpu().numpy()[0]
@@ -249,13 +340,13 @@ class Diabat_NN:
         intra_forces = np.append(forcesA, forcesB, axis=0)
         return np.asarray(intra_eng), np.asarray(intra_forces)
 
-    def compute_energy_inter(self, xyz):
+    def compute_energy_inter(self, atoms):
         """
         Compute the energy for the intermolecular components of the dimer.
 
         Parameters
         -----------
-        xyz : ASE Atoms Object
+        atoms : ASE Atoms Object
             ASE Atoms Object used as the input for the neural network.
 
         Returns
@@ -265,8 +356,8 @@ class Diabat_NN:
         forces : np.ndarray
             Intermolecular forces
         """
-        inp = self.inter_converter(xyz)
-        result = self.nn_dimer(inp)
+        inputs = self.inter_converter(atoms)
+        result = self.nn_dimer(inputs)
 
         energy = result['energy'].detach().cpu().numpy()[0][0]
         forces = result['forces'].detach().cpu().numpy()[0]
@@ -311,31 +402,29 @@ class Harmonic_Bias:
         output_file.write("{}   ".format(dist))
         return energy, forces
 
-class EVB_Hamiltonian(Calculator):
+class PBNN_Hamiltonian(Calculator):
     """ 
-    ASE Calculator for running EVB simulations using OpenMM forcefields 
+    ASE Calculator for running PBNN simulations using OpenMM forcefields 
     and SchNetPack neural networks. Modeled after SchNetPack calculator.
     """
     energy = "energy"
     forces = "forces"
     implemented_properties = [energy, forces]
 
-    def __init__(self, saptff_d1, saptff_d2, nn_d1, nn_d2, off_diag, tmpdir, nn_atoms, res_list, periodic_box, shift=0, bias_dicts=[], device='cuda', **kwargs):
+    def __init__(self, diabats, couplings, tmpdir, nn_atoms, res_list, bias_dicts=[], device='cuda', **kwargs):
         """
         Parameters
         -----------
-        saptff_d1 : Object
-            Contains OpenMM force field for diabat 1.
-        saptff_d2 : Object
-            Contains OpenMM force field for diabat 2.
-        nn_d1 : Object
-            Diabat_NN instance for diabat 1.
-        nn_d2 : Object
-            Diabat NN instance for diabat 2.
-        off_diag : PyTorch model
-            Model for predicting H12 energy and forces.
-        shift : float
-            Diabat 2 energy shift to diabat 1 reference.
+        diabats : list
+            List containing Diagonal diabatic state classes
+        coupling : list
+            List containing Coupling classes 
+        tmpdir : str
+            directory where the simulation logs are stored
+        nn_atoms : list
+            List containing the set of atoms that the neural network computes
+        res_list : list
+            List containing the atoms in each residue from OpenMM
         bias_dicts : list
             list of dictionaries containing information for bias potentials
         device : str
@@ -344,34 +433,17 @@ class EVB_Hamiltonian(Calculator):
             additional args for ASE base calculator.
         """
         Calculator.__init__(self, **kwargs)
-        self.saptff_d1 = saptff_d1
-        self.saptff_d2 = saptff_d2
-        self.nn_d1 = nn_d1
-        self.nn_d2 = nn_d2
-        self.off_diag = off_diag
-        self.shift = shift
+        self.diabats = diabats
+        self.couplings = couplings
         self.nn_atoms = nn_atoms
-        self.has_periodic_box = periodic_box
+        self.has_periodic_box = self.diabats[0].saptff.has_periodic_box
 
-        self.ff_time = 0
-        if self.has_periodic_box:
-            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModPBCEnvironmentProvider(), collect_triples=True)
-        else:
-            self.converter = AtomsConverter(device=torch.device(device), environment_provider=APModEnvironmentProvider(), collect_triples=True)
         self.energy_units = units.kJ / units.mol
         self.forces_units = units.kJ / units.mol / units.Angstrom
         self.frame = 0
         self.debug_forces = False
         self.res_list = res_list
 
-        self.previous_positions = None 
-        self.react_res_d1 = self.res_list[0]
-        self.react_atom_d1 = self.react_res_d1[3]
-        
-        res_list_d2 = self.saptff_d2.res_list()
-        self.react_res_d2 = res_list_d2[1]
-        self.react_atom_d2 = self.react_res_d2[7]
-        
         self.bias_potentials = []
         for bias in bias_dicts:
             self.bias_potentials.append(Harmonic_Bias(bias['k'], bias['r0'], bias['index1'], bias['index2']))
@@ -395,139 +467,17 @@ class EVB_Hamiltonian(Calculator):
         if os.path.isfile("diabat1_total_forces.txt"): os.remove("diabat1_total_forces.txt")
         if os.path.isfile("diabat2_total_forces.txt"): os.remove("diabat2_total_forces.txt")
 
-    def saptff_energy_force_d1(self, xyz):
-        """
-        Compute OpenMM energy and forces
-
-        Parameters
-        -----------
-        xyz : ASE Atoms object
-            Used to supply positions to the SAPTFF_Forcefield class
-
-        Returns
-        -----------
-        energy : np.ndarray
-            Energy in kJ/mol
-        forces : np.ndarray
-            Forces in kJ/mol/A
-        """
-        pos_d1 = xyz.get_positions()
-        if self.has_periodic_box:
-            pos_d1 = shift_reacting_atom(pos_d1, xyz.get_cell(), self.react_res_d1, self.react_atom_d1)
-        self.saptff_d1.set_xyz(pos_d1)
-        energy, forces = self.saptff_d1.compute_energy()
-        if self.debug_forces:
-            print("FF D1", energy)
-            write_forces("diabat1_forces_ff.txt", xyz, forces, self.frame)
-
-        return energy, forces
-
-    def saptff_energy_force_d2(self, xyz):
-        """
-        Compute OpenMM energy and forces
-
-        Parameters
-        -----------
-        xyz : ASE Atoms object
-            Used to supply positions to the SAPTFF_Forcefield class
-
-        Returns
-        -----------
-        energy : np.ndarray
-            Energy in kJ/mol
-        forces : np.ndarray
-            Forces in kJ/mol/A
-        """
-        
-        pos, reord_inds = pos_diabat2(xyz, xyz.get_positions())
-        if self.has_periodic_box:
-            pos = shift_reacting_atom(pos, xyz.get_cell(), self.react_res_d2, self.react_atom_d2)
-        self.saptff_d2.set_xyz(pos)
-        energy, forces = self.saptff_d2.compute_energy()
-        forces = reorder(forces, reord_inds)
-        
-        if self.debug_forces:
-            print("FF D2", energy)
-            write_forces("diabat2_forces_ff.txt", xyz, forces, self.frame)
-
-        return energy, forces
-
-    def nn_energy_force_d1(self, xyz):
-        """
-        Compute Diabat neural network energy and forces
-
-        Parameters
-        -----------
-        xyz : ASE Atoms object
-            Used to supply positions to the Diabat_NN class
-
-        Returns
-        -----------
-        energy : np.ndarray
-            Energy in kJ/mol
-        forces : np.ndarray
-            Forces in kJ/mol/A
-        """
-
-        intra_eng, intra_forces = self.nn_d1.compute_energy_intra(xyz)
-        inter_eng, inter_forces = self.nn_d1.compute_energy_inter(xyz)
-        total_eng = intra_eng + inter_eng
-        total_forces = intra_forces + inter_forces
-        if self.debug_forces:
-            print("Intra D1", intra_eng)
-            print("Inter D1", inter_eng)
-            write_forces("diabat1_forces_internn.txt", xyz, inter_forces, self.frame)
-            write_forces("diabat1_forces_intrann.txt", xyz, intra_forces, self.frame)
-
-        return total_eng, total_forces
-
-    def nn_energy_force_d2(self, xyz):
-        """
-        Compute Diabat neural network energy and forces
-
-        Parameters
-        -----------
-        xyz : ASE Atoms object
-            Used to supply positions to the Diabat_NN class
-
-        Returns
-        -----------
-        energy : np.ndarray
-            Energy in kJ/mol
-        forces : np.ndarray
-            Forces in kJ/mol/A
-        """
-
-        symb = xyz.get_chemical_symbols()
-        symb.insert(25, symb.pop(3))
-        pos, reord_inds = pos_diabat2(xyz, xyz.get_positions())
-        tmp_Atoms = Atoms(symb, positions=pos, cell=xyz.get_cell(), pbc=xyz.pbc)
-        intra_eng, intra_forces = self.nn_d2.compute_energy_intra(tmp_Atoms)
-        inter_eng, inter_forces = self.nn_d2.compute_energy_inter(tmp_Atoms)
-        total_eng = intra_eng + inter_eng
-        total_forces = intra_forces + inter_forces
-        total_forces = reorder(total_forces, reord_inds)
-        if self.debug_forces:
-            print("Intra Eng D2", intra_eng)
-            print("Inter Eng D2", inter_eng)
-            write_forces("diabat2_forces_internn.txt", tmp_Atoms, inter_forces, self.frame)
-            write_forces("diabat2_forces_intrann.txt", tmp_Atoms, intra_forces, self.frame)
-
-        return total_eng, total_forces
-
-    def diagonalize(self, d1_energy, d2_energy, h12_energy):
+    def diagonalize(self, diabat_energies, coupling_energies):
         """
         Forms matrix and diagonalizes using np to obtain ground-state
         eigenvalue and eigenvector.
 
         Parameters
         -----------
-        d1_energy : np.ndarray
-            Total diabat 1 energy
-        d2_energy : np.ndarray
-            Total diabat 2 energy
-        h12_energy : np.ndarray
-            Off-diagonal energy
+        diabat_energies : list
+            List containing the energies of the diabatic states
+        coupling_energies : list
+            List containing the coupling energies between diabatic states
 
         Returns
         -----------
@@ -536,23 +486,29 @@ class EVB_Hamiltonian(Calculator):
         eigv[:, l_eig] : np.ndarray
             Ground-state eigenvector
         """
-        hamiltonian = [[d1_energy, h12_energy], [h12_energy, d2_energy]]
+        num_states = len(diabat_energies)
+        hamiltonian = np.zeros((num_states, num_states))
+        for i, energy in enumerate(diabat_energies):
+            hamiltonian[i, i] = energy
+        for i, energy in enumerate(coupling_energies):
+            j = i + 1
+            hamiltonian[i, j] = energy
+            hamiltonian[j, i] = energy
+
         eig, eigv = np.linalg.eig(hamiltonian)
         l_eig = np.argmin(eig)
         return eig[l_eig], eigv[:, l_eig]
 
-    def calculate_forces(self, d1_forces, d2_forces, h12_forces, ci):
+    def calculate_forces(self, diabat_forces, coupling_forces, ci):
         """
         Uses Hellmann-Feynman theorem to calculate forces on each atom.
 
         Parameters
         -----------
-        d1_forces : np.ndarray
-            forces for diabat 1
-        d2_forces : np.ndarray
-            forces for diabat 2
-        h12_forces : np.ndarray
-            forces from off-diagonal elements
+        diabat_forces : list
+            List containing the forces for each diabat
+        coupling_forces : list
+            List containing the forces from the coupling elements
         ci : np.ndarray
             ground-state eigenvector
 
@@ -561,7 +517,17 @@ class EVB_Hamiltonian(Calculator):
         np.ndarray
             Forces calculated from Hellman-Feynman theorem
         """
-        return ci[0]**2 * d1_forces + 2 * ci[0] * ci[1] * h12_forces + ci[1]**2 * d2_forces
+        num_states = len(diabat_forces)
+        hamiltonian_force = np.zeros((num_states, num_states), dtype=np.ndarray)
+        for i, force in enumerate(diabat_forces):
+            hamiltonian_force[i, i] = force
+        
+        total_forces = 0
+        for i in range(num_states):
+            for j in range(num_states):
+                total_forces += ci[i] * ci[j] * hamiltonian_force[i, j]
+        
+        return total_forces
 
     def calculate(self, atoms=None, properties=['energy'], system_changes=all_changes):
         """
@@ -590,33 +556,24 @@ class EVB_Hamiltonian(Calculator):
         symbs = [symbs[i] for i in self.nn_atoms]
         nn_atoms = Atoms(symbols=symbs, positions=atoms.positions[self.nn_atoms], cell=atoms.get_cell(), pbc=atoms.pbc)
 
-        ff_energy_d1, ff_forces_d1 = self.saptff_energy_force_d1(atoms)
-        ff_energy_d2, ff_forces_d2 = self.saptff_energy_force_d2(atoms)
-        nn_energy_d1, nn_forces_d1 = self.nn_energy_force_d1(nn_atoms)
-        nn_energy_d2, nn_forces_d2 = self.nn_energy_force_d2(nn_atoms)
+        diabat_energies = []
+        diabat_forces = []
+        for diabat in self.diabats: 
+            energy, forces = diabat.compute_energy_force(atoms, nn_atoms)
+            diabat_energies.append(energy)
+            diabat_forces.append(forces)
 
-        diabat1_energy = ff_energy_d1 + nn_energy_d1
-        diabat2_energy = ff_energy_d2 + nn_energy_d2 + self.shift
-
-        ff_forces_d1[self.nn_atoms] += nn_forces_d1
-        ff_forces_d2[self.nn_atoms] += nn_forces_d2
-
-        diabat1_forces = ff_forces_d1
-        diabat2_forces = ff_forces_d2
-
-        inp = self.converter(nn_atoms)
-        off_diag = self.off_diag(inp)
-       
-        h12_energy = off_diag['energy'].detach().cpu().numpy()[0][0]
-        h12_forces = off_diag['forces'].detach().cpu().numpy()[0]
-        h12_forces[h12_forces != h12_forces] = 0.0
-
-        zero_forces = np.zeros_like(ff_forces_d1)
-        zero_forces[self.nn_atoms] += h12_forces
-        h12_forces = zero_forces
-  
-        energy, ci = self.diagonalize(diabat1_energy, diabat2_energy, h12_energy)
-        forces = self.calculate_forces(diabat1_forces, diabat2_forces, h12_forces, ci)
+        coupling_energies = []
+        coupling_forces = []
+        for coupling in self.couplings:
+            energy, forces = coupling.compute_energy_force(nn_atoms)
+            zero_forces = np.zeros_like(diabat_forces[-1])
+            zero_forces[self.nn_atoms] += forces
+            coupling_energies.append(energy)
+            coupling_forces.append(zero_forces)
+        
+        energy, ci = self.diagonalize(diabat_energies, coupling_energies)
+        forces = self.calculate_forces(diabat_forces, coupling_forces, ci)
 
         if self.debug_forces:
             print(ci[0]**2, ci[1]**2)
@@ -651,9 +608,9 @@ class EVB_Hamiltonian(Calculator):
 
 class ASE_MD:
     """
-    Setups and runs the MD simulation. Serves as an interface to the EVB Hamiltonian class and ASE.
+    Setups and runs the MD simulation. Serves as an interface to the PBNN Hamiltonian class and ASE.
     """
-    def __init__(self, ase_atoms, tmp, calc_omm_d1, calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, nn_atoms, res_list, shift=0, frame=-1, bias_dicts=[], device='cuda'):
+    def __init__(self, ase_atoms, tmp, diabats, coupling, nn_atoms, frame=-1, bias_dicts=[], device='cuda'):
         """
         Parameters
         -----------
@@ -661,18 +618,12 @@ class ASE_MD:
             Location of input structure, gets created to ASE Atoms object.
         tmp : str
             Location for tmp directory.
-        calc_omm_d1 : Object
-            Contains OpenMM force field for diabat 1.
-        calc_omm_d2 : Object
-            Contains OpenMM force field for diabat 2.
-        calc_nn_d1 : Object
-            Diabat_NN instance for diabat 1.
-        calc_nn_d2 : Object
-            Diabat NN instance for diabat 2.
-        off_diag : PyTorch model
-            Model for predicting H12 energy and forces.
-        shift : float
-            Diabat 2 energy shift to diabat 1 reference.
+        diabats : list
+            List containing Diagonal objects representing the diabatic states of the system
+        coupling : list
+            List containing the coupling terms for the matrix. Order so that they correspond with the diabats list
+        nn_atoms : list
+            List containing the atoms the neural network is applied to
         """
 
         self.working_dir = tmp
@@ -681,14 +632,15 @@ class ASE_MD:
             os.makedirs(self.tmp)
         
         self.mol = read(ase_atoms, index="{}".format(frame))
-        self.mol.set_masses(calc_omm_d1.get_masses())
-        self.calc_omm_d1 = calc_omm_d1
-        self.calc_omm_d1.set_initial_positions(self.mol.get_positions())
-        d2_pos, reord_inds = pos_diabat2(self.mol, self.mol.get_positions())
-        self.calc_omm_d2 = calc_omm_d2
-        self.calc_omm_d2.set_initial_positions(d2_pos)
-        periodic_box = self.calc_omm_d1.has_periodic_box
-        calculator = EVB_Hamiltonian(self.calc_omm_d1, self.calc_omm_d2, calc_nn_d1, calc_nn_d2, off_diag, self.tmp, nn_atoms, res_list, periodic_box, shift, bias_dicts, device)
+        self.diabats = diabats
+        self.coupling = coupling
+        self.mol.set_masses(self.diabats[0].saptff.get_masses())
+
+        for diabat in self.diabats:
+            diabat.setup_saptff(self.mol, self.mol.get_positions())
+
+        res_list = self.diabats[0].saptff.res_list()
+        calculator = PBNN_Hamiltonian(diabats, coupling, self.tmp, nn_atoms, res_list, bias_dicts, device)
         self.mol.set_calculator(calculator)
         self.md = False
 
@@ -755,9 +707,8 @@ class ASE_MD:
         xyz format. This functionality is mainly intended to be used for
         interfaces.
         """
-        self.calc_omm_d1.set_initial_positions(self.mol.get_positions())
-        d2_pos, reord_inds = pos_diabat2(self.mol, self.mol.get_positions())
-        self.calc_omm_d2.set_initial_positions(d2_pos)
+        for diabat in self.diabats:
+            diabat.setup_saptff(self.mol, self.mol.get_positions())
 
         energy = self.mol.get_potential_energy()
         forces = self.mol.get_forces()
