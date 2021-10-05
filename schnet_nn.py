@@ -526,6 +526,10 @@ class PBNN_Hamiltonian(Calculator):
         hamiltonian_force = np.zeros((num_states, num_states), dtype=np.ndarray)
         for i, force in enumerate(diabat_forces):
             hamiltonian_force[i, i] = force
+        for i, force in enumerate(coupling_forces):
+            j = i + 1
+            hamiltonian_force[i, j] = force
+            hamiltonian_force[j, i] = force
         
         total_forces = 0
         for i in range(num_states):
