@@ -225,20 +225,25 @@ class Diagonal:
         self.saptff.set_xyz(saptff_positions)
         saptff_energy, saptff_forces = self.saptff.compute_energy()
 
+        saptff_forces = reorder(saptff_forces, reorder_inds)
+
         symbols = nn_atoms.get_chemical_symbols()
         new_symbols = [symbols[i] for i in self.nn_indices]
-        nn_positions, junk_inds = self.reorder_func(nn_atoms, nn_atoms.get_positions())
+        nn_positions, reorder_nn_inds = self.reorder_func(nn_atoms, nn_atoms.get_positions())
         reorder_Atoms = Atoms(new_symbols, positions=nn_positions, cell=nn_atoms.get_cell(), pbc=nn_atoms.pbc)
         
         nn_intra_energy, nn_intra_forces = self.nn.compute_energy_intra(reorder_Atoms)
         nn_inter_energy, nn_inter_forces = self.nn.compute_energy_inter(reorder_Atoms)
 
         energy = saptff_energy + nn_intra_energy + nn_inter_energy + self.shift
-        
-        saptff_forces[self.nn_atoms] += nn_intra_forces + nn_inter_forces
-        
-        forces = reorder(saptff_forces, reorder_inds)
 
+        nn_forces = nn_intra_forces + nn_inter_forces
+        nn_forces = reorder(nn_forces, reorder_nn_inds)
+        saptff_forces[self.nn_atoms] += nn_forces
+        
+        forces = saptff_forces
+        print(forces)
+        sys.exit()
         return energy, forces
 
 class Coupling: 
@@ -574,6 +579,8 @@ class PBNN_Hamiltonian(Calculator):
         
         energy, ci = self.diagonalize(diabat_energies, coupling_energies)
         forces = self.calculate_forces(diabat_forces, coupling_forces, ci)
+        print(forces)
+        sys.exit()
 
         if self.debug_forces:
             print(ci[0]**2, ci[1]**2)
