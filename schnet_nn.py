@@ -20,6 +20,7 @@ from ase import units, Atoms
 from ase.io import read, write
 from ase.io import Trajectory
 from ase.calculators.calculator import Calculator, all_changes
+from ase.calculators.plumed import Plumed
 from ase.md import VelocityVerlet, Langevin, MDLogger
 from ase.md.velocitydistribution import (
     MaxwellBoltzmannDistribution,
@@ -78,6 +79,45 @@ def pos_diabat2(atoms, positions):
         new_pos = np.insert(new_pos, 25, [h_atom], axis=0)
         positions = new_pos
     return positions, inds
+
+def pos_diabat1_acetic(atoms, positions):
+    inds = [i for i in range(len(positions))]
+    dists = atoms.get_distances(7, [0, 1], mic=True)
+    dist1, dist2 = dists[0], dists[1]
+    if dist1 < dist2:
+        return positions, inds
+    else:
+        new_pos = np.empty_like(positions)
+        new_pos[:] = positions
+        o1 = positions[0]
+        o2 = positions[1]
+        new_pos[0] = o2
+        new_pos[1] = o1
+        positions = new_pos
+        return positions, inds
+
+def pos_diabat2_acetic(atoms, positions):
+    inds = [i for i in range(len(positions))]
+    mol1 = np.arange(8, 15, 1).tolist()
+    mol2 = np.arange(0, 7, 1).tolist()
+    mol1.append(7)
+    for m in mol2: mol1.append(m)
+    index = mol1
+    positions = positions[index]
+    dists = atoms.get_distances(7, [8, 9])
+    dist1, dist2 = dists[0], dists[1]
+    if dist1 < dist2:
+        return positions, index
+    else:
+        new_pos = np.empty_like(positions)
+        new_pos[:] = positions
+        o1, o2 = positions[0], positions[1]
+        new_pos[0] = o2
+        new_pos[1] = o1
+        positions = new_pos
+        index[0] = 9
+        index[1] = 8
+        return positions, index 
 
 def return_positions(atoms, positions):
     inds = [i for i in range(len(positions))]
@@ -184,7 +224,7 @@ def make_molecule_whole(xyz, box, res_list):
         shifts[mol[1:]] += diff
     return shifts
 
-class Diagonal:
+class Diabat:
     """
     Contains the SAPT-FF and Diabat_NN classes for a diabatic state and uses
     them to compute the diabatic energy for a system.
@@ -275,7 +315,7 @@ class Coupling:
         forces[forces != forces] = 0.0
         return np.asarray(energy), np.asarray(forces)
 
-class Diabat_NN:
+class NN_Diagonal:
     """
     Class for obtaining the energies and forces from SchNetPack
     neural networks. This computes energies and forces from the
@@ -342,6 +382,7 @@ class Diabat_NN:
         forcesB = resultB['forces'].detach().cpu().numpy()[0]
         intra_eng = energyA + energyB
         intra_forces = np.append(forcesA, forcesB, axis=0)
+        intra_forces[intra_forces!=intra_forces] = 0
         return np.asarray(intra_eng), np.asarray(intra_forces)
 
     def compute_energy_inter(self, atoms):
@@ -365,46 +406,8 @@ class Diabat_NN:
 
         energy = result['energy'].detach().cpu().numpy()[0][0]
         forces = result['forces'].detach().cpu().numpy()[0]
-        forces[forces != forces] = 0.0
+        forces[forces!=forces] = 0
         return np.asarray(energy), np.asarray(forces)
-
-class Harmonic_Bias:
-    """
-    Adds harmonic bias to the Hamiltonian, based on the ASE Harmonic calculator
-    """
-    def __init__(self, spring_constant, r0, index1, index2):
-        self.k = spring_constant
-        self.r0 = r0
-        self.index1 = index1
-        self.index2 = index2
-
-    def compute_energy_force(self, atoms, output_file):
-        if not isinstance(self.index1, list) and not isinstance(self.index2, list):
-            dist = atoms.get_distance(self.index1, self.index2, mic=True)
-            index1 = self.index1
-            index2 = self.index2
-        elif isinstance(self.index1, list):
-            dists = atoms.get_distances(self.index2, self.index1, mic=True)
-            dist = np.min(dists)
-            index1 = self.index1[np.argmin(dists)]
-            index2 = self.index2
-        elif isinstance(self.index2, list):
-            dists = atoms.get_distances(self.index1, self.index2, mic=True)
-            dist = np.min(dists)
-            index1 = self.index1
-            index2 = self.index2[np.argmin(dists)]
-
-        forces = np.zeros_like(atoms.positions)
-        disps = atoms.positions[index1, :] - atoms.positions[index2, :]
-        disps = disps.reshape(1, -1)
-        D, D_len = find_mic(disps, atoms.get_cell(), pbc=True)
-        disps = D[0]
-
-        energy = 0.5 * self.k * (dist - self.r0)**2
-        forces[index1, :] += -self.k * (dist - self.r0) * disps/dist
-        forces[index2, :] -= -self.k * (dist - self.r0) * disps/dist
-        output_file.write("{}   ".format(dist))
-        return energy, forces
 
 class PBNN_Hamiltonian(Calculator):
     """ 
@@ -415,7 +418,7 @@ class PBNN_Hamiltonian(Calculator):
     forces = "forces"
     implemented_properties = [energy, forces]
 
-    def __init__(self, diabats, couplings, tmpdir, nn_atoms, res_list, bias_dicts=[], device='cuda', **kwargs):
+    def __init__(self, diabats, couplings, tmpdir, nn_atoms, res_list, device='cuda', **kwargs):
         """
         Parameters
         -----------
@@ -429,8 +432,6 @@ class PBNN_Hamiltonian(Calculator):
             List containing the set of atoms that the neural network computes
         res_list : list
             List containing the atoms in each residue from OpenMM
-        bias_dicts : list
-            list of dictionaries containing information for bias potentials
         device : str
             device where the neural networks will be run. Default is cuda.
         **kwargs : dict
@@ -447,14 +448,6 @@ class PBNN_Hamiltonian(Calculator):
         self.frame = 0
         self.debug_forces = False
         self.res_list = res_list
-
-        self.bias_potentials = []
-        for bias in bias_dicts:
-            self.bias_potentials.append(Harmonic_Bias(bias['k'], bias['r0'], bias['index1'], bias['index2']))
-
-        if bias_dicts:
-            self.bias_file = open("{}/umbrella_log.txt".format(tmpdir), 'w')
-            self.bias_file.close()
 
         if os.path.isfile("diabat1_forces_ff.txt"): os.remove("diabat1_forces_ff.txt")
         if os.path.isfile("diabat1_forces_intrann.txt"): os.remove("diabat1_forces_intrann.txt")
@@ -583,7 +576,7 @@ class PBNN_Hamiltonian(Calculator):
         
         energy, ci = self.diagonalize(diabat_energies, coupling_energies)
         forces = self.calculate_forces(diabat_forces, coupling_forces, ci)
-
+        
         if self.debug_forces:
             print(ci[0]**2, ci[1]**2)
             print(diabat1_energy)
@@ -595,19 +588,6 @@ class PBNN_Hamiltonian(Calculator):
             write_forces("diabat1_total_forces.txt", atoms, diabat1_forces, self.frame)
             write_forces("diabat2_total_forces.txt", atoms, diabat2_forces, self.frame)
 
-        if self.bias_potentials:
-            self.bias_file = open(self.bias_file.name, 'a+')
-            self.bias_file.write("{}   ".format(self.frame))
-
-        for bias in self.bias_potentials:
-            bias_energy, bias_force = bias.compute_energy_force(atoms, self.bias_file)
-            energy += bias_energy
-            forces += bias_force
-
-        if self.bias_potentials:
-            self.bias_file.write("\n")
-            self.bias_file.close()
-        
         self.frame += 1
         
         result["energy"] = energy.reshape(-1) * self.energy_units
@@ -619,7 +599,7 @@ class ASE_MD:
     """
     Setups and runs the MD simulation. Serves as an interface to the PBNN Hamiltonian class and ASE.
     """
-    def __init__(self, ase_atoms, tmp, diabats, coupling, nn_atoms, frame=-1, bias_dicts=[], device='cuda'):
+    def __init__(self, ase_atoms, tmp, diabats, coupling, nn_atoms, frame=-1, plumed_input=[], device='cuda'):
         """
         Parameters
         -----------
@@ -631,6 +611,8 @@ class ASE_MD:
             List containing Diagonal objects representing the diabatic states of the system
         coupling : list
             List containing the coupling terms for the matrix. Order so that they correspond with the diabats list
+        plumed_input : list
+            List containing the commands for Plumed
         nn_atoms : list
             List containing the atoms the neural network is applied to
         """
@@ -649,8 +631,13 @@ class ASE_MD:
             diabat.setup_saptff(self.mol, self.mol.get_positions())
 
         res_list = self.diabats[0].saptff.res_list()
-        calculator = PBNN_Hamiltonian(diabats, coupling, self.tmp, nn_atoms, res_list, bias_dicts, device)
-        self.mol.set_calculator(calculator)
+        pbnn_calculator = PBNN_Hamiltonian(diabats, coupling, self.tmp, nn_atoms, res_list, device)
+        if not plumed_input:
+            self.mol.set_calculator(pbnn_calculator)
+        else:
+            plumed_calculator = Plumed(pbnn_calculator, plumed_input, 1.0, atoms=self.mol, kT=300.0*units.kB, log=f'{self.tmp}/colvar.dat')
+            self.mol.set_calculator(plumed_calculator)
+        
         self.md = False
 
     def create_system(self, name, time_step=1.0, temp=300, temp_init=None, restart=False, store=1, nvt=False, friction=0.001):
@@ -755,5 +742,4 @@ class ASE_MD:
      
         # Save final geometry in xyz format
         self.save_molecule(name)
-
 

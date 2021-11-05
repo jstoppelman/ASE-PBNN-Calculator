@@ -30,20 +30,20 @@ def main():
     #Constuct residue list in order to partition total dimer positions into separate monomer
     #positions for the intramolecular neural networks included in the Diabat_NN classes
     res_list1 = diabat1_saptff.res_list()
-    diabat1_nn = Diabat_NN("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet", res_list1, diabat1_saptff.has_periodic_box)
+    diabat1_nn = NN_Diagonal("ff_files/emim_model", "ff_files/acetate_model", "ff_files/d1_apnet", res_list1, diabat1_saptff.has_periodic_box)
 
     nn_indices_diabat1 = np.arange(0, len(nn_atoms), 1).tolist()
-    diabat1 = Diagonal(diabat1_saptff, diabat1_nn, nn_atoms, nn_indices_diabat1, return_positions)
+    diabat1 = Diabat(diabat1_saptff, diabat1_nn, nn_atoms, nn_indices_diabat1, return_positions)
 
     diabat2_saptff = SAPT_ForceField(pdbtemplate_d2, xml_res_file, xml_ff_file, Drude_hyper_force=True, exclude_intra_res=[0, 1], platformtype='OpenCL')
     diabat2_saptff.set_react_res(1, 7)
     
     res_list2 = diabat2_saptff.res_list()
-    diabat2_nn = Diabat_NN("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet", res_list2, diabat1_saptff.has_periodic_box)
+    diabat2_nn = NN_Diagonal("ff_files/nhc_model", "ff_files/acetic_model", "ff_files/d2_apnet", res_list2, diabat1_saptff.has_periodic_box)
     
     nn_indices_diabat2 = np.arange(0, len(nn_atoms), 1).tolist()
     nn_indices_diabat2.insert(25, nn_indices_diabat2.pop(3))
-    diabat2 = Diagonal(diabat2_saptff, diabat2_nn, nn_atoms, nn_indices_diabat2, pos_diabat2, shift=shift)
+    diabat2 = Diabat(diabat2_saptff, diabat2_nn, nn_atoms, nn_indices_diabat2, pos_diabat2, shift=shift)
     diabats = [diabat1, diabat2]
 
     #Model for predicting the H12 energy and force
