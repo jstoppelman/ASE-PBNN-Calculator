@@ -1,0 +1,40 @@
+###############Simulation Settings################
+ensemble = NVT !Ensemble can be NVE or NVT
+friction_coefficient = 0.001 !Enter friction coefficient in fs^(-1) 
+temperature = 300.0 !Temperature for NVT simulation
+time_step = 0.5 !Enter timestep in fs
+run_time = 2000 !number of timesteps to perform
+sim_dir = vacuum_test !Directory to place simulation output
+store_frq = 1
+###############System Settings####################
+number_of_diabats = 3 !number of diabatic states used for the reaction
+OpenMM_ForceField = pb.xml !xml file containing FF parameters
+OpenMM_Residue = pb_residues.xml !xml file containing residue definitions
+OpenMM_pdbfile = diabat1_vacuum.pdb diabat2_vacuum.pdb diabat3_vacuum.pdb !PDB Files containing topology info for each diabat. List each pdb file below.
+Reacting_Atom = HI HO HO !List the name of the reacting atom in each diabat
+Accepting_Atoms = O1 O2 !List of atom names that can accept a reacting atom. This only needs to be listed for accepting molecules in diabat 1
+NN_Intra_D1 = emim_model acetate_model acetate_model !NN models used to model intramolecular DOF for each diabat
+NN_Intra_D2 = nhc_model acetic_model acetate_model
+NN_Intra_D3 = nhc_model acetate_model acetic_model
+NN_Inter_D1 = d1_apnet 0,1 d1_apnet 0,2 !NN models used to model intermolecular DOF between dimers in reacting complex. NN model name followed by which residues in the reacting complex are involved.
+NN_Inter_D2 = d2_apnet 0,1 acetic_apnet 1,2
+NN_Inter_D3 = d2_apnet 0,2 acetic_apnet 2,1
+Couplings = h12_model 0,1 h12_model 0,2 h23_model 1,2 !List the coupling neural network residues and the diabats they are applied to
+Diabat_shift = -346.5007134 -346.5007134 !Energy difference of isolated monomers in diabat with respect to diabat 1 (in kJ/mol). Should be at the level of theory the force field was fit to.
+###############Plumed Settings####################
+Umbrella_residues = 0 2 0 3 !First index listed is the index of the residue (starting from 0 in the list of residues that the diabatic states are built for) followed by the atom(s) index that the umbrella potential is applied to in that residue. This is repeated for the other residue. Repeat "Umbrella_residues" entry for more than one umbrella potential
+Umbrella_residues = 0 3 1 0,1
+Umbrella_force_constants = 20000 20000 !Force constant (in kJ/mol/nm^2) for each umbrella potential 
+Umbrella_center_positions = 1.8 1.2 !Distances (in angstrom) for which the umbrella potentials should be centered
+###############Adaptive PBNN Molecules############
+Molecule_adapt = AET O1 O2 !Enter residue name and atom name(s) for adaptive molecules.
+Molecule_adapt = ACI O1 OH
+Core_mol_id = 1 !Index (of molecules in the neural network list) for which the core region will be defined
+Core_mol_atoms = 0 1 2 3 4 !Atoms in the core molecule which will be used to center the active site
+R_inner = 4.0 !Distance in angstroms from core to buffer region
+R_outer = 6.0 !Distance in angstroms from from core to environmental region
+FD_beta = 6.0 !Exponent in Fermi-Dirac smoothing function
+FD_mu = 5.0 !Center for Fermi-Dirac function
+adapt_nn_model = AET acetate_model ACI acetic_model !Neural network model used to handle adaptive molecules
+adapt_pdb = acetate.pdb
+ff_shift = -179.78397445515418 

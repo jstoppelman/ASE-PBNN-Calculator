@@ -1,0 +1,1305 @@
+CREATED 
+CRYST1   23.825   23.825   23.825  90.00  90.00  90.00 P 1           1 
+HETATM    1  NI1 EMIMA   1      10.027  17.383  13.086  1.00  0.00           N  
+HETATM    2  NI  EMIMA   1      12.117  17.015  12.964  1.00  0.00           N  
+HETATM    3  CI  EMIMA   1      11.079  16.991  13.778  1.00  0.00           C  
+HETATM    4  HI  EMIMA   1      11.110  16.791  14.828  1.00  0.00           H  
+HETATM    5  CWI EMIMA   1      10.362  17.599  11.781  1.00  0.00           C  
+HETATM    6  HWI EMIMA   1       9.650  17.827  11.018  1.00  0.00           H  
+HETATM    7 CWI1 EMIMA   1      11.672  17.286  11.658  1.00  0.00           C  
+HETATM    8 HWI1 EMIMA   1      12.219  17.137  10.753  1.00  0.00           H  
+HETATM    9  CMI EMIMA   1       8.709  17.400  13.608  1.00  0.00           C  
+HETATM   10 HMI1 EMIMA   1       8.832  17.562  14.668  1.00  0.00           H  
+HETATM   11 HMI2 EMIMA   1       8.191  16.472  13.413  1.00  0.00           H  
+HETATM   12 HMI3 EMIMA   1       8.149  18.242  13.229  1.00  0.00           H  
+HETATM   13  CAI EMIMA   1      13.480  16.622  13.334  1.00  0.00           C  
+HETATM   14 HAI1 EMIMA   1      13.422  16.171  14.314  1.00  0.00           H  
+HETATM   15 HAI2 EMIMA   1      13.701  15.778  12.697  1.00  0.00           H  
+HETATM   16  CTI EMIMA   1      14.458  17.801  13.298  1.00  0.00           C  
+HETATM   17 HTI1 EMIMA   1      15.449  17.540  13.653  1.00  0.00           H  
+HETATM   18 HTI2 EMIMA   1      14.678  18.162  12.300  1.00  0.00           H  
+HETATM   19 HTI3 EMIMA   1      13.977  18.560  13.905  1.00  0.00           H  
+HETATM   28  NI1 EMIMA   2      18.357   9.655  11.383  1.00  0.00           N  
+HETATM   29  NI  EMIMA   2      18.757   9.501  13.512  1.00  0.00           N  
+HETATM   30  CI  EMIMA   2      19.290   9.749  12.327  1.00  0.00           C  
+HETATM   31  HI  EMIMA   2      20.335   9.954  12.228  1.00  0.00           H  
+HETATM   32  CWI EMIMA   2      17.187   9.236  12.020  1.00  0.00           C  
+HETATM   33  HWI EMIMA   2      16.300   9.098  11.443  1.00  0.00           H  
+HETATM   34 CWI1 EMIMA   2      17.407   9.165  13.313  1.00  0.00           C  
+HETATM   35 HWI1 EMIMA   2      16.811   8.844  14.139  1.00  0.00           H  
+HETATM   36  CMI EMIMA   2      18.615   9.732   9.952  1.00  0.00           C  
+HETATM   37 HMI1 EMIMA   2      19.640   9.976   9.714  1.00  0.00           H  
+HETATM   38 HMI2 EMIMA   2      18.004  10.527   9.550  1.00  0.00           H  
+HETATM   39 HMI3 EMIMA   2      18.362   8.796   9.476  1.00  0.00           H  
+HETATM   40  CAI EMIMA   2      19.384   9.402  14.844  1.00  0.00           C  
+HETATM   41 HAI1 EMIMA   2      19.635   8.385  15.103  1.00  0.00           H  
+HETATM   42 HAI2 EMIMA   2      20.364   9.855  14.832  1.00  0.00           H  
+HETATM   43  CTI EMIMA   2      18.510   9.751  16.043  1.00  0.00           C  
+HETATM   44 HTI1 EMIMA   2      17.494   9.375  16.028  1.00  0.00           H  
+HETATM   45 HTI2 EMIMA   2      19.066   9.650  16.968  1.00  0.00           H  
+HETATM   46 HTI3 EMIMA   2      18.430  10.830  15.976  1.00  0.00           H  
+HETATM   55  NI1 EMIMA   3      18.547  20.846  18.932  1.00  0.00           N  
+HETATM   56  NI  EMIMA   3      19.398  20.577  20.976  1.00  0.00           N  
+HETATM   57  CI  EMIMA   3      19.609  20.433  19.670  1.00  0.00           C  
+HETATM   58  HI  EMIMA   3      20.460  19.868  19.356  1.00  0.00           H  
+HETATM   59  CWI EMIMA   3      17.664  21.479  19.841  1.00  0.00           C  
+HETATM   60  HWI EMIMA   3      16.764  21.861  19.413  1.00  0.00           H  
+HETATM   61 CWI1 EMIMA   3      18.195  21.261  21.122  1.00  0.00           C  
+HETATM   62 HWI1 EMIMA   3      17.974  21.568  22.121  1.00  0.00           H  
+HETATM   63  CMI EMIMA   3      18.395  20.844  17.450  1.00  0.00           C  
+HETATM   64 HMI1 EMIMA   3      18.746  21.767  17.015  1.00  0.00           H  
+HETATM   65 HMI2 EMIMA   3      17.349  20.651  17.261  1.00  0.00           H  
+HETATM   66 HMI3 EMIMA   3      18.988  20.030  17.058  1.00  0.00           H  
+HETATM   67  CAI EMIMA   3      20.249  19.936  22.015  1.00  0.00           C  
+HETATM   68 HAI1 EMIMA   3      20.956  19.203  21.654  1.00  0.00           H  
+HETATM   69 HAI2 EMIMA   3      20.718  20.855  22.332  1.00  0.00           H  
+HETATM   70  CTI EMIMA   3      19.507  19.251  23.164  1.00  0.00           C  
+HETATM   71 HTI1 EMIMA   3      18.709  19.920  23.464  1.00  0.00           H  
+HETATM   72 HTI2 EMIMA   3      19.108  18.279  22.898  1.00  0.00           H  
+HETATM   73 HTI3 EMIMA   3      20.175  19.151  24.013  1.00  0.00           H  
+HETATM   82  NI1 EMIMA   4      23.840  14.635  16.057  1.00  0.00           N  
+HETATM   83  NI  EMIMA   4      23.021  13.054  17.337  1.00  0.00           N  
+HETATM   84  CI  EMIMA   4      23.941  13.997  17.225  1.00  0.00           C  
+HETATM   85  HI  EMIMA   4      24.769  13.976  17.901  1.00  0.00           H  
+HETATM   86  CWI EMIMA   4      22.825  14.015  15.315  1.00  0.00           C  
+HETATM   87  HWI EMIMA   4      22.623  14.325  14.313  1.00  0.00           H  
+HETATM   88 CWI1 EMIMA   4      22.286  13.078  16.170  1.00  0.00           C  
+HETATM   89 HWI1 EMIMA   4      21.500  12.385  15.963  1.00  0.00           H  
+HETATM   90  CMI EMIMA   4      24.767  15.684  15.579  1.00  0.00           C  
+HETATM   91 HMI1 EMIMA   4      25.493  16.048  16.291  1.00  0.00           H  
+HETATM   92 HMI2 EMIMA   4      24.143  16.549  15.406  1.00  0.00           H  
+HETATM   93 HMI3 EMIMA   4      25.362  15.345  14.744  1.00  0.00           H  
+HETATM   94  CAI EMIMA   4      22.938  11.956  18.393  1.00  0.00           C  
+HETATM   95 HAI1 EMIMA   4      23.937  11.572  18.542  1.00  0.00           H  
+HETATM   96 HAI2 EMIMA   4      22.658  12.438  19.319  1.00  0.00           H  
+HETATM   97  CTI EMIMA   4      21.993  10.792  18.013  1.00  0.00           C  
+HETATM   98 HTI1 EMIMA   4      21.017  11.261  17.958  1.00  0.00           H  
+HETATM   99 HTI2 EMIMA   4      22.203  10.210  17.123  1.00  0.00           H  
+HETATM  100 HTI3 EMIMA   4      21.811  10.095  18.823  1.00  0.00           H  
+HETATM  109  NI1 EMIMA   5      11.152   1.871  18.051  1.00  0.00           N  
+HETATM  110  NI  EMIMA   5      10.573   3.792  18.741  1.00  0.00           N  
+HETATM  111  CI  EMIMA   5      10.128   2.612  18.375  1.00  0.00           C  
+HETATM  112  HI  EMIMA   5       9.099   2.417  18.162  1.00  0.00           H  
+HETATM  113  CWI EMIMA   5      12.257   2.442  18.711  1.00  0.00           C  
+HETATM  114  HWI EMIMA   5      13.150   1.875  18.856  1.00  0.00           H  
+HETATM  115 CWI1 EMIMA   5      11.898   3.644  19.137  1.00  0.00           C  
+HETATM  116 HWI1 EMIMA   5      12.456   4.438  19.584  1.00  0.00           H  
+HETATM  117  CMI EMIMA   5      11.117   0.529  17.568  1.00  0.00           C  
+HETATM  118 HMI1 EMIMA   5      12.025   0.386  17.001  1.00  0.00           H  
+HETATM  119 HMI2 EMIMA   5      10.187   0.315  17.062  1.00  0.00           H  
+HETATM  120 HMI3 EMIMA   5      11.186  -0.182  18.378  1.00  0.00           H  
+HETATM  121  CAI EMIMA   5       9.764   4.935  19.015  1.00  0.00           C  
+HETATM  122 HAI1 EMIMA   5       8.749   4.579  19.113  1.00  0.00           H  
+HETATM  123 HAI2 EMIMA   5       9.978   5.240  20.029  1.00  0.00           H  
+HETATM  124  CTI EMIMA   5      10.173   6.052  18.052  1.00  0.00           C  
+HETATM  125 HTI1 EMIMA   5      11.146   6.389  18.391  1.00  0.00           H  
+HETATM  126 HTI2 EMIMA   5      10.212   5.523  17.107  1.00  0.00           H  
+HETATM  127 HTI3 EMIMA   5       9.536   6.929  18.058  1.00  0.00           H  
+HETATM  136  NI1 EMIMA   6       5.025  12.046   6.206  1.00  0.00           N  
+HETATM  137  NI  EMIMA   6       4.755  13.385   7.853  1.00  0.00           N  
+HETATM  138  CI  EMIMA   6       5.159  12.223   7.474  1.00  0.00           C  
+HETATM  139  HI  EMIMA   6       5.557  11.548   8.201  1.00  0.00           H  
+HETATM  140  CWI EMIMA   6       4.470  13.213   5.691  1.00  0.00           C  
+HETATM  141  HWI EMIMA   6       4.379  13.292   4.630  1.00  0.00           H  
+HETATM  142 CWI1 EMIMA   6       4.264  13.981   6.712  1.00  0.00           C  
+HETATM  143 HWI1 EMIMA   6       3.844  14.963   6.709  1.00  0.00           H  
+HETATM  144  CMI EMIMA   6       5.407  10.850   5.458  1.00  0.00           C  
+HETATM  145 HMI1 EMIMA   6       5.279  10.960   4.391  1.00  0.00           H  
+HETATM  146 HMI2 EMIMA   6       4.812   9.992   5.733  1.00  0.00           H  
+HETATM  147 HMI3 EMIMA   6       6.461  10.652   5.585  1.00  0.00           H  
+HETATM  148  CAI EMIMA   6       4.948  14.106   9.111  1.00  0.00           C  
+HETATM  149 HAI1 EMIMA   6       5.676  13.513   9.645  1.00  0.00           H  
+HETATM  150 HAI2 EMIMA   6       5.313  15.101   8.901  1.00  0.00           H  
+HETATM  151  CTI EMIMA   6       3.699  14.188   9.934  1.00  0.00           C  
+HETATM  152 HTI1 EMIMA   6       3.008  14.906   9.506  1.00  0.00           H  
+HETATM  153 HTI2 EMIMA   6       3.262  13.199   9.851  1.00  0.00           H  
+HETATM  154 HTI3 EMIMA   6       3.861  14.275  11.002  1.00  0.00           H  
+HETATM  163  NI1 EMIMA   7      21.730   5.008  12.842  1.00  0.00           N  
+HETATM  164  NI  EMIMA   7      23.811   5.443  12.344  1.00  0.00           N  
+HETATM  165  CI  EMIMA   7      22.745   5.799  13.028  1.00  0.00           C  
+HETATM  166  HI  EMIMA   7      22.589   6.650  13.656  1.00  0.00           H  
+HETATM  167  CWI EMIMA   7      22.190   3.993  12.001  1.00  0.00           C  
+HETATM  168  HWI EMIMA   7      21.656   3.138  11.648  1.00  0.00           H  
+HETATM  169 CWI1 EMIMA   7      23.477   4.273  11.698  1.00  0.00           C  
+HETATM  170 HWI1 EMIMA   7      24.245   3.671  11.264  1.00  0.00           H  
+HETATM  171  CMI EMIMA   7      20.503   4.988  13.647  1.00  0.00           C  
+HETATM  172 HMI1 EMIMA   7      20.446   5.796  14.362  1.00  0.00           H  
+HETATM  173 HMI2 EMIMA   7      20.598   3.987  14.039  1.00  0.00           H  
+HETATM  174 HMI3 EMIMA   7      19.639   4.919  13.004  1.00  0.00           H  
+HETATM  175  CAI EMIMA   7      25.195   5.934  12.635  1.00  0.00           C  
+HETATM  176 HAI1 EMIMA   7      25.058   6.956  12.959  1.00  0.00           H  
+HETATM  177 HAI2 EMIMA   7      25.553   5.406  13.506  1.00  0.00           H  
+HETATM  178  CTI EMIMA   7      26.124   5.731  11.423  1.00  0.00           C  
+HETATM  179 HTI1 EMIMA   7      27.102   6.189  11.511  1.00  0.00           H  
+HETATM  180 HTI2 EMIMA   7      26.360   4.687  11.254  1.00  0.00           H  
+HETATM  181 HTI3 EMIMA   7      25.734   6.216  10.535  1.00  0.00           H  
+HETATM  190  NI1 EMIMA   8      18.799   4.217  16.895  1.00  0.00           N  
+HETATM  191  NI  EMIMA   8      16.797   4.872  16.451  1.00  0.00           N  
+HETATM  192  CI  EMIMA   8      17.586   3.834  16.566  1.00  0.00           C  
+HETATM  193  HI  EMIMA   8      17.281   2.820  16.422  1.00  0.00           H  
+HETATM  194  CWI EMIMA   8      18.828   5.597  16.736  1.00  0.00           C  
+HETATM  195  HWI EMIMA   8      19.764   6.111  16.700  1.00  0.00           H  
+HETATM  196 CWI1 EMIMA   8      17.593   5.997  16.584  1.00  0.00           C  
+HETATM  197 HWI1 EMIMA   8      17.225   6.999  16.534  1.00  0.00           H  
+HETATM  198  CMI EMIMA   8      19.887   3.271  17.020  1.00  0.00           C  
+HETATM  199 HMI1 EMIMA   8      19.396   2.309  17.015  1.00  0.00           H  
+HETATM  200 HMI2 EMIMA   8      20.471   3.370  17.922  1.00  0.00           H  
+HETATM  201 HMI3 EMIMA   8      20.620   3.110  16.243  1.00  0.00           H  
+HETATM  202  CAI EMIMA   8      15.319   4.793  16.564  1.00  0.00           C  
+HETATM  203 HAI1 EMIMA   8      15.142   3.826  16.115  1.00  0.00           H  
+HETATM  204 HAI2 EMIMA   8      14.970   4.765  17.585  1.00  0.00           H  
+HETATM  205  CTI EMIMA   8      14.649   5.925  15.805  1.00  0.00           C  
+HETATM  206 HTI1 EMIMA   8      15.003   6.095  14.794  1.00  0.00           H  
+HETATM  207 HTI2 EMIMA   8      13.570   5.977  15.716  1.00  0.00           H  
+HETATM  208 HTI3 EMIMA   8      14.874   6.901  16.221  1.00  0.00           H  
+HETATM  217  NI1 EMIMA   9       3.120  21.914   4.222  1.00  0.00           N  
+HETATM  218  NI  EMIMA   9       1.889  20.985   2.801  1.00  0.00           N  
+HETATM  219  CI  EMIMA   9       2.243  20.962   4.076  1.00  0.00           C  
+HETATM  220  HI  EMIMA   9       1.863  20.419   4.914  1.00  0.00           H  
+HETATM  221  CWI EMIMA   9       3.378  22.518   3.002  1.00  0.00           C  
+HETATM  222  HWI EMIMA   9       4.045  23.352   2.971  1.00  0.00           H  
+HETATM  223 CWI1 EMIMA   9       2.563  22.011   2.115  1.00  0.00           C  
+HETATM  224 HWI1 EMIMA   9       2.352  22.314   1.113  1.00  0.00           H  
+HETATM  225  CMI EMIMA   9       3.528  22.434   5.542  1.00  0.00           C  
+HETATM  226 HMI1 EMIMA   9       2.720  22.384   6.256  1.00  0.00           H  
+HETATM  227 HMI2 EMIMA   9       3.982  23.414   5.574  1.00  0.00           H  
+HETATM  228 HMI3 EMIMA   9       4.221  21.708   5.940  1.00  0.00           H  
+HETATM  229  CAI EMIMA   9       0.824  20.155   2.258  1.00  0.00           C  
+HETATM  230 HAI1 EMIMA   9       0.705  19.331   2.946  1.00  0.00           H  
+HETATM  231 HAI2 EMIMA   9      -0.121  20.675   2.313  1.00  0.00           H  
+HETATM  232  CTI EMIMA   9       1.155  19.752   0.757  1.00  0.00           C  
+HETATM  233 HTI1 EMIMA   9       0.500  18.963   0.404  1.00  0.00           H  
+HETATM  234 HTI2 EMIMA   9       1.036  20.663   0.181  1.00  0.00           H  
+HETATM  235 HTI3 EMIMA   9       2.172  19.391   0.656  1.00  0.00           H  
+HETATM  244  NI1 EMIMA  10       9.492   3.832  11.993  1.00  0.00           N  
+HETATM  245  NI  EMIMA  10      10.477   1.916  11.560  1.00  0.00           N  
+HETATM  246  CI  EMIMA  10       9.368   2.502  12.005  1.00  0.00           C  
+HETATM  247  HI  EMIMA  10       8.637   1.973  12.578  1.00  0.00           H  
+HETATM  248  CWI EMIMA  10      10.640   4.105  11.301  1.00  0.00           C  
+HETATM  249  HWI EMIMA  10      10.986   5.057  10.962  1.00  0.00           H  
+HETATM  250 CWI1 EMIMA  10      11.237   2.914  11.073  1.00  0.00           C  
+HETATM  251 HWI1 EMIMA  10      12.192   2.799  10.608  1.00  0.00           H  
+HETATM  252  CMI EMIMA  10       8.530   4.754  12.563  1.00  0.00           C  
+HETATM  253 HMI1 EMIMA  10       8.316   5.588  11.911  1.00  0.00           H  
+HETATM  254 HMI2 EMIMA  10       8.947   5.005  13.526  1.00  0.00           H  
+HETATM  255 HMI3 EMIMA  10       7.574   4.270  12.702  1.00  0.00           H  
+HETATM  256  CAI EMIMA  10      10.714   0.469  11.353  1.00  0.00           C  
+HETATM  257 HAI1 EMIMA  10      11.788   0.462  11.471  1.00  0.00           H  
+HETATM  258 HAI2 EMIMA  10      10.266  -0.083  12.166  1.00  0.00           H  
+HETATM  259  CTI EMIMA  10      10.346   0.070   9.924  1.00  0.00           C  
+HETATM  260 HTI1 EMIMA  10       9.346   0.440   9.728  1.00  0.00           H  
+HETATM  261 HTI2 EMIMA  10      11.064   0.468   9.216  1.00  0.00           H  
+HETATM  262 HTI3 EMIMA  10      10.182  -0.997   9.835  1.00  0.00           H  
+HETATM  271  NI1 EMIMA  11       3.013  17.678  18.590  1.00  0.00           N  
+HETATM  272  NI  EMIMA  11       3.998  16.473  17.079  1.00  0.00           N  
+HETATM  273  CI  EMIMA  11       3.728  17.686  17.522  1.00  0.00           C  
+HETATM  274  HI  EMIMA  11       4.051  18.624  17.124  1.00  0.00           H  
+HETATM  275  CWI EMIMA  11       2.867  16.337  18.923  1.00  0.00           C  
+HETATM  276  HWI EMIMA  11       2.366  16.059  19.824  1.00  0.00           H  
+HETATM  277 CWI1 EMIMA  11       3.497  15.559  17.985  1.00  0.00           C  
+HETATM  278 HWI1 EMIMA  11       3.595  14.498  17.916  1.00  0.00           H  
+HETATM  279  CMI EMIMA  11       2.497  18.840  19.369  1.00  0.00           C  
+HETATM  280 HMI1 EMIMA  11       3.221  19.626  19.211  1.00  0.00           H  
+HETATM  281 HMI2 EMIMA  11       2.421  18.551  20.407  1.00  0.00           H  
+HETATM  282 HMI3 EMIMA  11       1.527  19.055  18.945  1.00  0.00           H  
+HETATM  283  CAI EMIMA  11       4.651  16.126  15.826  1.00  0.00           C  
+HETATM  284 HAI1 EMIMA  11       4.267  16.756  15.037  1.00  0.00           H  
+HETATM  285 HAI2 EMIMA  11       5.649  16.490  16.020  1.00  0.00           H  
+HETATM  286  CTI EMIMA  11       4.671  14.660  15.324  1.00  0.00           C  
+HETATM  287 HTI1 EMIMA  11       3.827  14.389  14.700  1.00  0.00           H  
+HETATM  288 HTI2 EMIMA  11       5.584  14.391  14.805  1.00  0.00           H  
+HETATM  289 HTI3 EMIMA  11       4.681  13.872  16.069  1.00  0.00           H  
+HETATM  298  NI1 EMIMA  12      13.604  20.909  10.761  1.00  0.00           N  
+HETATM  299  NI  EMIMA  12      15.630  21.136  11.515  1.00  0.00           N  
+HETATM  300  CI  EMIMA  12      14.871  20.506  10.657  1.00  0.00           C  
+HETATM  301  HI  EMIMA  12      15.196  19.698  10.038  1.00  0.00           H  
+HETATM  302  CWI EMIMA  12      13.542  21.828  11.806  1.00  0.00           C  
+HETATM  303  HWI EMIMA  12      12.611  22.276  12.077  1.00  0.00           H  
+HETATM  304 CWI1 EMIMA  12      14.830  22.029  12.231  1.00  0.00           C  
+HETATM  305 HWI1 EMIMA  12      15.200  22.626  13.035  1.00  0.00           H  
+HETATM  306  CMI EMIMA  12      12.515  20.618   9.926  1.00  0.00           C  
+HETATM  307 HMI1 EMIMA  12      12.404  21.504   9.319  1.00  0.00           H  
+HETATM  308 HMI2 EMIMA  12      11.622  20.529  10.527  1.00  0.00           H  
+HETATM  309 HMI3 EMIMA  12      12.858  19.747   9.388  1.00  0.00           H  
+HETATM  310  CAI EMIMA  12      17.097  20.956  11.734  1.00  0.00           C  
+HETATM  311 HAI1 EMIMA  12      17.504  20.557  10.816  1.00  0.00           H  
+HETATM  312 HAI2 EMIMA  12      17.531  21.941  11.814  1.00  0.00           H  
+HETATM  313  CTI EMIMA  12      17.487  20.249  12.938  1.00  0.00           C  
+HETATM  314 HTI1 EMIMA  12      17.243  19.202  12.800  1.00  0.00           H  
+HETATM  315 HTI2 EMIMA  12      18.570  20.231  12.990  1.00  0.00           H  
+HETATM  316 HTI3 EMIMA  12      17.001  20.730  13.779  1.00  0.00           H  
+HETATM  325  NI1 EMIMA  13       6.753   5.703  22.987  1.00  0.00           N  
+HETATM  326  NI  EMIMA  13       5.448   7.236  23.754  1.00  0.00           N  
+HETATM  327  CI  EMIMA  13       6.276   6.899  22.740  1.00  0.00           C  
+HETATM  328  HI  EMIMA  13       6.512   7.530  21.910  1.00  0.00           H  
+HETATM  329  CWI EMIMA  13       6.318   5.335  24.308  1.00  0.00           C  
+HETATM  330  HWI EMIMA  13       6.615   4.417  24.768  1.00  0.00           H  
+HETATM  331 CWI1 EMIMA  13       5.573   6.338  24.770  1.00  0.00           C  
+HETATM  332 HWI1 EMIMA  13       5.128   6.446  25.735  1.00  0.00           H  
+HETATM  333  CMI EMIMA  13       7.741   5.014  22.165  1.00  0.00           C  
+HETATM  334 HMI1 EMIMA  13       8.259   5.764  21.584  1.00  0.00           H  
+HETATM  335 HMI2 EMIMA  13       7.158   4.261  21.657  1.00  0.00           H  
+HETATM  336 HMI3 EMIMA  13       8.434   4.582  22.872  1.00  0.00           H  
+HETATM  337  CAI EMIMA  13       4.789   8.550  23.957  1.00  0.00           C  
+HETATM  338 HAI1 EMIMA  13       5.325   9.064  24.741  1.00  0.00           H  
+HETATM  339 HAI2 EMIMA  13       4.878   9.012  22.985  1.00  0.00           H  
+HETATM  340  CTI EMIMA  13       3.294   8.548  24.173  1.00  0.00           C  
+HETATM  341 HTI1 EMIMA  13       2.774   9.499  24.160  1.00  0.00           H  
+HETATM  342 HTI2 EMIMA  13       2.803   7.959  23.406  1.00  0.00           H  
+HETATM  343 HTI3 EMIMA  13       3.061   8.116  25.139  1.00  0.00           H  
+HETATM  352  NI1 EMIMA  14      14.665  21.169  22.372  1.00  0.00           N  
+HETATM  353  NI  EMIMA  14      14.941  23.264  22.223  1.00  0.00           N  
+HETATM  354  CI  EMIMA  14      14.942  22.256  23.041  1.00  0.00           C  
+HETATM  355  HI  EMIMA  14      15.282  22.252  24.055  1.00  0.00           H  
+HETATM  356  CWI EMIMA  14      14.203  21.509  21.078  1.00  0.00           C  
+HETATM  357  HWI EMIMA  14      13.900  20.688  20.465  1.00  0.00           H  
+HETATM  358 CWI1 EMIMA  14      14.428  22.829  20.948  1.00  0.00           C  
+HETATM  359 HWI1 EMIMA  14      14.248  23.358  20.038  1.00  0.00           H  
+HETATM  360  CMI EMIMA  14      14.936  19.799  22.949  1.00  0.00           C  
+HETATM  361 HMI1 EMIMA  14      14.329  19.129  22.358  1.00  0.00           H  
+HETATM  362 HMI2 EMIMA  14      14.714  19.683  24.000  1.00  0.00           H  
+HETATM  363 HMI3 EMIMA  14      16.009  19.732  22.842  1.00  0.00           H  
+HETATM  364  CAI EMIMA  14      15.409  24.633  22.573  1.00  0.00           C  
+HETATM  365 HAI1 EMIMA  14      15.676  24.567  23.617  1.00  0.00           H  
+HETATM  366 HAI2 EMIMA  14      16.346  24.806  22.064  1.00  0.00           H  
+HETATM  367  CTI EMIMA  14      14.401  25.688  22.269  1.00  0.00           C  
+HETATM  368 HTI1 EMIMA  14      14.617  26.620  22.778  1.00  0.00           H  
+HETATM  369 HTI2 EMIMA  14      14.528  25.743  21.194  1.00  0.00           H  
+HETATM  370 HTI3 EMIMA  14      13.382  25.409  22.512  1.00  0.00           H  
+HETATM  379  NI1 EMIMA  15      16.212  13.791  15.932  1.00  0.00           N  
+HETATM  380  NI  EMIMA  15      17.402  13.398  17.637  1.00  0.00           N  
+HETATM  381  CI  EMIMA  15      16.637  12.822  16.734  1.00  0.00           C  
+HETATM  382  HI  EMIMA  15      16.553  11.777  16.526  1.00  0.00           H  
+HETATM  383  CWI EMIMA  15      16.757  15.000  16.349  1.00  0.00           C  
+HETATM  384  HWI EMIMA  15      16.499  15.942  15.916  1.00  0.00           H  
+HETATM  385 CWI1 EMIMA  15      17.498  14.692  17.400  1.00  0.00           C  
+HETATM  386 HWI1 EMIMA  15      18.022  15.351  18.057  1.00  0.00           H  
+HETATM  387  CMI EMIMA  15      15.072  13.645  14.979  1.00  0.00           C  
+HETATM  388 HMI1 EMIMA  15      15.182  12.690  14.486  1.00  0.00           H  
+HETATM  389 HMI2 EMIMA  15      15.122  14.463  14.276  1.00  0.00           H  
+HETATM  390 HMI3 EMIMA  15      14.118  13.598  15.484  1.00  0.00           H  
+HETATM  391  CAI EMIMA  15      18.080  12.654  18.777  1.00  0.00           C  
+HETATM  392 HAI1 EMIMA  15      17.743  11.628  18.784  1.00  0.00           H  
+HETATM  393 HAI2 EMIMA  15      19.059  12.536  18.335  1.00  0.00           H  
+HETATM  394  CTI EMIMA  15      17.963  13.281  20.105  1.00  0.00           C  
+HETATM  395 HTI1 EMIMA  15      18.889  13.833  20.219  1.00  0.00           H  
+HETATM  396 HTI2 EMIMA  15      17.100  13.933  20.175  1.00  0.00           H  
+HETATM  397 HTI3 EMIMA  15      18.059  12.499  20.850  1.00  0.00           H  
+HETATM  406  NI1 EMIMA  16      13.982  14.506  18.981  1.00  0.00           N  
+HETATM  407  NI  EMIMA  16      13.871  16.539  18.304  1.00  0.00           N  
+HETATM  408  CI  EMIMA  16      14.221  15.757  19.303  1.00  0.00           C  
+HETATM  409  HI  EMIMA  16      14.735  16.095  20.178  1.00  0.00           H  
+HETATM  410  CWI EMIMA  16      13.495  14.444  17.725  1.00  0.00           C  
+HETATM  411  HWI EMIMA  16      13.136  13.527  17.312  1.00  0.00           H  
+HETATM  412 CWI1 EMIMA  16      13.380  15.764  17.312  1.00  0.00           C  
+HETATM  413 HWI1 EMIMA  16      12.899  16.151  16.440  1.00  0.00           H  
+HETATM  414  CMI EMIMA  16      14.259  13.318  19.826  1.00  0.00           C  
+HETATM  415 HMI1 EMIMA  16      13.324  12.880  20.142  1.00  0.00           H  
+HETATM  416 HMI2 EMIMA  16      14.742  13.593  20.752  1.00  0.00           H  
+HETATM  417 HMI3 EMIMA  16      14.718  12.487  19.309  1.00  0.00           H  
+HETATM  418  CAI EMIMA  16      13.819  17.959  18.235  1.00  0.00           C  
+HETATM  419 HAI1 EMIMA  16      12.785  18.261  18.157  1.00  0.00           H  
+HETATM  420 HAI2 EMIMA  16      14.149  18.299  19.206  1.00  0.00           H  
+HETATM  421  CTI EMIMA  16      14.760  18.496  17.168  1.00  0.00           C  
+HETATM  422 HTI1 EMIMA  16      15.811  18.300  17.351  1.00  0.00           H  
+HETATM  423 HTI2 EMIMA  16      14.445  18.101  16.208  1.00  0.00           H  
+HETATM  424 HTI3 EMIMA  16      14.669  19.576  17.159  1.00  0.00           H  
+HETATM  433  NI1 EMIMA  17       6.472  25.111   2.419  1.00  0.00           N  
+HETATM  434  NI  EMIMA  17       6.629  23.211   1.475  1.00  0.00           N  
+HETATM  435  CI  EMIMA  17       7.204  24.031   2.319  1.00  0.00           C  
+HETATM  436  HI  EMIMA  17       8.165  23.845   2.749  1.00  0.00           H  
+HETATM  437  CWI EMIMA  17       5.601  25.129   1.352  1.00  0.00           C  
+HETATM  438  HWI EMIMA  17       5.030  26.007   1.139  1.00  0.00           H  
+HETATM  439 CWI1 EMIMA  17       5.722  23.971   0.780  1.00  0.00           C  
+HETATM  440 HWI1 EMIMA  17       5.264  23.601  -0.111  1.00  0.00           H  
+HETATM  441  CMI EMIMA  17       6.753  26.325   3.249  1.00  0.00           C  
+HETATM  442 HMI1 EMIMA  17       7.797  26.424   3.508  1.00  0.00           H  
+HETATM  443 HMI2 EMIMA  17       6.061  26.255   4.076  1.00  0.00           H  
+HETATM  444 HMI3 EMIMA  17       6.467  27.228   2.730  1.00  0.00           H  
+HETATM  445  CAI EMIMA  17       7.064  21.843   0.918  1.00  0.00           C  
+HETATM  446 HAI1 EMIMA  17       7.669  22.049   0.048  1.00  0.00           H  
+HETATM  447 HAI2 EMIMA  17       7.712  21.419   1.671  1.00  0.00           H  
+HETATM  448  CTI EMIMA  17       5.866  20.969   0.528  1.00  0.00           C  
+HETATM  449 HTI1 EMIMA  17       6.263  19.974   0.357  1.00  0.00           H  
+HETATM  450 HTI2 EMIMA  17       5.096  20.875   1.285  1.00  0.00           H  
+HETATM  451 HTI3 EMIMA  17       5.338  21.258  -0.373  1.00  0.00           H  
+HETATM  460  NI1 EMIMA  18       0.840   5.899   2.700  1.00  0.00           N  
+HETATM  461  NI  EMIMA  18       1.447   6.151   4.759  1.00  0.00           N  
+HETATM  462  CI  EMIMA  18       0.433   6.206   3.918  1.00  0.00           C  
+HETATM  463  HI  EMIMA  18      -0.523   6.621   4.158  1.00  0.00           H  
+HETATM  464  CWI EMIMA  18       2.047   5.446   2.806  1.00  0.00           C  
+HETATM  465  HWI EMIMA  18       2.400   4.939   1.936  1.00  0.00           H  
+HETATM  466 CWI1 EMIMA  18       2.485   5.640   4.052  1.00  0.00           C  
+HETATM  467 HWI1 EMIMA  18       3.322   5.199   4.547  1.00  0.00           H  
+HETATM  468  CMI EMIMA  18      -0.020   5.988   1.500  1.00  0.00           C  
+HETATM  469 HMI1 EMIMA  18      -0.548   5.046   1.508  1.00  0.00           H  
+HETATM  470 HMI2 EMIMA  18       0.543   6.312   0.638  1.00  0.00           H  
+HETATM  471 HMI3 EMIMA  18      -0.755   6.696   1.857  1.00  0.00           H  
+HETATM  472  CAI EMIMA  18       1.476   6.636   6.199  1.00  0.00           C  
+HETATM  473 HAI1 EMIMA  18       0.824   7.497   6.175  1.00  0.00           H  
+HETATM  474 HAI2 EMIMA  18       0.889   5.916   6.750  1.00  0.00           H  
+HETATM  475  CTI EMIMA  18       2.841   6.993   6.762  1.00  0.00           C  
+HETATM  476 HTI1 EMIMA  18       2.733   7.736   7.543  1.00  0.00           H  
+HETATM  477 HTI2 EMIMA  18       3.303   6.093   7.152  1.00  0.00           H  
+HETATM  478 HTI3 EMIMA  18       3.555   7.303   6.007  1.00  0.00           H  
+HETATM  487  NI1 EMIMA  19      20.483   8.280   1.956  1.00  0.00           N  
+HETATM  488  NI  EMIMA  19      20.545   8.193   4.091  1.00  0.00           N  
+HETATM  489  CI  EMIMA  19      20.101   7.623   3.040  1.00  0.00           C  
+HETATM  490  HI  EMIMA  19      19.621   6.675   3.161  1.00  0.00           H  
+HETATM  491  CWI EMIMA  19      21.364   9.232   2.337  1.00  0.00           C  
+HETATM  492  HWI EMIMA  19      21.914   9.862   1.672  1.00  0.00           H  
+HETATM  493 CWI1 EMIMA  19      21.361   9.217   3.665  1.00  0.00           C  
+HETATM  494 HWI1 EMIMA  19      21.987   9.743   4.353  1.00  0.00           H  
+HETATM  495  CMI EMIMA  19      20.335   7.740   0.598  1.00  0.00           C  
+HETATM  496 HMI1 EMIMA  19      19.987   6.727   0.736  1.00  0.00           H  
+HETATM  497 HMI2 EMIMA  19      21.335   7.743   0.190  1.00  0.00           H  
+HETATM  498 HMI3 EMIMA  19      19.572   8.293   0.070  1.00  0.00           H  
+HETATM  499  CAI EMIMA  19      20.204   7.766   5.494  1.00  0.00           C  
+HETATM  500 HAI1 EMIMA  19      19.662   6.836   5.415  1.00  0.00           H  
+HETATM  501 HAI2 EMIMA  19      21.133   7.522   5.988  1.00  0.00           H  
+HETATM  502  CTI EMIMA  19      19.403   8.778   6.289  1.00  0.00           C  
+HETATM  503 HTI1 EMIMA  19      18.880   8.359   7.140  1.00  0.00           H  
+HETATM  504 HTI2 EMIMA  19      20.089   9.557   6.603  1.00  0.00           H  
+HETATM  505 HTI3 EMIMA  19      18.744   9.355   5.651  1.00  0.00           H  
+HETATM  514  NI1 EMIMA  20      23.477   2.356   8.545  1.00  0.00           N  
+HETATM  515  NI  EMIMA  20      21.547   1.407   9.160  1.00  0.00           N  
+HETATM  516  CI  EMIMA  20      22.885   1.266   9.085  1.00  0.00           C  
+HETATM  517  HI  EMIMA  20      23.394   0.371   9.372  1.00  0.00           H  
+HETATM  518  CWI EMIMA  20      22.426   3.251   8.302  1.00  0.00           C  
+HETATM  519  HWI EMIMA  20      22.633   4.131   7.732  1.00  0.00           H  
+HETATM  520 CWI1 EMIMA  20      21.322   2.673   8.675  1.00  0.00           C  
+HETATM  521 HWI1 EMIMA  20      20.336   3.078   8.627  1.00  0.00           H  
+HETATM  522  CMI EMIMA  20      24.916   2.380   8.291  1.00  0.00           C  
+HETATM  523 HMI1 EMIMA  20      25.195   3.325   8.734  1.00  0.00           H  
+HETATM  524 HMI2 EMIMA  20      24.971   2.344   7.213  1.00  0.00           H  
+HETATM  525 HMI3 EMIMA  20      25.414   1.563   8.791  1.00  0.00           H  
+HETATM  526  CAI EMIMA  20      20.624   0.434   9.706  1.00  0.00           C  
+HETATM  527 HAI1 EMIMA  20      20.951  -0.509   9.295  1.00  0.00           H  
+HETATM  528 HAI2 EMIMA  20      20.915   0.406  10.746  1.00  0.00           H  
+HETATM  529  CTI EMIMA  20      19.132   0.668   9.331  1.00  0.00           C  
+HETATM  530 HTI1 EMIMA  20      18.408   0.134   9.936  1.00  0.00           H  
+HETATM  531 HTI2 EMIMA  20      18.882   1.654   9.707  1.00  0.00           H  
+HETATM  532 HTI3 EMIMA  20      18.912   0.592   8.272  1.00  0.00           H  
+HETATM  541  NI1 EMIMA  21      12.048   9.750  10.544  1.00  0.00           N  
+HETATM  542  NI  EMIMA  21      10.736   8.688   9.237  1.00  0.00           N  
+HETATM  543  CI  EMIMA  21      11.937   8.638   9.799  1.00  0.00           C  
+HETATM  544  HI  EMIMA  21      12.649   7.850   9.680  1.00  0.00           H  
+HETATM  545  CWI EMIMA  21      10.930  10.520  10.414  1.00  0.00           C  
+HETATM  546  HWI EMIMA  21      10.738  11.336  11.076  1.00  0.00           H  
+HETATM  547 CWI1 EMIMA  21      10.107   9.851   9.657  1.00  0.00           C  
+HETATM  548 HWI1 EMIMA  21       9.094  10.026   9.367  1.00  0.00           H  
+HETATM  549  CMI EMIMA  21      13.088   9.970  11.493  1.00  0.00           C  
+HETATM  550 HMI1 EMIMA  21      13.844   9.234  11.265  1.00  0.00           H  
+HETATM  551 HMI2 EMIMA  21      12.688   9.810  12.483  1.00  0.00           H  
+HETATM  552 HMI3 EMIMA  21      13.455  10.974  11.339  1.00  0.00           H  
+HETATM  553  CAI EMIMA  21      10.170   7.671   8.332  1.00  0.00           C  
+HETATM  554 HAI1 EMIMA  21      10.695   6.754   8.554  1.00  0.00           H  
+HETATM  555 HAI2 EMIMA  21       9.179   7.606   8.756  1.00  0.00           H  
+HETATM  556  CTI EMIMA  21      10.254   8.010   6.887  1.00  0.00           C  
+HETATM  557 HTI1 EMIMA  21       9.646   8.865   6.615  1.00  0.00           H  
+HETATM  558 HTI2 EMIMA  21      11.302   8.215   6.696  1.00  0.00           H  
+HETATM  559 HTI3 EMIMA  21       9.962   7.184   6.249  1.00  0.00           H  
+HETATM  568  NI1 EMIMA  22       3.050   3.242  22.580  1.00  0.00           N  
+HETATM  569  NI  EMIMA  22       3.067   1.093  22.353  1.00  0.00           N  
+HETATM  570  CI  EMIMA  22       2.373   2.145  22.834  1.00  0.00           C  
+HETATM  571  HI  EMIMA  22       1.427   2.081  23.329  1.00  0.00           H  
+HETATM  572  CWI EMIMA  22       4.181   2.882  21.828  1.00  0.00           C  
+HETATM  573  HWI EMIMA  22       4.825   3.633  21.425  1.00  0.00           H  
+HETATM  574 CWI1 EMIMA  22       4.076   1.575  21.560  1.00  0.00           C  
+HETATM  575 HWI1 EMIMA  22       4.659   0.923  20.947  1.00  0.00           H  
+HETATM  576  CMI EMIMA  22       2.634   4.552  22.994  1.00  0.00           C  
+HETATM  577 HMI1 EMIMA  22       1.708   4.362  23.516  1.00  0.00           H  
+HETATM  578 HMI2 EMIMA  22       2.509   5.197  22.137  1.00  0.00           H  
+HETATM  579 HMI3 EMIMA  22       3.419   5.022  23.568  1.00  0.00           H  
+HETATM  580  CAI EMIMA  22       2.634  -0.316  22.468  1.00  0.00           C  
+HETATM  581 HAI1 EMIMA  22       3.060  -0.804  23.332  1.00  0.00           H  
+HETATM  582 HAI2 EMIMA  22       1.572  -0.506  22.523  1.00  0.00           H  
+HETATM  583  CTI EMIMA  22       2.911  -0.999  21.114  1.00  0.00           C  
+HETATM  584 HTI1 EMIMA  22       2.511  -0.360  20.336  1.00  0.00           H  
+HETATM  585 HTI2 EMIMA  22       3.928  -1.167  20.778  1.00  0.00           H  
+HETATM  586 HTI3 EMIMA  22       2.444  -1.976  21.069  1.00  0.00           H  
+HETATM  595  NI1 EMIMA  23       7.834  -0.366  15.668  1.00  0.00           N  
+HETATM  596  NI  EMIMA  23       7.152   1.664  15.706  1.00  0.00           N  
+HETATM  597  CI  EMIMA  23       7.829   0.784  15.042  1.00  0.00           C  
+HETATM  598  HI  EMIMA  23       8.219   0.956  14.062  1.00  0.00           H  
+HETATM  599  CWI EMIMA  23       7.387  -0.032  16.924  1.00  0.00           C  
+HETATM  600  HWI EMIMA  23       7.441  -0.730  17.731  1.00  0.00           H  
+HETATM  601 CWI1 EMIMA  23       6.884   1.209  16.986  1.00  0.00           C  
+HETATM  602 HWI1 EMIMA  23       6.680   1.835  17.827  1.00  0.00           H  
+HETATM  603  CMI EMIMA  23       8.474  -1.614  15.216  1.00  0.00           C  
+HETATM  604 HMI1 EMIMA  23       8.038  -2.521  15.606  1.00  0.00           H  
+HETATM  605 HMI2 EMIMA  23       9.517  -1.508  15.477  1.00  0.00           H  
+HETATM  606 HMI3 EMIMA  23       8.401  -1.790  14.153  1.00  0.00           H  
+HETATM  607  CAI EMIMA  23       6.985   3.049  15.366  1.00  0.00           C  
+HETATM  608 HAI1 EMIMA  23       7.370   3.609  16.205  1.00  0.00           H  
+HETATM  609 HAI2 EMIMA  23       7.542   3.204  14.454  1.00  0.00           H  
+HETATM  610  CTI EMIMA  23       5.538   3.474  15.167  1.00  0.00           C  
+HETATM  611 HTI1 EMIMA  23       4.959   3.108  16.008  1.00  0.00           H  
+HETATM  612 HTI2 EMIMA  23       5.510   4.553  15.270  1.00  0.00           H  
+HETATM  613 HTI3 EMIMA  23       5.119   3.050  14.262  1.00  0.00           H  
+HETATM  622  NI1 EMIMA  24       3.735  11.379  20.127  1.00  0.00           N  
+HETATM  623  NI  EMIMA  24       2.561   9.580  20.182  1.00  0.00           N  
+HETATM  624  CI  EMIMA  24       2.519  10.874  19.893  1.00  0.00           C  
+HETATM  625  HI  EMIMA  24       1.626  11.358  19.560  1.00  0.00           H  
+HETATM  626  CWI EMIMA  24       4.609  10.341  20.471  1.00  0.00           C  
+HETATM  627  HWI EMIMA  24       5.648  10.476  20.679  1.00  0.00           H  
+HETATM  628 CWI1 EMIMA  24       3.818   9.299  20.620  1.00  0.00           C  
+HETATM  629 HWI1 EMIMA  24       4.088   8.328  20.973  1.00  0.00           H  
+HETATM  630  CMI EMIMA  24       4.057  12.755  20.181  1.00  0.00           C  
+HETATM  631 HMI1 EMIMA  24       4.597  13.066  21.063  1.00  0.00           H  
+HETATM  632 HMI2 EMIMA  24       3.294  13.370  19.726  1.00  0.00           H  
+HETATM  633 HMI3 EMIMA  24       4.880  12.805  19.484  1.00  0.00           H  
+HETATM  634  CAI EMIMA  24       1.415   8.684  20.430  1.00  0.00           C  
+HETATM  635 HAI1 EMIMA  24       0.879   8.877  21.348  1.00  0.00           H  
+HETATM  636 HAI2 EMIMA  24       0.727   8.888  19.622  1.00  0.00           H  
+HETATM  637  CTI EMIMA  24       1.794   7.228  20.440  1.00  0.00           C  
+HETATM  638 HTI1 EMIMA  24       0.911   6.614  20.570  1.00  0.00           H  
+HETATM  639 HTI2 EMIMA  24       2.223   6.888  19.504  1.00  0.00           H  
+HETATM  640 HTI3 EMIMA  24       2.517   6.962  21.203  1.00  0.00           H  
+HETATM  649  NI1 EMIMA  25      17.061  17.057   4.760  1.00  0.00           N  
+HETATM  650  NI  EMIMA  25      15.139  17.278   3.871  1.00  0.00           N  
+HETATM  651  CI  EMIMA  25      15.787  16.772   4.904  1.00  0.00           C  
+HETATM  652  HI  EMIMA  25      15.363  16.338   5.783  1.00  0.00           H  
+HETATM  653  CWI EMIMA  25      17.314  17.479   3.431  1.00  0.00           C  
+HETATM  654  HWI EMIMA  25      18.261  17.705   2.993  1.00  0.00           H  
+HETATM  655 CWI1 EMIMA  25      16.072  17.612   2.899  1.00  0.00           C  
+HETATM  656 HWI1 EMIMA  25      15.744  17.857   1.912  1.00  0.00           H  
+HETATM  657  CMI EMIMA  25      18.066  16.657   5.770  1.00  0.00           C  
+HETATM  658 HMI1 EMIMA  25      18.547  15.693   5.701  1.00  0.00           H  
+HETATM  659 HMI2 EMIMA  25      17.591  16.661   6.740  1.00  0.00           H  
+HETATM  660 HMI3 EMIMA  25      18.846  17.403   5.794  1.00  0.00           H  
+HETATM  661  CAI EMIMA  25      13.706  17.228   3.675  1.00  0.00           C  
+HETATM  662 HAI1 EMIMA  25      13.407  16.325   3.163  1.00  0.00           H  
+HETATM  663 HAI2 EMIMA  25      13.313  17.083   4.671  1.00  0.00           H  
+HETATM  664  CTI EMIMA  25      13.062  18.463   3.097  1.00  0.00           C  
+HETATM  665 HTI1 EMIMA  25      12.250  18.167   2.442  1.00  0.00           H  
+HETATM  666 HTI2 EMIMA  25      12.663  19.140   3.844  1.00  0.00           H  
+HETATM  667 HTI3 EMIMA  25      13.785  18.930   2.438  1.00  0.00           H  
+HETATM  676  NI1 EMIMA  26       8.613  16.909   1.421  1.00  0.00           N  
+HETATM  677  NI  EMIMA  26       9.478  15.669   3.013  1.00  0.00           N  
+HETATM  678  CI  EMIMA  26       9.415  16.915   2.468  1.00  0.00           C  
+HETATM  679  HI  EMIMA  26      10.046  17.701   2.825  1.00  0.00           H  
+HETATM  680  CWI EMIMA  26       8.144  15.614   1.338  1.00  0.00           C  
+HETATM  681  HWI EMIMA  26       7.366  15.473   0.619  1.00  0.00           H  
+HETATM  682 CWI1 EMIMA  26       8.666  14.874   2.239  1.00  0.00           C  
+HETATM  683 HWI1 EMIMA  26       8.488  13.826   2.336  1.00  0.00           H  
+HETATM  684  CMI EMIMA  26       8.309  18.006   0.540  1.00  0.00           C  
+HETATM  685 HMI1 EMIMA  26       7.527  18.594   0.998  1.00  0.00           H  
+HETATM  686 HMI2 EMIMA  26       8.025  17.441  -0.335  1.00  0.00           H  
+HETATM  687 HMI3 EMIMA  26       9.257  18.513   0.443  1.00  0.00           H  
+HETATM  688  CAI EMIMA  26      10.336  15.222   4.112  1.00  0.00           C  
+HETATM  689 HAI1 EMIMA  26      11.004  16.008   4.432  1.00  0.00           H  
+HETATM  690 HAI2 EMIMA  26       9.742  15.027   4.993  1.00  0.00           H  
+HETATM  691  CTI EMIMA  26      11.237  13.969   3.938  1.00  0.00           C  
+HETATM  692 HTI1 EMIMA  26      10.629  13.103   3.705  1.00  0.00           H  
+HETATM  693 HTI2 EMIMA  26      12.089  14.180   3.302  1.00  0.00           H  
+HETATM  694 HTI3 EMIMA  26      11.641  13.826   4.933  1.00  0.00           H  
+HETATM  703  NI1 EMIMA  27      19.209  12.950   2.448  1.00  0.00           N  
+HETATM  704  NI  EMIMA  27      18.243  13.935   0.787  1.00  0.00           N  
+HETATM  705  CI  EMIMA  27      18.635  14.018   2.036  1.00  0.00           C  
+HETATM  706  HI  EMIMA  27      18.631  14.871   2.680  1.00  0.00           H  
+HETATM  707  CWI EMIMA  27      19.328  12.118   1.328  1.00  0.00           C  
+HETATM  708  HWI EMIMA  27      19.792  11.157   1.290  1.00  0.00           H  
+HETATM  709 CWI1 EMIMA  27      18.716  12.700   0.275  1.00  0.00           C  
+HETATM  710 HWI1 EMIMA  27      18.625  12.297  -0.710  1.00  0.00           H  
+HETATM  711  CMI EMIMA  27      19.832  12.675   3.724  1.00  0.00           C  
+HETATM  712 HMI1 EMIMA  27      19.538  13.446   4.420  1.00  0.00           H  
+HETATM  713 HMI2 EMIMA  27      20.896  12.557   3.578  1.00  0.00           H  
+HETATM  714 HMI3 EMIMA  27      19.491  11.720   4.095  1.00  0.00           H  
+HETATM  715  CAI EMIMA  27      17.758  15.157   0.039  1.00  0.00           C  
+HETATM  716 HAI1 EMIMA  27      17.900  16.019   0.675  1.00  0.00           H  
+HETATM  717 HAI2 EMIMA  27      18.319  15.368  -0.860  1.00  0.00           H  
+HETATM  718  CTI EMIMA  27      16.226  15.093  -0.338  1.00  0.00           C  
+HETATM  719 HTI1 EMIMA  27      15.776  16.072  -0.458  1.00  0.00           H  
+HETATM  720 HTI2 EMIMA  27      16.018  14.598  -1.279  1.00  0.00           H  
+HETATM  721 HTI3 EMIMA  27      15.649  14.587   0.428  1.00  0.00           H  
+HETATM  730  NI1 EMIMA  28       0.105  11.200   6.784  1.00  0.00           N  
+HETATM  731  NI  EMIMA  28      -0.078  13.123   5.868  1.00  0.00           N  
+HETATM  732  CI  EMIMA  28      -0.550  11.914   5.909  1.00  0.00           C  
+HETATM  733  HI  EMIMA  28      -1.379  11.507   5.370  1.00  0.00           H  
+HETATM  734  CWI EMIMA  28       1.240  11.939   7.139  1.00  0.00           C  
+HETATM  735  HWI EMIMA  28       1.970  11.507   7.789  1.00  0.00           H  
+HETATM  736 CWI1 EMIMA  28       1.089  13.105   6.505  1.00  0.00           C  
+HETATM  737 HWI1 EMIMA  28       1.685  13.992   6.517  1.00  0.00           H  
+HETATM  738  CMI EMIMA  28      -0.325   9.931   7.420  1.00  0.00           C  
+HETATM  739 HMI1 EMIMA  28      -0.757   9.283   6.672  1.00  0.00           H  
+HETATM  740 HMI2 EMIMA  28      -1.041  10.336   8.120  1.00  0.00           H  
+HETATM  741 HMI3 EMIMA  28       0.470   9.544   8.039  1.00  0.00           H  
+HETATM  742  CAI EMIMA  28      -0.456  14.187   4.931  1.00  0.00           C  
+HETATM  743 HAI1 EMIMA  28      -1.345  13.886   4.396  1.00  0.00           H  
+HETATM  744 HAI2 EMIMA  28      -0.764  15.020   5.545  1.00  0.00           H  
+HETATM  745  CTI EMIMA  28       0.537  14.620   3.845  1.00  0.00           C  
+HETATM  746 HTI1 EMIMA  28       1.346  15.177   4.304  1.00  0.00           H  
+HETATM  747 HTI2 EMIMA  28       0.982  13.850   3.225  1.00  0.00           H  
+HETATM  748 HTI3 EMIMA  28       0.045  15.320   3.179  1.00  0.00           H  
+HETATM  757  NI1 EMIMA  29      10.191  14.704   9.960  1.00  0.00           N  
+HETATM  758  NI  EMIMA  29      12.088  14.940   8.907  1.00  0.00           N  
+HETATM  759  CI  EMIMA  29      10.786  15.128   8.848  1.00  0.00           C  
+HETATM  760  HI  EMIMA  29      10.302  15.409   7.937  1.00  0.00           H  
+HETATM  761  CWI EMIMA  29      11.157  14.314  10.848  1.00  0.00           C  
+HETATM  762  HWI EMIMA  29      10.906  13.929  11.811  1.00  0.00           H  
+HETATM  763 CWI1 EMIMA  29      12.331  14.439  10.187  1.00  0.00           C  
+HETATM  764 HWI1 EMIMA  29      13.301  14.135  10.514  1.00  0.00           H  
+HETATM  765  CMI EMIMA  29       8.788  14.776  10.281  1.00  0.00           C  
+HETATM  766 HMI1 EMIMA  29       8.286  15.029   9.358  1.00  0.00           H  
+HETATM  767 HMI2 EMIMA  29       8.644  15.600  10.964  1.00  0.00           H  
+HETATM  768 HMI3 EMIMA  29       8.321  13.887  10.679  1.00  0.00           H  
+HETATM  769  CAI EMIMA  29      13.072  15.182   7.812  1.00  0.00           C  
+HETATM  770 HAI1 EMIMA  29      12.486  15.150   6.905  1.00  0.00           H  
+HETATM  771 HAI2 EMIMA  29      13.560  16.116   8.048  1.00  0.00           H  
+HETATM  772  CTI EMIMA  29      14.150  14.100   7.664  1.00  0.00           C  
+HETATM  773 HTI1 EMIMA  29      14.933  14.613   7.116  1.00  0.00           H  
+HETATM  774 HTI2 EMIMA  29      14.544  13.596   8.539  1.00  0.00           H  
+HETATM  775 HTI3 EMIMA  29      13.896  13.325   6.950  1.00  0.00           H  
+HETATM  784  NI1 EMIMA  30       9.863   8.069   2.113  1.00  0.00           N  
+HETATM  785  NI  EMIMA  30      11.401   9.563   2.417  1.00  0.00           N  
+HETATM  786  CI  EMIMA  30      11.029   8.308   2.631  1.00  0.00           C  
+HETATM  787  HI  EMIMA  30      11.677   7.670   3.193  1.00  0.00           H  
+HETATM  788  CWI EMIMA  30       9.478   9.169   1.437  1.00  0.00           C  
+HETATM  789  HWI EMIMA  30       8.569   9.159   0.875  1.00  0.00           H  
+HETATM  790 CWI1 EMIMA  30      10.373  10.167   1.689  1.00  0.00           C  
+HETATM  791 HWI1 EMIMA  30      10.513  11.099   1.187  1.00  0.00           H  
+HETATM  792  CMI EMIMA  30       9.330   6.704   1.977  1.00  0.00           C  
+HETATM  793 HMI1 EMIMA  30       9.715   6.425   1.007  1.00  0.00           H  
+HETATM  794 HMI2 EMIMA  30       8.252   6.659   2.013  1.00  0.00           H  
+HETATM  795 HMI3 EMIMA  30       9.842   6.033   2.652  1.00  0.00           H  
+HETATM  796  CAI EMIMA  30      12.619  10.227   2.883  1.00  0.00           C  
+HETATM  797 HAI1 EMIMA  30      13.447   9.568   2.666  1.00  0.00           H  
+HETATM  798 HAI2 EMIMA  30      12.802  11.029   2.183  1.00  0.00           H  
+HETATM  799  CTI EMIMA  30      12.601  10.627   4.396  1.00  0.00           C  
+HETATM  800 HTI1 EMIMA  30      13.534  10.362   4.880  1.00  0.00           H  
+HETATM  801 HTI2 EMIMA  30      12.408  11.688   4.509  1.00  0.00           H  
+HETATM  802 HTI3 EMIMA  30      11.819   9.992   4.797  1.00  0.00           H  
+HETATM  811  NI1 EMIMA  31      16.803   4.443  20.605  1.00  0.00           N  
+HETATM  812  NI  EMIMA  31      18.945   4.970  20.917  1.00  0.00           N  
+HETATM  813  CI  EMIMA  31      17.695   5.405  20.902  1.00  0.00           C  
+HETATM  814  HI  EMIMA  31      17.393   6.427  20.979  1.00  0.00           H  
+HETATM  815  CWI EMIMA  31      17.521   3.280  20.316  1.00  0.00           C  
+HETATM  816  HWI EMIMA  31      17.039   2.373  20.024  1.00  0.00           H  
+HETATM  817 CWI1 EMIMA  31      18.837   3.654  20.490  1.00  0.00           C  
+HETATM  818 HWI1 EMIMA  31      19.744   3.108  20.353  1.00  0.00           H  
+HETATM  819  CMI EMIMA  31      15.397   4.611  20.351  1.00  0.00           C  
+HETATM  820 HMI1 EMIMA  31      15.370   4.959  19.329  1.00  0.00           H  
+HETATM  821 HMI2 EMIMA  31      14.991   5.354  21.022  1.00  0.00           H  
+HETATM  822 HMI3 EMIMA  31      14.815   3.702  20.363  1.00  0.00           H  
+HETATM  823  CAI EMIMA  31      20.061   5.816  21.148  1.00  0.00           C  
+HETATM  824 HAI1 EMIMA  31      20.500   6.084  20.198  1.00  0.00           H  
+HETATM  825 HAI2 EMIMA  31      19.728   6.696  21.677  1.00  0.00           H  
+HETATM  826  CTI EMIMA  31      21.165   5.239  21.949  1.00  0.00           C  
+HETATM  827 HTI1 EMIMA  31      21.968   5.954  22.086  1.00  0.00           H  
+HETATM  828 HTI2 EMIMA  31      20.841   5.117  22.977  1.00  0.00           H  
+HETATM  829 HTI3 EMIMA  31      21.735   4.377  21.621  1.00  0.00           H  
+HETATM  838  NI1 EMIMA  32       4.763  21.662  15.092  1.00  0.00           N  
+HETATM  839  NI  EMIMA  32       3.933  23.228  16.265  1.00  0.00           N  
+HETATM  840  CI  EMIMA  32       4.197  21.923  16.245  1.00  0.00           C  
+HETATM  841  HI  EMIMA  32       3.940  21.219  17.007  1.00  0.00           H  
+HETATM  842  CWI EMIMA  32       4.824  22.838  14.332  1.00  0.00           C  
+HETATM  843  HWI EMIMA  32       5.342  22.942  13.404  1.00  0.00           H  
+HETATM  844 CWI1 EMIMA  32       4.388  23.813  15.091  1.00  0.00           C  
+HETATM  845 HWI1 EMIMA  32       4.354  24.857  14.868  1.00  0.00           H  
+HETATM  846  CMI EMIMA  32       5.366  20.369  14.728  1.00  0.00           C  
+HETATM  847 HMI1 EMIMA  32       6.199  20.609  14.083  1.00  0.00           H  
+HETATM  848 HMI2 EMIMA  32       4.663  19.642  14.351  1.00  0.00           H  
+HETATM  849 HMI3 EMIMA  32       5.797  19.972  15.635  1.00  0.00           H  
+HETATM  850  CAI EMIMA  32       3.055  23.816  17.283  1.00  0.00           C  
+HETATM  851 HAI1 EMIMA  32       2.110  24.173  16.900  1.00  0.00           H  
+HETATM  852 HAI2 EMIMA  32       2.875  22.974  17.935  1.00  0.00           H  
+HETATM  853  CTI EMIMA  32       3.905  24.980  17.935  1.00  0.00           C  
+HETATM  854 HTI1 EMIMA  32       3.378  25.419  18.774  1.00  0.00           H  
+HETATM  855 HTI2 EMIMA  32       4.705  24.513  18.498  1.00  0.00           H  
+HETATM  856 HTI3 EMIMA  32       4.395  25.721  17.315  1.00  0.00           H  
+HETATM  865  NI1 EMIMA  33       0.740  18.782   7.248  1.00  0.00           N  
+HETATM  866  NI  EMIMA  33       1.449  20.110   8.715  1.00  0.00           N  
+HETATM  867  CI  EMIMA  33       0.432  19.884   7.885  1.00  0.00           C  
+HETATM  868  HI  EMIMA  33      -0.487  20.413   7.746  1.00  0.00           H  
+HETATM  869  CWI EMIMA  33       2.065  18.457   7.550  1.00  0.00           C  
+HETATM  870  HWI EMIMA  33       2.638  17.729   7.018  1.00  0.00           H  
+HETATM  871 CWI1 EMIMA  33       2.512  19.343   8.362  1.00  0.00           C  
+HETATM  872 HWI1 EMIMA  33       3.454  19.583   8.804  1.00  0.00           H  
+HETATM  873  CMI EMIMA  33      -0.017  18.267   6.145  1.00  0.00           C  
+HETATM  874 HMI1 EMIMA  33       0.460  17.487   5.569  1.00  0.00           H  
+HETATM  875 HMI2 EMIMA  33      -0.305  19.007   5.412  1.00  0.00           H  
+HETATM  876 HMI3 EMIMA  33      -0.940  18.048   6.661  1.00  0.00           H  
+HETATM  877  CAI EMIMA  33       1.458  21.332   9.493  1.00  0.00           C  
+HETATM  878 HAI1 EMIMA  33       0.665  22.044   9.318  1.00  0.00           H  
+HETATM  879 HAI2 EMIMA  33       1.354  21.029  10.524  1.00  0.00           H  
+HETATM  880  CTI EMIMA  33       2.726  22.131   9.443  1.00  0.00           C  
+HETATM  881 HTI1 EMIMA  33       2.537  22.866  10.216  1.00  0.00           H  
+HETATM  882 HTI2 EMIMA  33       3.691  21.637   9.455  1.00  0.00           H  
+HETATM  883 HTI3 EMIMA  33       2.768  22.784   8.578  1.00  0.00           H  
+HETATM  892  NI1 EMIMA  34       6.709   9.006  10.004  1.00  0.00           N  
+HETATM  893  NI  EMIMA  34       7.076  10.200  11.793  1.00  0.00           N  
+HETATM  894  CI  EMIMA  34       6.636  10.194  10.551  1.00  0.00           C  
+HETATM  895  HI  EMIMA  34       6.452  11.082   9.984  1.00  0.00           H  
+HETATM  896  CWI EMIMA  34       7.192   8.150  10.935  1.00  0.00           C  
+HETATM  897  HWI EMIMA  34       7.246   7.089  10.823  1.00  0.00           H  
+HETATM  898 CWI1 EMIMA  34       7.373   8.903  12.046  1.00  0.00           C  
+HETATM  899 HWI1 EMIMA  34       7.763   8.562  12.980  1.00  0.00           H  
+HETATM  900  CMI EMIMA  34       6.527   8.717   8.558  1.00  0.00           C  
+HETATM  901 HMI1 EMIMA  34       6.473   9.654   8.023  1.00  0.00           H  
+HETATM  902 HMI2 EMIMA  34       5.526   8.313   8.516  1.00  0.00           H  
+HETATM  903 HMI3 EMIMA  34       7.303   8.084   8.154  1.00  0.00           H  
+HETATM  904  CAI EMIMA  34       7.220  11.446  12.531  1.00  0.00           C  
+HETATM  905 HAI1 EMIMA  34       8.296  11.544  12.502  1.00  0.00           H  
+HETATM  906 HAI2 EMIMA  34       6.743  12.276  12.032  1.00  0.00           H  
+HETATM  907  CTI EMIMA  34       6.684  11.340  14.000  1.00  0.00           C  
+HETATM  908 HTI1 EMIMA  34       6.411  12.307  14.406  1.00  0.00           H  
+HETATM  909 HTI2 EMIMA  34       5.792  10.731  13.907  1.00  0.00           H  
+HETATM  910 HTI3 EMIMA  34       7.410  10.833  14.625  1.00  0.00           H  
+HETATM  919  NI1 EMIMA  35      15.415   7.553   3.979  1.00  0.00           N  
+HETATM  920  NI  EMIMA  35      16.050   8.396   2.122  1.00  0.00           N  
+HETATM  921  CI  EMIMA  35      15.403   7.363   2.657  1.00  0.00           C  
+HETATM  922  HI  EMIMA  35      14.975   6.561   2.095  1.00  0.00           H  
+HETATM  923  CWI EMIMA  35      16.137   8.737   4.233  1.00  0.00           C  
+HETATM  924  HWI EMIMA  35      16.214   9.062   5.248  1.00  0.00           H  
+HETATM  925 CWI1 EMIMA  35      16.597   9.144   3.092  1.00  0.00           C  
+HETATM  926 HWI1 EMIMA  35      17.172  10.021   2.887  1.00  0.00           H  
+HETATM  927  CMI EMIMA  35      15.183   6.549   5.043  1.00  0.00           C  
+HETATM  928 HMI1 EMIMA  35      16.106   6.199   5.482  1.00  0.00           H  
+HETATM  929 HMI2 EMIMA  35      14.671   5.823   4.429  1.00  0.00           H  
+HETATM  930 HMI3 EMIMA  35      14.477   6.817   5.815  1.00  0.00           H  
+HETATM  931  CAI EMIMA  35      16.235   8.632   0.652  1.00  0.00           C  
+HETATM  932 HAI1 EMIMA  35      17.195   8.204   0.404  1.00  0.00           H  
+HETATM  933 HAI2 EMIMA  35      15.616   7.863   0.214  1.00  0.00           H  
+HETATM  934  CTI EMIMA  35      16.188  10.047   0.189  1.00  0.00           C  
+HETATM  935 HTI1 EMIMA  35      16.280   9.938  -0.886  1.00  0.00           H  
+HETATM  936 HTI2 EMIMA  35      15.221  10.477   0.424  1.00  0.00           H  
+HETATM  937 HTI3 EMIMA  35      17.023  10.559   0.654  1.00  0.00           H  
+HETATM  946  NI1 EMIMA  36      22.189  17.686  17.639  1.00  0.00           N  
+HETATM  947  NI  EMIMA  36      20.957  18.000  15.931  1.00  0.00           N  
+HETATM  948  CI  EMIMA  36      21.074  17.398  17.063  1.00  0.00           C  
+HETATM  949  HI  EMIMA  36      20.369  16.673  17.409  1.00  0.00           H  
+HETATM  950  CWI EMIMA  36      22.808  18.649  16.842  1.00  0.00           C  
+HETATM  951  HWI EMIMA  36      23.756  19.014  17.172  1.00  0.00           H  
+HETATM  952 CWI1 EMIMA  36      22.073  18.782  15.744  1.00  0.00           C  
+HETATM  953 HWI1 EMIMA  36      22.296  19.369  14.880  1.00  0.00           H  
+HETATM  954  CMI EMIMA  36      22.488  17.192  19.015  1.00  0.00           C  
+HETATM  955 HMI1 EMIMA  36      23.556  17.107  19.154  1.00  0.00           H  
+HETATM  956 HMI2 EMIMA  36      21.928  16.291  19.216  1.00  0.00           H  
+HETATM  957 HMI3 EMIMA  36      22.109  17.920  19.717  1.00  0.00           H  
+HETATM  958  CAI EMIMA  36      19.890  17.932  14.967  1.00  0.00           C  
+HETATM  959 HAI1 EMIMA  36      18.971  17.840  15.528  1.00  0.00           H  
+HETATM  960 HAI2 EMIMA  36      20.010  18.891  14.484  1.00  0.00           H  
+HETATM  961  CTI EMIMA  36      20.081  16.795  13.962  1.00  0.00           C  
+HETATM  962 HTI1 EMIMA  36      21.101  16.801  13.596  1.00  0.00           H  
+HETATM  963 HTI2 EMIMA  36      19.866  15.828  14.401  1.00  0.00           H  
+HETATM  964 HTI3 EMIMA  36      19.380  16.872  13.138  1.00  0.00           H  
+HETATM  973  NI1 EMIMA  37      12.028  21.621   2.093  1.00  0.00           N  
+HETATM  974  NI  EMIMA  37      11.856  22.774   3.856  1.00  0.00           N  
+HETATM  975  CI  EMIMA  37      11.172  22.161   2.966  1.00  0.00           C  
+HETATM  976  HI  EMIMA  37      10.109  22.191   2.848  1.00  0.00           H  
+HETATM  977  CWI EMIMA  37      13.305  21.776   2.504  1.00  0.00           C  
+HETATM  978  HWI EMIMA  37      14.073  21.350   1.897  1.00  0.00           H  
+HETATM  979 CWI1 EMIMA  37      13.187  22.448   3.642  1.00  0.00           C  
+HETATM  980 HWI1 EMIMA  37      14.036  22.760   4.211  1.00  0.00           H  
+HETATM  981  CMI EMIMA  37      11.586  20.864   0.879  1.00  0.00           C  
+HETATM  982 HMI1 EMIMA  37      11.842  19.828   1.047  1.00  0.00           H  
+HETATM  983 HMI2 EMIMA  37      12.126  21.141  -0.015  1.00  0.00           H  
+HETATM  984 HMI3 EMIMA  37      10.526  20.979   0.710  1.00  0.00           H  
+HETATM  985  CAI EMIMA  37      11.303  23.792   4.755  1.00  0.00           C  
+HETATM  986 HAI1 EMIMA  37      11.263  24.635   4.081  1.00  0.00           H  
+HETATM  987 HAI2 EMIMA  37      10.251  23.596   4.896  1.00  0.00           H  
+HETATM  988  CTI EMIMA  37      12.021  23.966   6.130  1.00  0.00           C  
+HETATM  989 HTI1 EMIMA  37      11.718  24.914   6.559  1.00  0.00           H  
+HETATM  990 HTI2 EMIMA  37      11.643  23.169   6.760  1.00  0.00           H  
+HETATM  991 HTI3 EMIMA  37      13.103  23.950   6.072  1.00  0.00           H  
+HETATM 1000  NI1 EMIMA  38      23.703  17.200  10.538  1.00  0.00           N  
+HETATM 1001  NI  EMIMA  38      21.781  16.888   9.671  1.00  0.00           N  
+HETATM 1002  CI  EMIMA  38      22.408  17.285  10.770  1.00  0.00           C  
+HETATM 1003  HI  EMIMA  38      21.931  17.692  11.636  1.00  0.00           H  
+HETATM 1004  CWI EMIMA  38      23.895  16.704   9.201  1.00  0.00           C  
+HETATM 1005  HWI EMIMA  38      24.815  16.473   8.709  1.00  0.00           H  
+HETATM 1006 CWI1 EMIMA  38      22.668  16.436   8.754  1.00  0.00           C  
+HETATM 1007 HWI1 EMIMA  38      22.262  16.151   7.808  1.00  0.00           H  
+HETATM 1008  CMI EMIMA  38      24.690  17.751  11.498  1.00  0.00           C  
+HETATM 1009 HMI1 EMIMA  38      24.935  18.751  11.170  1.00  0.00           H  
+HETATM 1010 HMI2 EMIMA  38      25.548  17.096  11.512  1.00  0.00           H  
+HETATM 1011 HMI3 EMIMA  38      24.241  17.805  12.478  1.00  0.00           H  
+HETATM 1012  CAI EMIMA  38      20.355  16.869   9.519  1.00  0.00           C  
+HETATM 1013 HAI1 EMIMA  38      20.031  17.841   9.861  1.00  0.00           H  
+HETATM 1014 HAI2 EMIMA  38      20.157  16.875   8.458  1.00  0.00           H  
+HETATM 1015  CTI EMIMA  38      19.742  15.577  10.078  1.00  0.00           C  
+HETATM 1016 HTI1 EMIMA  38      20.044  15.526  11.118  1.00  0.00           H  
+HETATM 1017 HTI2 EMIMA  38      18.663  15.655  10.008  1.00  0.00           H  
+HETATM 1018 HTI3 EMIMA  38      20.164  14.724   9.558  1.00  0.00           H  
+HETATM 1027  NI1 EMIMA  39      13.591   2.852   3.275  1.00  0.00           N  
+HETATM 1028  NI  EMIMA  39      15.511   2.078   3.910  1.00  0.00           N  
+HETATM 1029  CI  EMIMA  39      14.647   3.035   4.023  1.00  0.00           C  
+HETATM 1030  HI  EMIMA  39      14.892   3.989   4.439  1.00  0.00           H  
+HETATM 1031  CWI EMIMA  39      13.732   1.643   2.651  1.00  0.00           C  
+HETATM 1032  HWI EMIMA  39      12.928   1.230   2.081  1.00  0.00           H  
+HETATM 1033 CWI1 EMIMA  39      14.883   1.168   3.068  1.00  0.00           C  
+HETATM 1034 HWI1 EMIMA  39      15.470   0.295   2.889  1.00  0.00           H  
+HETATM 1035  CMI EMIMA  39      12.567   3.885   2.835  1.00  0.00           C  
+HETATM 1036 HMI1 EMIMA  39      11.588   3.496   2.596  1.00  0.00           H  
+HETATM 1037 HMI2 EMIMA  39      12.939   4.237   1.884  1.00  0.00           H  
+HETATM 1038 HMI3 EMIMA  39      12.569   4.735   3.501  1.00  0.00           H  
+HETATM 1039  CAI EMIMA  39      16.808   1.979   4.619  1.00  0.00           C  
+HETATM 1040 HAI1 EMIMA  39      17.370   2.882   4.433  1.00  0.00           H  
+HETATM 1041 HAI2 EMIMA  39      16.493   1.908   5.650  1.00  0.00           H  
+HETATM 1042  CTI EMIMA  39      17.695   0.764   4.179  1.00  0.00           C  
+HETATM 1043 HTI1 EMIMA  39      17.309  -0.169   4.573  1.00  0.00           H  
+HETATM 1044 HTI2 EMIMA  39      18.006   0.605   3.153  1.00  0.00           H  
+HETATM 1045 HTI3 EMIMA  39      18.612   0.949   4.728  1.00  0.00           H  
+HETATM 1054  NI1 EMIMA  40      20.048   0.303  20.868  1.00  0.00           N  
+HETATM 1055  NI  EMIMA  40      21.129   0.083  22.731  1.00  0.00           N  
+HETATM 1056  CI  EMIMA  40      21.239   0.096  21.404  1.00  0.00           C  
+HETATM 1057  HI  EMIMA  40      22.203  -0.129  20.999  1.00  0.00           H  
+HETATM 1058  CWI EMIMA  40      19.101   0.385  21.927  1.00  0.00           C  
+HETATM 1059  HWI EMIMA  40      18.065   0.442  21.673  1.00  0.00           H  
+HETATM 1060 CWI1 EMIMA  40      19.793   0.215  23.024  1.00  0.00           C  
+HETATM 1061 HWI1 EMIMA  40      19.456   0.197  24.037  1.00  0.00           H  
+HETATM 1062  CMI EMIMA  40      19.744   0.248  19.476  1.00  0.00           C  
+HETATM 1063 HMI1 EMIMA  40      20.128  -0.692  19.110  1.00  0.00           H  
+HETATM 1064 HMI2 EMIMA  40      20.292   1.078  19.055  1.00  0.00           H  
+HETATM 1065 HMI3 EMIMA  40      18.694   0.461  19.341  1.00  0.00           H  
+HETATM 1066  CAI EMIMA  40      22.241  -0.164  23.657  1.00  0.00           C  
+HETATM 1067 HAI1 EMIMA  40      22.159  -1.213  23.898  1.00  0.00           H  
+HETATM 1068 HAI2 EMIMA  40      23.169   0.015  23.134  1.00  0.00           H  
+HETATM 1069  CTI EMIMA  40      22.198   0.802  24.821  1.00  0.00           C  
+HETATM 1070 HTI1 EMIMA  40      23.193   0.807  25.253  1.00  0.00           H  
+HETATM 1071 HTI2 EMIMA  40      21.960   1.839  24.611  1.00  0.00           H  
+HETATM 1072 HTI3 EMIMA  40      21.437   0.464  25.515  1.00  0.00           H  
+HETATM 1081  NI1 EMIMA  41       9.201   3.397   6.786  1.00  0.00           N  
+HETATM 1082  NI  EMIMA  41       7.371   3.633   7.945  1.00  0.00           N  
+HETATM 1083  CI  EMIMA  41       7.933   3.703   6.751  1.00  0.00           C  
+HETATM 1084  HI  EMIMA  41       7.414   4.009   5.868  1.00  0.00           H  
+HETATM 1085  CWI EMIMA  41       9.518   3.142   8.072  1.00  0.00           C  
+HETATM 1086  HWI EMIMA  41      10.495   2.824   8.364  1.00  0.00           H  
+HETATM 1087 CWI1 EMIMA  41       8.392   3.297   8.813  1.00  0.00           C  
+HETATM 1088 HWI1 EMIMA  41       8.150   3.196   9.849  1.00  0.00           H  
+HETATM 1089  CMI EMIMA  41      10.146   3.672   5.715  1.00  0.00           C  
+HETATM 1090 HMI1 EMIMA  41       9.575   3.873   4.820  1.00  0.00           H  
+HETATM 1091 HMI2 EMIMA  41      10.828   2.878   5.447  1.00  0.00           H  
+HETATM 1092 HMI3 EMIMA  41      10.632   4.533   6.148  1.00  0.00           H  
+HETATM 1093  CAI EMIMA  41       5.945   3.808   8.258  1.00  0.00           C  
+HETATM 1094 HAI1 EMIMA  41       5.508   3.869   7.272  1.00  0.00           H  
+HETATM 1095 HAI2 EMIMA  41       5.676   2.843   8.662  1.00  0.00           H  
+HETATM 1096  CTI EMIMA  41       5.666   4.970   9.143  1.00  0.00           C  
+HETATM 1097 HTI1 EMIMA  41       6.192   5.831   8.746  1.00  0.00           H  
+HETATM 1098 HTI2 EMIMA  41       4.597   5.143   9.166  1.00  0.00           H  
+HETATM 1099 HTI3 EMIMA  41       5.957   4.644  10.135  1.00  0.00           H  
+HETATM 1108  NI1 EMIMA  42      20.839  -0.152  14.677  1.00  0.00           N  
+HETATM 1109  NI  EMIMA  42      22.329   1.336  15.057  1.00  0.00           N  
+HETATM 1110  CI  EMIMA  42      21.440   0.930  14.222  1.00  0.00           C  
+HETATM 1111  HI  EMIMA  42      21.063   1.356  13.317  1.00  0.00           H  
+HETATM 1112  CWI EMIMA  42      21.446  -0.539  15.856  1.00  0.00           C  
+HETATM 1113  HWI EMIMA  42      21.137  -1.423  16.369  1.00  0.00           H  
+HETATM 1114 CWI1 EMIMA  42      22.332   0.371  16.087  1.00  0.00           C  
+HETATM 1115 HWI1 EMIMA  42      22.980   0.394  16.935  1.00  0.00           H  
+HETATM 1116  CMI EMIMA  42      19.591  -0.797  14.199  1.00  0.00           C  
+HETATM 1117 HMI1 EMIMA  42      19.978  -1.795  14.342  1.00  0.00           H  
+HETATM 1118 HMI2 EMIMA  42      19.419  -0.452  13.190  1.00  0.00           H  
+HETATM 1119 HMI3 EMIMA  42      18.828  -0.710  14.959  1.00  0.00           H  
+HETATM 1120  CAI EMIMA  42      23.115   2.492  14.922  1.00  0.00           C  
+HETATM 1121 HAI1 EMIMA  42      23.534   2.498  13.927  1.00  0.00           H  
+HETATM 1122 HAI2 EMIMA  42      22.410   3.305  15.013  1.00  0.00           H  
+HETATM 1123  CTI EMIMA  42      24.221   2.509  15.938  1.00  0.00           C  
+HETATM 1124 HTI1 EMIMA  42      23.827   2.290  16.924  1.00  0.00           H  
+HETATM 1125 HTI2 EMIMA  42      24.936   1.753  15.635  1.00  0.00           H  
+HETATM 1126 HTI3 EMIMA  42      24.702   3.478  15.866  1.00  0.00           H  
+HETATM 1135  NI1 EMIMA  43       8.633  13.847  18.478  1.00  0.00           N  
+HETATM 1136  NI  EMIMA  43       9.585  13.983  20.436  1.00  0.00           N  
+HETATM 1137  CI  EMIMA  43       8.471  13.687  19.804  1.00  0.00           C  
+HETATM 1138  HI  EMIMA  43       7.712  13.043  20.195  1.00  0.00           H  
+HETATM 1139  CWI EMIMA  43       9.869  14.465  18.235  1.00  0.00           C  
+HETATM 1140  HWI EMIMA  43      10.229  14.758  17.273  1.00  0.00           H  
+HETATM 1141 CWI1 EMIMA  43      10.464  14.483  19.465  1.00  0.00           C  
+HETATM 1142 HWI1 EMIMA  43      11.410  14.942  19.654  1.00  0.00           H  
+HETATM 1143  CMI EMIMA  43       7.544  13.764  17.552  1.00  0.00           C  
+HETATM 1144 HMI1 EMIMA  43       7.147  12.813  17.874  1.00  0.00           H  
+HETATM 1145 HMI2 EMIMA  43       7.970  13.758  16.559  1.00  0.00           H  
+HETATM 1146 HMI3 EMIMA  43       6.838  14.570  17.693  1.00  0.00           H  
+HETATM 1147  CAI EMIMA  43       9.910  13.972  21.899  1.00  0.00           C  
+HETATM 1148 HAI1 EMIMA  43      10.053  14.992  22.226  1.00  0.00           H  
+HETATM 1149 HAI2 EMIMA  43       9.068  13.519  22.400  1.00  0.00           H  
+HETATM 1150  CTI EMIMA  43      11.192  13.164  22.197  1.00  0.00           C  
+HETATM 1151 HTI1 EMIMA  43      11.288  12.154  21.813  1.00  0.00           H  
+HETATM 1152 HTI2 EMIMA  43      11.988  13.690  21.681  1.00  0.00           H  
+HETATM 1153 HTI3 EMIMA  43      11.432  13.182  23.254  1.00  0.00           H  
+HETATM 1162  NI1 EMIMA  44      23.176  12.049  23.440  1.00  0.00           N  
+HETATM 1163  NI  EMIMA  44      21.828  13.647  22.902  1.00  0.00           N  
+HETATM 1164  CI  EMIMA  44      22.391  12.541  22.514  1.00  0.00           C  
+HETATM 1165  HI  EMIMA  44      22.238  12.085  21.559  1.00  0.00           H  
+HETATM 1166  CWI EMIMA  44      22.996  12.805  24.572  1.00  0.00           C  
+HETATM 1167  HWI EMIMA  44      23.320  12.434  25.519  1.00  0.00           H  
+HETATM 1168 CWI1 EMIMA  44      22.190  13.920  24.222  1.00  0.00           C  
+HETATM 1169 HWI1 EMIMA  44      21.896  14.755  24.820  1.00  0.00           H  
+HETATM 1170  CMI EMIMA  44      23.955  10.812  23.330  1.00  0.00           C  
+HETATM 1171 HMI1 EMIMA  44      24.886  11.033  23.830  1.00  0.00           H  
+HETATM 1172 HMI2 EMIMA  44      24.204  10.810  22.280  1.00  0.00           H  
+HETATM 1173 HMI3 EMIMA  44      23.239  10.107  23.727  1.00  0.00           H  
+HETATM 1174  CAI EMIMA  44      21.051  14.539  22.025  1.00  0.00           C  
+HETATM 1175 HAI1 EMIMA  44      21.265  14.276  21.000  1.00  0.00           H  
+HETATM 1176 HAI2 EMIMA  44      20.017  14.234  22.094  1.00  0.00           H  
+HETATM 1177  CTI EMIMA  44      21.337  16.024  22.228  1.00  0.00           C  
+HETATM 1178 HTI1 EMIMA  44      20.857  16.585  21.435  1.00  0.00           H  
+HETATM 1179 HTI2 EMIMA  44      21.036  16.469  23.170  1.00  0.00           H  
+HETATM 1180 HTI3 EMIMA  44      22.364  16.365  22.178  1.00  0.00           H  
+HETATM 1189  NI1 EMIMA  45       6.909  18.159   7.146  1.00  0.00           N  
+HETATM 1190  NI  EMIMA  45       7.103  19.675   8.632  1.00  0.00           N  
+HETATM 1191  CI  EMIMA  45       7.347  18.458   8.306  1.00  0.00           C  
+HETATM 1192  HI  EMIMA  45       7.995  17.783   8.822  1.00  0.00           H  
+HETATM 1193  CWI EMIMA  45       6.074  19.259   6.784  1.00  0.00           C  
+HETATM 1194  HWI EMIMA  45       5.419  19.245   5.941  1.00  0.00           H  
+HETATM 1195 CWI1 EMIMA  45       6.117  20.111   7.787  1.00  0.00           C  
+HETATM 1196 HWI1 EMIMA  45       5.514  20.936   8.099  1.00  0.00           H  
+HETATM 1197  CMI EMIMA  45       7.175  16.898   6.431  1.00  0.00           C  
+HETATM 1198 HMI1 EMIMA  45       7.328  16.093   7.134  1.00  0.00           H  
+HETATM 1199 HMI2 EMIMA  45       8.046  16.975   5.797  1.00  0.00           H  
+HETATM 1200 HMI3 EMIMA  45       6.278  16.677   5.872  1.00  0.00           H  
+HETATM 1201  CAI EMIMA  45       7.589  20.386   9.838  1.00  0.00           C  
+HETATM 1202 HAI1 EMIMA  45       7.955  19.629  10.516  1.00  0.00           H  
+HETATM 1203 HAI2 EMIMA  45       8.434  20.983   9.530  1.00  0.00           H  
+HETATM 1204  CTI EMIMA  45       6.599  21.261  10.614  1.00  0.00           C  
+HETATM 1205 HTI1 EMIMA  45       6.215  22.135  10.100  1.00  0.00           H  
+HETATM 1206 HTI2 EMIMA  45       5.721  20.730  10.964  1.00  0.00           H  
+HETATM 1207 HTI3 EMIMA  45       7.105  21.635  11.497  1.00  0.00           H  
+HETATM 1216  NI1 EMIMA  46      17.448   5.799   9.006  1.00  0.00           N  
+HETATM 1217  NI  EMIMA  46      15.974   6.253  10.519  1.00  0.00           N  
+HETATM 1218  CI  EMIMA  46      16.197   6.033   9.231  1.00  0.00           C  
+HETATM 1219  HI  EMIMA  46      15.428   6.080   8.490  1.00  0.00           H  
+HETATM 1220  CWI EMIMA  46      18.127   5.815  10.181  1.00  0.00           C  
+HETATM 1221  HWI EMIMA  46      19.171   5.590  10.172  1.00  0.00           H  
+HETATM 1222 CWI1 EMIMA  46      17.187   6.142  11.083  1.00  0.00           C  
+HETATM 1223 HWI1 EMIMA  46      17.298   6.276  12.137  1.00  0.00           H  
+HETATM 1224  CMI EMIMA  46      17.987   5.312   7.766  1.00  0.00           C  
+HETATM 1225 HMI1 EMIMA  46      17.588   5.902   6.953  1.00  0.00           H  
+HETATM 1226 HMI2 EMIMA  46      17.959   4.245   7.600  1.00  0.00           H  
+HETATM 1227 HMI3 EMIMA  46      19.028   5.597   7.733  1.00  0.00           H  
+HETATM 1228  CAI EMIMA  46      14.606   6.401  11.070  1.00  0.00           C  
+HETATM 1229 HAI1 EMIMA  46      14.614   7.348  11.589  1.00  0.00           H  
+HETATM 1230 HAI2 EMIMA  46      14.056   6.463  10.142  1.00  0.00           H  
+HETATM 1231  CTI EMIMA  46      14.211   5.231  11.958  1.00  0.00           C  
+HETATM 1232 HTI1 EMIMA  46      13.140   5.066  11.984  1.00  0.00           H  
+HETATM 1233 HTI2 EMIMA  46      14.688   4.354  11.536  1.00  0.00           H  
+HETATM 1234 HTI3 EMIMA  46      14.618   5.354  12.954  1.00  0.00           H  
+HETATM 1243  NI1 EMIMA  47      23.374  12.496  11.179  1.00  0.00           N  
+HETATM 1244  NI  EMIMA  47      23.407  11.076  12.740  1.00  0.00           N  
+HETATM 1245  CI  EMIMA  47      22.715  11.560  11.800  1.00  0.00           C  
+HETATM 1246  HI  EMIMA  47      21.750  11.177  11.542  1.00  0.00           H  
+HETATM 1247  CWI EMIMA  47      24.558  12.716  11.878  1.00  0.00           C  
+HETATM 1248  HWI EMIMA  47      25.236  13.476  11.557  1.00  0.00           H  
+HETATM 1249 CWI1 EMIMA  47      24.485  11.906  12.897  1.00  0.00           C  
+HETATM 1250 HWI1 EMIMA  47      25.104  11.684  13.739  1.00  0.00           H  
+HETATM 1251  CMI EMIMA  47      22.799  13.221   9.990  1.00  0.00           C  
+HETATM 1252 HMI1 EMIMA  47      22.052  12.580   9.545  1.00  0.00           H  
+HETATM 1253 HMI2 EMIMA  47      23.520  13.562   9.262  1.00  0.00           H  
+HETATM 1254 HMI3 EMIMA  47      22.263  14.100  10.318  1.00  0.00           H  
+HETATM 1255  CAI EMIMA  47      23.114   9.825  13.432  1.00  0.00           C  
+HETATM 1256 HAI1 EMIMA  47      22.110  10.072  13.746  1.00  0.00           H  
+HETATM 1257 HAI2 EMIMA  47      23.020   9.087  12.649  1.00  0.00           H  
+HETATM 1258  CTI EMIMA  47      23.835   9.493  14.679  1.00  0.00           C  
+HETATM 1259 HTI1 EMIMA  47      24.706   8.935  14.356  1.00  0.00           H  
+HETATM 1260 HTI2 EMIMA  47      24.000  10.353  15.319  1.00  0.00           H  
+HETATM 1261 HTI3 EMIMA  47      23.201   8.853  15.283  1.00  0.00           H  
+HETATM 1270  NI1 EMIMA  48       8.819  18.236  18.393  1.00  0.00           N  
+HETATM 1271  NI  EMIMA  48       9.963  19.797  19.252  1.00  0.00           N  
+HETATM 1272  CI  EMIMA  48       9.233  19.452  18.223  1.00  0.00           C  
+HETATM 1273  HI  EMIMA  48       8.897  20.133  17.471  1.00  0.00           H  
+HETATM 1274  CWI EMIMA  48       9.470  17.738  19.484  1.00  0.00           C  
+HETATM 1275  HWI EMIMA  48       9.380  16.770  19.925  1.00  0.00           H  
+HETATM 1276 CWI1 EMIMA  48      10.147  18.658  20.015  1.00  0.00           C  
+HETATM 1277 HWI1 EMIMA  48      10.744  18.657  20.900  1.00  0.00           H  
+HETATM 1278  CMI EMIMA  48       7.774  17.615  17.553  1.00  0.00           C  
+HETATM 1279 HMI1 EMIMA  48       7.430  18.313  16.803  1.00  0.00           H  
+HETATM 1280 HMI2 EMIMA  48       7.047  17.246  18.261  1.00  0.00           H  
+HETATM 1281 HMI3 EMIMA  48       8.062  16.681  17.093  1.00  0.00           H  
+HETATM 1282  CAI EMIMA  48      10.452  21.196  19.527  1.00  0.00           C  
+HETATM 1283 HAI1 EMIMA  48      11.485  21.171  19.213  1.00  0.00           H  
+HETATM 1284 HAI2 EMIMA  48       9.873  21.942  19.004  1.00  0.00           H  
+HETATM 1285  CTI EMIMA  48      10.477  21.473  21.034  1.00  0.00           C  
+HETATM 1286 HTI1 EMIMA  48       9.497  21.634  21.467  1.00  0.00           H  
+HETATM 1287 HTI2 EMIMA  48      10.817  20.554  21.498  1.00  0.00           H  
+HETATM 1288 HTI3 EMIMA  48      11.126  22.297  21.306  1.00  0.00           H  
+HETATM 1297  NI1 EMIMA  49       9.824   9.315  20.178  1.00  0.00           N  
+HETATM 1298  NI  EMIMA  49       8.450   9.648  18.527  1.00  0.00           N  
+HETATM 1299  CI  EMIMA  49       8.536   9.287  19.784  1.00  0.00           C  
+HETATM 1300  HI  EMIMA  49       7.699   8.961  20.365  1.00  0.00           H  
+HETATM 1301  CWI EMIMA  49      10.531   9.728  19.088  1.00  0.00           C  
+HETATM 1302  HWI EMIMA  49      11.592   9.723  19.208  1.00  0.00           H  
+HETATM 1303 CWI1 EMIMA  49       9.709   9.991  18.108  1.00  0.00           C  
+HETATM 1304 HWI1 EMIMA  49       9.924  10.242  17.092  1.00  0.00           H  
+HETATM 1305  CMI EMIMA  49      10.268   9.150  21.554  1.00  0.00           C  
+HETATM 1306 HMI1 EMIMA  49      10.432  10.046  22.133  1.00  0.00           H  
+HETATM 1307 HMI2 EMIMA  49      11.088   8.454  21.652  1.00  0.00           H  
+HETATM 1308 HMI3 EMIMA  49       9.323   8.763  21.903  1.00  0.00           H  
+HETATM 1309  CAI EMIMA  49       7.229   9.566  17.732  1.00  0.00           C  
+HETATM 1310 HAI1 EMIMA  49       6.455   9.369  18.459  1.00  0.00           H  
+HETATM 1311 HAI2 EMIMA  49       7.024  10.447  17.142  1.00  0.00           H  
+HETATM 1312  CTI EMIMA  49       7.257   8.326  16.833  1.00  0.00           C  
+HETATM 1313 HTI1 EMIMA  49       7.791   8.662  15.952  1.00  0.00           H  
+HETATM 1314 HTI2 EMIMA  49       7.699   7.520  17.408  1.00  0.00           H  
+HETATM 1315 HTI3 EMIMA  49       6.275   8.025  16.486  1.00  0.00           H  
+HETATM 1324  NI1 EMIMA  50      15.887  20.000   6.251  1.00  0.00           N  
+HETATM 1325  NI  EMIMA  50      17.840  20.399   7.175  1.00  0.00           N  
+HETATM 1326  CI  EMIMA  50      16.577  20.133   7.383  1.00  0.00           C  
+HETATM 1327  HI  EMIMA  50      16.302  19.845   8.375  1.00  0.00           H  
+HETATM 1328  CWI EMIMA  50      16.809  20.205   5.246  1.00  0.00           C  
+HETATM 1329  HWI EMIMA  50      16.616  20.228   4.196  1.00  0.00           H  
+HETATM 1330 CWI1 EMIMA  50      18.021  20.318   5.799  1.00  0.00           C  
+HETATM 1331 HWI1 EMIMA  50      19.016  20.505   5.461  1.00  0.00           H  
+HETATM 1332  CMI EMIMA  50      14.474  19.712   6.159  1.00  0.00           C  
+HETATM 1333 HMI1 EMIMA  50      13.982  19.599   7.114  1.00  0.00           H  
+HETATM 1334 HMI2 EMIMA  50      14.277  18.776   5.658  1.00  0.00           H  
+HETATM 1335 HMI3 EMIMA  50      13.994  20.504   5.603  1.00  0.00           H  
+HETATM 1336  CAI EMIMA  50      18.887  20.356   8.298  1.00  0.00           C  
+HETATM 1337 HAI1 EMIMA  50      18.822  21.240   8.915  1.00  0.00           H  
+HETATM 1338 HAI2 EMIMA  50      18.722  19.454   8.870  1.00  0.00           H  
+HETATM 1339  CTI EMIMA  50      20.352  20.189   7.800  1.00  0.00           C  
+HETATM 1340 HTI1 EMIMA  50      20.646  21.157   7.408  1.00  0.00           H  
+HETATM 1341 HTI2 EMIMA  50      20.938  19.895   8.663  1.00  0.00           H  
+HETATM 1342 HTI3 EMIMA  50      20.558  19.412   7.073  1.00  0.00           H  
+TER    1351      EMIMA  50
+HETATM 1352  O1  AET B   1       2.010  12.344  17.090  1.00  0.00           O  
+HETATM 1353  O2  AET B   1       4.109  12.050  17.601  1.00  0.00           O  
+HETATM 1354  CA  AET B   1       3.134  11.844  16.886  1.00  0.00           C  
+HETATM 1355  CT  AET B   1       3.357  10.936  15.771  1.00  0.00           C  
+HETATM 1356  HT1 AET B   1       3.846   9.989  15.998  1.00  0.00           H  
+HETATM 1357  HT2 AET B   1       3.982  11.472  15.057  1.00  0.00           H  
+HETATM 1358  HT3 AET B   1       2.452  10.498  15.349  1.00  0.00           H  
+HETATM 1364  O1  AET B   2      21.185  15.233   2.973  1.00  0.00           O  
+HETATM 1365  O2  AET B   2      19.877  16.666   1.841  1.00  0.00           O  
+HETATM 1366  CA  AET B   2      20.843  16.439   2.649  1.00  0.00           C  
+HETATM 1367  CT  AET B   2      21.516  17.583   3.370  1.00  0.00           C  
+HETATM 1368  HT1 AET B   2      20.908  18.458   3.140  1.00  0.00           H  
+HETATM 1369  HT2 AET B   2      22.603  17.615   3.303  1.00  0.00           H  
+HETATM 1370  HT3 AET B   2      21.476  17.454   4.452  1.00  0.00           H  
+HETATM 1376  O1  AET B   3      21.161  10.300  22.419  1.00  0.00           O  
+HETATM 1377  O2  AET B   3      20.022  11.635  21.404  1.00  0.00           O  
+HETATM 1378  CA  AET B   3      20.325  10.421  21.549  1.00  0.00           C  
+HETATM 1379  CT  AET B   3      19.551   9.348  20.786  1.00  0.00           C  
+HETATM 1380  HT1 AET B   3      18.668   9.013  21.332  1.00  0.00           H  
+HETATM 1381  HT2 AET B   3      20.216   8.553  20.447  1.00  0.00           H  
+HETATM 1382  HT3 AET B   3      19.071   9.850  19.946  1.00  0.00           H  
+HETATM 1388  O1  AET B   4      14.836  21.607   8.219  1.00  0.00           O  
+HETATM 1389  O2  AET B   4      16.299  22.470   9.427  1.00  0.00           O  
+HETATM 1390  CA  AET B   4      15.454  22.651   8.617  1.00  0.00           C  
+HETATM 1391  CT  AET B   4      15.142  23.934   8.066  1.00  0.00           C  
+HETATM 1392  HT1 AET B   4      15.919  24.653   8.325  1.00  0.00           H  
+HETATM 1393  HT2 AET B   4      14.203  24.342   8.439  1.00  0.00           H  
+HETATM 1394  HT3 AET B   4      15.166  23.911   6.977  1.00  0.00           H  
+HETATM 1400  O1  AET B   5      12.547   6.807  25.063  1.00  0.00           O  
+HETATM 1401  O2  AET B   5      11.693   8.280  23.920  1.00  0.00           O  
+HETATM 1402  CA  AET B   5      12.408   7.292  23.955  1.00  0.00           C  
+HETATM 1403  CT  AET B   5      12.810   6.616  22.761  1.00  0.00           C  
+HETATM 1404  HT1 AET B   5      13.211   5.628  22.987  1.00  0.00           H  
+HETATM 1405  HT2 AET B   5      13.503   7.172  22.129  1.00  0.00           H  
+HETATM 1406  HT3 AET B   5      11.999   6.482  22.046  1.00  0.00           H  
+HETATM 1412  O1  AET B   6       7.419  11.241  21.469  1.00  0.00           O  
+HETATM 1413  O2  AET B   6       7.268   9.674  22.879  1.00  0.00           O  
+HETATM 1414  CA  AET B   6       7.255  10.915  22.633  1.00  0.00           C  
+HETATM 1415  CT  AET B   6       6.880  11.852  23.761  1.00  0.00           C  
+HETATM 1416  HT1 AET B   6       5.830  11.752  24.035  1.00  0.00           H  
+HETATM 1417  HT2 AET B   6       7.098  12.851  23.383  1.00  0.00           H  
+HETATM 1418  HT3 AET B   6       7.558  11.553  24.560  1.00  0.00           H  
+HETATM 1424  O1  AET B   7      22.260  21.405  20.204  1.00  0.00           O  
+HETATM 1425  O2  AET B   7      21.807  21.183  18.068  1.00  0.00           O  
+HETATM 1426  CA  AET B   7      22.619  21.431  18.981  1.00  0.00           C  
+HETATM 1427  CT  AET B   7      24.024  21.872  18.533  1.00  0.00           C  
+HETATM 1428  HT1 AET B   7      24.292  21.356  17.611  1.00  0.00           H  
+HETATM 1429  HT2 AET B   7      24.831  21.616  19.219  1.00  0.00           H  
+HETATM 1430  HT3 AET B   7      24.103  22.939  18.325  1.00  0.00           H  
+HETATM 1436  O1  AET B   8      13.532  17.419  21.230  1.00  0.00           O  
+HETATM 1437  O2  AET B   8      13.427  15.405  21.698  1.00  0.00           O  
+HETATM 1438  CA  AET B   8      13.319  16.547  22.115  1.00  0.00           C  
+HETATM 1439  CT  AET B   8      13.037  16.881  23.536  1.00  0.00           C  
+HETATM 1440  HT1 AET B   8      12.096  17.376  23.776  1.00  0.00           H  
+HETATM 1441  HT2 AET B   8      13.989  17.310  23.848  1.00  0.00           H  
+HETATM 1442  HT3 AET B   8      13.003  15.902  24.015  1.00  0.00           H  
+HETATM 1448  O1  AET B   9       8.401  24.813   6.290  1.00  0.00           O  
+HETATM 1449  O2  AET B   9       6.689  24.014   5.005  1.00  0.00           O  
+HETATM 1450  CA  AET B   9       7.380  24.168   6.082  1.00  0.00           C  
+HETATM 1451  CT  AET B   9       6.924  23.239   7.164  1.00  0.00           C  
+HETATM 1452  HT1 AET B   9       6.917  23.619   8.185  1.00  0.00           H  
+HETATM 1453  HT2 AET B   9       7.764  22.554   7.278  1.00  0.00           H  
+HETATM 1454  HT3 AET B   9       6.149  22.601   6.739  1.00  0.00           H  
+HETATM 1460  O1  AET B  10       9.745  14.752  14.243  1.00  0.00           O  
+HETATM 1461  O2  AET B  10      11.917  14.388  14.250  1.00  0.00           O  
+HETATM 1462  CA  AET B  10      10.798  14.016  14.437  1.00  0.00           C  
+HETATM 1463  CT  AET B  10      10.587  12.583  14.834  1.00  0.00           C  
+HETATM 1464  HT1 AET B  10      11.042  12.447  15.815  1.00  0.00           H  
+HETATM 1465  HT2 AET B  10      11.127  12.017  14.075  1.00  0.00           H  
+HETATM 1466  HT3 AET B  10       9.537  12.475  15.108  1.00  0.00           H  
+HETATM 1472  O1  AET B  11       5.568  22.022  18.803  1.00  0.00           O  
+HETATM 1473  O2  AET B  11       5.607  19.947  18.054  1.00  0.00           O  
+HETATM 1474  CA  AET B  11       5.773  20.776  18.982  1.00  0.00           C  
+HETATM 1475  CT  AET B  11       6.163  20.330  20.332  1.00  0.00           C  
+HETATM 1476  HT1 AET B  11       6.664  21.048  20.981  1.00  0.00           H  
+HETATM 1477  HT2 AET B  11       6.863  19.499  20.418  1.00  0.00           H  
+HETATM 1478  HT3 AET B  11       5.322  19.822  20.805  1.00  0.00           H  
+HETATM 1484  O1  AET B  12      15.721   2.237  18.165  1.00  0.00           O  
+HETATM 1485  O2  AET B  12      16.023   0.522  19.387  1.00  0.00           O  
+HETATM 1486  CA  AET B  12      15.967   0.986  18.239  1.00  0.00           C  
+HETATM 1487  CT  AET B  12      16.211   0.032  17.070  1.00  0.00           C  
+HETATM 1488  HT1 AET B  12      17.229   0.083  16.684  1.00  0.00           H  
+HETATM 1489  HT2 AET B  12      15.558   0.439  16.297  1.00  0.00           H  
+HETATM 1490  HT3 AET B  12      16.072  -1.000  17.391  1.00  0.00           H  
+HETATM 1496  O1  AET B  13      16.479  14.863   3.752  1.00  0.00           O  
+HETATM 1497  O2  AET B  13      14.435  14.597   4.134  1.00  0.00           O  
+HETATM 1498  CA  AET B  13      15.523  14.085   3.806  1.00  0.00           C  
+HETATM 1499  CT  AET B  13      15.864  12.665   3.647  1.00  0.00           C  
+HETATM 1500  HT1 AET B  13      15.523  12.291   2.681  1.00  0.00           H  
+HETATM 1501  HT2 AET B  13      15.150  12.255   4.361  1.00  0.00           H  
+HETATM 1502  HT3 AET B  13      16.918  12.625   3.920  1.00  0.00           H  
+HETATM 1508  O1  AET B  14       6.901   0.257  12.407  1.00  0.00           O  
+HETATM 1509  O2  AET B  14       7.019   2.170  11.360  1.00  0.00           O  
+HETATM 1510  CA  AET B  14       6.432   1.126  11.647  1.00  0.00           C  
+HETATM 1511  CT  AET B  14       5.103   0.889  10.951  1.00  0.00           C  
+HETATM 1512  HT1 AET B  14       5.172  -0.010  10.339  1.00  0.00           H  
+HETATM 1513  HT2 AET B  14       4.935   1.767  10.328  1.00  0.00           H  
+HETATM 1514  HT3 AET B  14       4.309   0.872  11.698  1.00  0.00           H  
+HETATM 1520  O1  AET B  15       6.728  16.769  11.222  1.00  0.00           O  
+HETATM 1521  O2  AET B  15       5.768  18.172   9.981  1.00  0.00           O  
+HETATM 1522  CA  AET B  15       5.713  17.465  11.034  1.00  0.00           C  
+HETATM 1523  CT  AET B  15       4.540  17.416  11.956  1.00  0.00           C  
+HETATM 1524  HT1 AET B  15       4.156  18.434  12.021  1.00  0.00           H  
+HETATM 1525  HT2 AET B  15       4.840  17.282  12.995  1.00  0.00           H  
+HETATM 1526  HT3 AET B  15       3.799  16.809  11.435  1.00  0.00           H  
+HETATM 1532  O1  AET B  16      10.449  17.669   8.468  1.00  0.00           O  
+HETATM 1533  O2  AET B  16      10.721  17.061   6.408  1.00  0.00           O  
+HETATM 1534  CA  AET B  16      10.613  17.983   7.263  1.00  0.00           C  
+HETATM 1535  CT  AET B  16      10.439  19.332   6.683  1.00  0.00           C  
+HETATM 1536  HT1 AET B  16      11.231  19.984   7.050  1.00  0.00           H  
+HETATM 1537  HT2 AET B  16       9.536  19.924   6.831  1.00  0.00           H  
+HETATM 1538  HT3 AET B  16      10.484  19.336   5.593  1.00  0.00           H  
+HETATM 1544  O1  AET B  17       9.947   7.134  11.419  1.00  0.00           O  
+HETATM 1545  O2  AET B  17      11.893   7.230  11.739  1.00  0.00           O  
+HETATM 1546  CA  AET B  17      10.802   7.373  12.274  1.00  0.00           C  
+HETATM 1547  CT  AET B  17      10.573   8.046  13.600  1.00  0.00           C  
+HETATM 1548  HT1 AET B  17       9.715   8.711  13.512  1.00  0.00           H  
+HETATM 1549  HT2 AET B  17      11.361   8.673  14.018  1.00  0.00           H  
+HETATM 1550  HT3 AET B  17      10.332   7.321  14.378  1.00  0.00           H  
+HETATM 1556  O1  AET B  18       7.961  18.433   3.677  1.00  0.00           O  
+HETATM 1557  O2  AET B  18       9.392  19.771   2.770  1.00  0.00           O  
+HETATM 1558  CA  AET B  18       8.414  19.592   3.591  1.00  0.00           C  
+HETATM 1559  CT  AET B  18       7.755  20.787   4.395  1.00  0.00           C  
+HETATM 1560  HT1 AET B  18       8.284  21.679   4.732  1.00  0.00           H  
+HETATM 1561  HT2 AET B  18       7.374  20.581   5.396  1.00  0.00           H  
+HETATM 1562  HT3 AET B  18       6.892  21.128   3.824  1.00  0.00           H  
+HETATM 1568  O1  AET B  19       9.671  -0.554   0.796  1.00  0.00           O  
+HETATM 1569  O2  AET B  19      10.032   1.263   1.915  1.00  0.00           O  
+HETATM 1570  CA  AET B  19      10.168   0.590   0.899  1.00  0.00           C  
+HETATM 1571  CT  AET B  19      11.153   0.912  -0.063  1.00  0.00           C  
+HETATM 1572  HT1 AET B  19      10.693   0.676  -1.022  1.00  0.00           H  
+HETATM 1573  HT2 AET B  19      12.106   0.395   0.051  1.00  0.00           H  
+HETATM 1574  HT3 AET B  19      11.290   1.994  -0.052  1.00  0.00           H  
+HETATM 1580  O1  AET B  20      10.814  20.756  16.528  1.00  0.00           O  
+HETATM 1581  O2  AET B  20      11.029  18.732  16.097  1.00  0.00           O  
+HETATM 1582  CA  AET B  20      11.393  19.895  15.879  1.00  0.00           C  
+HETATM 1583  CT  AET B  20      12.331  20.329  14.793  1.00  0.00           C  
+HETATM 1584  HT1 AET B  20      13.364  20.282  15.135  1.00  0.00           H  
+HETATM 1585  HT2 AET B  20      12.233  21.414  14.835  1.00  0.00           H  
+HETATM 1586  HT3 AET B  20      12.233  20.019  13.753  1.00  0.00           H  
+HETATM 1592  O1  AET B  21       2.994   2.762   1.577  1.00  0.00           O  
+HETATM 1593  O2  AET B  21       1.964   0.947   1.297  1.00  0.00           O  
+HETATM 1594  CA  AET B  21       2.281   1.842   2.156  1.00  0.00           C  
+HETATM 1595  CT  AET B  21       1.751   1.892   3.593  1.00  0.00           C  
+HETATM 1596  HT1 AET B  21       0.711   2.215   3.604  1.00  0.00           H  
+HETATM 1597  HT2 AET B  21       2.302   2.579   4.236  1.00  0.00           H  
+HETATM 1598  HT3 AET B  21       1.656   0.837   3.853  1.00  0.00           H  
+HETATM 1604  O1  AET B  22      16.329  21.177   1.838  1.00  0.00           O  
+HETATM 1605  O2  AET B  22      17.598  22.042   0.254  1.00  0.00           O  
+HETATM 1606  CA  AET B  22      17.415  21.670   1.440  1.00  0.00           C  
+HETATM 1607  CT  AET B  22      18.563  21.802   2.524  1.00  0.00           C  
+HETATM 1608  HT1 AET B  22      19.195  22.652   2.268  1.00  0.00           H  
+HETATM 1609  HT2 AET B  22      19.335  21.055   2.339  1.00  0.00           H  
+HETATM 1610  HT3 AET B  22      18.235  21.929   3.555  1.00  0.00           H  
+HETATM 1616  O1  AET B  23      21.584   9.046  10.625  1.00  0.00           O  
+HETATM 1617  O2  AET B  23      20.278   7.670  11.439  1.00  0.00           O  
+HETATM 1618  CA  AET B  23      21.170   7.891  10.665  1.00  0.00           C  
+HETATM 1619  CT  AET B  23      21.915   6.949   9.792  1.00  0.00           C  
+HETATM 1620  HT1 AET B  23      21.915   7.002   8.703  1.00  0.00           H  
+HETATM 1621  HT2 AET B  23      21.740   5.913  10.080  1.00  0.00           H  
+HETATM 1622  HT3 AET B  23      22.947   7.197  10.040  1.00  0.00           H  
+HETATM 1628  O1  AET B  24      18.368  17.704  18.043  1.00  0.00           O  
+HETATM 1629  O2  AET B  24      19.829  17.569  19.455  1.00  0.00           O  
+HETATM 1630  CA  AET B  24      18.659  17.475  19.254  1.00  0.00           C  
+HETATM 1631  CT  AET B  24      17.641  17.219  20.242  1.00  0.00           C  
+HETATM 1632  HT1 AET B  24      16.845  16.493  20.077  1.00  0.00           H  
+HETATM 1633  HT2 AET B  24      17.202  18.217  20.273  1.00  0.00           H  
+HETATM 1634  HT3 AET B  24      18.082  16.985  21.211  1.00  0.00           H  
+HETATM 1640  O1  AET B  25       0.139   9.790   4.397  1.00  0.00           O  
+HETATM 1641  O2  AET B  25       0.245   8.977   2.495  1.00  0.00           O  
+HETATM 1642  CA  AET B  25       0.853   9.599   3.405  1.00  0.00           C  
+HETATM 1643  CT  AET B  25       2.316  10.127   3.320  1.00  0.00           C  
+HETATM 1644  HT1 AET B  25       2.465  10.405   2.276  1.00  0.00           H  
+HETATM 1645  HT2 AET B  25       3.037   9.439   3.762  1.00  0.00           H  
+HETATM 1646  HT3 AET B  25       2.186  11.083   3.826  1.00  0.00           H  
+HETATM 1652  O1  AET B  26      23.967  23.065   7.510  1.00  0.00           O  
+HETATM 1653  O2  AET B  26      23.941  21.674   5.837  1.00  0.00           O  
+HETATM 1654  CA  AET B  26      23.476  22.721   6.397  1.00  0.00           C  
+HETATM 1655  CT  AET B  26      22.461  23.458   5.755  1.00  0.00           C  
+HETATM 1656  HT1 AET B  26      22.651  24.496   5.483  1.00  0.00           H  
+HETATM 1657  HT2 AET B  26      21.452  23.399   6.163  1.00  0.00           H  
+HETATM 1658  HT3 AET B  26      22.331  23.055   4.751  1.00  0.00           H  
+HETATM 1664  O1  AET B  27       4.390  11.139  10.849  1.00  0.00           O  
+HETATM 1665  O2  AET B  27       4.092  10.335   8.916  1.00  0.00           O  
+HETATM 1666  CA  AET B  27       3.688  10.465  10.119  1.00  0.00           C  
+HETATM 1667  CT  AET B  27       2.418   9.843  10.672  1.00  0.00           C  
+HETATM 1668  HT1 AET B  27       2.281  10.109  11.720  1.00  0.00           H  
+HETATM 1669  HT2 AET B  27       2.305   8.788  10.424  1.00  0.00           H  
+HETATM 1670  HT3 AET B  27       1.552  10.393  10.302  1.00  0.00           H  
+HETATM 1676  O1  AET B  28      14.172  11.478  16.934  1.00  0.00           O  
+HETATM 1677  O2  AET B  28      15.322  10.521  15.446  1.00  0.00           O  
+HETATM 1678  CA  AET B  28      14.296  10.531  16.128  1.00  0.00           C  
+HETATM 1679  CT  AET B  28      13.301   9.458  16.007  1.00  0.00           C  
+HETATM 1680  HT1 AET B  28      12.254   9.730  16.140  1.00  0.00           H  
+HETATM 1681  HT2 AET B  28      13.593   8.723  16.757  1.00  0.00           H  
+HETATM 1682  HT3 AET B  28      13.436   9.010  15.023  1.00  0.00           H  
+HETATM 1688  O1  AET B  29      16.236   4.670   2.203  1.00  0.00           O  
+HETATM 1689  O2  AET B  29      17.817   6.214   1.706  1.00  0.00           O  
+HETATM 1690  CA  AET B  29      17.313   5.002   1.695  1.00  0.00           C  
+HETATM 1691  CT  AET B  29      18.249   3.950   1.186  1.00  0.00           C  
+HETATM 1692  HT1 AET B  29      18.462   4.364   0.201  1.00  0.00           H  
+HETATM 1693  HT2 AET B  29      17.754   2.986   1.303  1.00  0.00           H  
+HETATM 1694  HT3 AET B  29      19.048   3.765   1.904  1.00  0.00           H  
+HETATM 1700  O1  AET B  30      20.917  12.127   6.664  1.00  0.00           O  
+HETATM 1701  O2  AET B  30      21.159  14.218   7.289  1.00  0.00           O  
+HETATM 1702  CA  AET B  30      20.444  13.210   7.066  1.00  0.00           C  
+HETATM 1703  CT  AET B  30      19.043  13.027   7.576  1.00  0.00           C  
+HETATM 1704  HT1 AET B  30      18.367  13.808   7.227  1.00  0.00           H  
+HETATM 1705  HT2 AET B  30      19.202  12.988   8.653  1.00  0.00           H  
+HETATM 1706  HT3 AET B  30      18.623  12.148   7.088  1.00  0.00           H  
+HETATM 1712  O1  AET B  31       3.184  16.445   5.407  1.00  0.00           O  
+HETATM 1713  O2  AET B  31       2.399  18.279   4.515  1.00  0.00           O  
+HETATM 1714  CA  AET B  31       3.027  17.172   4.397  1.00  0.00           C  
+HETATM 1715  CT  AET B  31       3.482  16.585   3.068  1.00  0.00           C  
+HETATM 1716  HT1 AET B  31       3.082  15.607   2.800  1.00  0.00           H  
+HETATM 1717  HT2 AET B  31       4.509  16.283   3.274  1.00  0.00           H  
+HETATM 1718  HT3 AET B  31       3.226  17.363   2.349  1.00  0.00           H  
+HETATM 1724  O1  AET B  32       7.704   5.646   4.176  1.00  0.00           O  
+HETATM 1725  O2  AET B  32       6.550   5.995   6.080  1.00  0.00           O  
+HETATM 1726  CA  AET B  32       7.151   6.413   5.008  1.00  0.00           C  
+HETATM 1727  CT  AET B  32       7.253   7.765   4.818  1.00  0.00           C  
+HETATM 1728  HT1 AET B  32       7.416   8.277   5.767  1.00  0.00           H  
+HETATM 1729  HT2 AET B  32       6.359   8.191   4.361  1.00  0.00           H  
+HETATM 1730  HT3 AET B  32       8.166   7.929   4.247  1.00  0.00           H  
+HETATM 1736  O1  AET B  33      -0.593   0.673  12.124  1.00  0.00           O  
+HETATM 1737  O2  AET B  33       0.729   1.625  10.786  1.00  0.00           O  
+HETATM 1738  CA  AET B  33       0.598   0.958  11.889  1.00  0.00           C  
+HETATM 1739  CT  AET B  33       1.732   0.494  12.799  1.00  0.00           C  
+HETATM 1740  HT1 AET B  33       1.216   0.022  13.635  1.00  0.00           H  
+HETATM 1741  HT2 AET B  33       2.325   1.366  13.077  1.00  0.00           H  
+HETATM 1742  HT3 AET B  33       2.408  -0.188  12.284  1.00  0.00           H  
+HETATM 1748  O1  AET B  34       1.331  12.701  21.218  1.00  0.00           O  
+HETATM 1749  O2  AET B  34       0.648  14.670  20.269  1.00  0.00           O  
+HETATM 1750  CA  AET B  34       1.155  14.014  21.224  1.00  0.00           C  
+HETATM 1751  CT  AET B  34       1.462  14.758  22.443  1.00  0.00           C  
+HETATM 1752  HT1 AET B  34       2.522  15.005  22.374  1.00  0.00           H  
+HETATM 1753  HT2 AET B  34       1.230  14.218  23.360  1.00  0.00           H  
+HETATM 1754  HT3 AET B  34       0.947  15.719  22.463  1.00  0.00           H  
+HETATM 1760  O1  AET B  35      23.743   1.674  21.326  1.00  0.00           O  
+HETATM 1761  O2  AET B  35      22.228   2.165  19.967  1.00  0.00           O  
+HETATM 1762  CA  AET B  35      23.373   2.401  20.428  1.00  0.00           C  
+HETATM 1763  CT  AET B  35      24.410   3.163  19.794  1.00  0.00           C  
+HETATM 1764  HT1 AET B  35      25.358   2.648  19.948  1.00  0.00           H  
+HETATM 1765  HT2 AET B  35      24.560   4.189  20.130  1.00  0.00           H  
+HETATM 1766  HT3 AET B  35      24.322   3.426  18.740  1.00  0.00           H  
+HETATM 1772  O1  AET B  36      16.229   8.158   7.680  1.00  0.00           O  
+HETATM 1773  O2  AET B  36      15.195   8.708   9.423  1.00  0.00           O  
+HETATM 1774  CA  AET B  36      15.633   9.055   8.359  1.00  0.00           C  
+HETATM 1775  CT  AET B  36      15.202  10.278   7.789  1.00  0.00           C  
+HETATM 1776  HT1 AET B  36      16.064  10.832   7.416  1.00  0.00           H  
+HETATM 1777  HT2 AET B  36      14.702  10.882   8.546  1.00  0.00           H  
+HETATM 1778  HT3 AET B  36      14.549  10.131   6.928  1.00  0.00           H  
+HETATM 1784  O1  AET B  37       7.865  16.019  21.836  1.00  0.00           O  
+HETATM 1785  O2  AET B  37       6.780  15.541  20.019  1.00  0.00           O  
+HETATM 1786  CA  AET B  37       6.788  16.005  21.184  1.00  0.00           C  
+HETATM 1787  CT  AET B  37       5.525  16.403  21.787  1.00  0.00           C  
+HETATM 1788  HT1 AET B  37       5.188  15.901  22.694  1.00  0.00           H  
+HETATM 1789  HT2 AET B  37       4.669  16.026  21.227  1.00  0.00           H  
+HETATM 1790  HT3 AET B  37       5.443  17.488  21.847  1.00  0.00           H  
+HETATM 1796  O1  AET B  38      21.547   5.122   3.595  1.00  0.00           O  
+HETATM 1797  O2  AET B  38      22.500   4.706   5.463  1.00  0.00           O  
+HETATM 1798  CA  AET B  38      21.785   4.307   4.513  1.00  0.00           C  
+HETATM 1799  CT  AET B  38      21.039   2.878   4.507  1.00  0.00           C  
+HETATM 1800  HT1 AET B  38      21.028   2.344   5.457  1.00  0.00           H  
+HETATM 1801  HT2 AET B  38      21.410   2.298   3.663  1.00  0.00           H  
+HETATM 1802  HT3 AET B  38      20.016   3.140   4.238  1.00  0.00           H  
+HETATM 1808  O1  AET B  39      17.005  18.177  10.246  1.00  0.00           O  
+HETATM 1809  O2  AET B  39      15.634  17.609   8.737  1.00  0.00           O  
+HETATM 1810  CA  AET B  39      16.264  17.294   9.752  1.00  0.00           C  
+HETATM 1811  CT  AET B  39      15.911  16.065  10.450  1.00  0.00           C  
+HETATM 1812  HT1 AET B  39      16.183  15.227   9.809  1.00  0.00           H  
+HETATM 1813  HT2 AET B  39      14.839  15.989  10.627  1.00  0.00           H  
+HETATM 1814  HT3 AET B  39      16.353  16.064  11.447  1.00  0.00           H  
+HETATM 1820  O1  AET B  40       9.778   2.873  14.713  1.00  0.00           O  
+HETATM 1821  O2  AET B  40      10.466   0.850  14.367  1.00  0.00           O  
+HETATM 1822  CA  AET B  40      10.779   2.041  14.647  1.00  0.00           C  
+HETATM 1823  CT  AET B  40      12.129   2.631  14.561  1.00  0.00           C  
+HETATM 1824  HT1 AET B  40      12.933   1.922  14.759  1.00  0.00           H  
+HETATM 1825  HT2 AET B  40      12.046   3.415  15.313  1.00  0.00           H  
+HETATM 1826  HT3 AET B  40      12.305   3.119  13.602  1.00  0.00           H  
+HETATM 1832  O1  AET B  41      20.994  12.096  13.526  1.00  0.00           O  
+HETATM 1833  O2  AET B  41      21.002  13.640  12.179  1.00  0.00           O  
+HETATM 1834  CA  AET B  41      20.393  13.034  12.993  1.00  0.00           C  
+HETATM 1835  CT  AET B  41      18.950  13.334  13.199  1.00  0.00           C  
+HETATM 1836  HT1 AET B  41      18.659  14.345  12.917  1.00  0.00           H  
+HETATM 1837  HT2 AET B  41      18.610  13.003  14.181  1.00  0.00           H  
+HETATM 1838  HT3 AET B  41      18.484  12.617  12.524  1.00  0.00           H  
+HETATM 1844  O1  AET B  42      22.574  19.695  10.301  1.00  0.00           O  
+HETATM 1845  O2  AET B  42      22.740  19.452  12.409  1.00  0.00           O  
+HETATM 1846  CA  AET B  42      22.387  20.230  11.444  1.00  0.00           C  
+HETATM 1847  CT  AET B  42      21.774  21.602  11.635  1.00  0.00           C  
+HETATM 1848  HT1 AET B  42      20.698  21.505  11.777  1.00  0.00           H  
+HETATM 1849  HT2 AET B  42      21.879  22.035  10.641  1.00  0.00           H  
+HETATM 1850  HT3 AET B  42      22.241  22.234  12.390  1.00  0.00           H  
+HETATM 1856  O1  AET B  43      15.272   3.778   6.722  1.00  0.00           O  
+HETATM 1857  O2  AET B  43      13.251   3.520   6.146  1.00  0.00           O  
+HETATM 1858  CA  AET B  43      14.037   3.554   7.079  1.00  0.00           C  
+HETATM 1859  CT  AET B  43      13.649   3.477   8.537  1.00  0.00           C  
+HETATM 1860  HT1 AET B  43      13.298   4.412   8.974  1.00  0.00           H  
+HETATM 1861  HT2 AET B  43      14.446   2.941   9.054  1.00  0.00           H  
+HETATM 1862  HT3 AET B  43      12.800   2.795   8.488  1.00  0.00           H  
+HETATM 1868  O1  AET B  44       7.736  12.788   8.406  1.00  0.00           O  
+HETATM 1869  O2  AET B  44       8.001  10.965   7.495  1.00  0.00           O  
+HETATM 1870  CA  AET B  44       8.323  12.114   7.505  1.00  0.00           C  
+HETATM 1871  CT  AET B  44       9.287  12.684   6.468  1.00  0.00           C  
+HETATM 1872  HT1 AET B  44       9.087  12.348   5.451  1.00  0.00           H  
+HETATM 1873  HT2 AET B  44      10.231  12.313   6.867  1.00  0.00           H  
+HETATM 1874  HT3 AET B  44       9.437  13.760   6.547  1.00  0.00           H  
+HETATM 1880  O1  AET B  45      24.050   5.590  15.256  1.00  0.00           O  
+HETATM 1881  O2  AET B  45      22.156   6.156  16.089  1.00  0.00           O  
+HETATM 1882  CA  AET B  45      23.341   5.964  16.254  1.00  0.00           C  
+HETATM 1883  CT  AET B  45      23.966   6.213  17.559  1.00  0.00           C  
+HETATM 1884  HT1 AET B  45      24.943   5.754  17.712  1.00  0.00           H  
+HETATM 1885  HT2 AET B  45      23.477   5.802  18.442  1.00  0.00           H  
+HETATM 1886  HT3 AET B  45      24.163   7.278  17.674  1.00  0.00           H  
+HETATM 1892  O1  AET B  46       2.868  18.541  15.177  1.00  0.00           O  
+HETATM 1893  O2  AET B  46       1.893  19.638  16.684  1.00  0.00           O  
+HETATM 1894  CA  AET B  46       2.025  19.391  15.484  1.00  0.00           C  
+HETATM 1895  CT  AET B  46       1.334  20.413  14.508  1.00  0.00           C  
+HETATM 1896  HT1 AET B  46       1.054  21.328  15.029  1.00  0.00           H  
+HETATM 1897  HT2 AET B  46       0.425  20.050  14.028  1.00  0.00           H  
+HETATM 1898  HT3 AET B  46       2.001  20.566  13.660  1.00  0.00           H  
+HETATM 1904  O1  AET B  47      18.522   1.636  15.235  1.00  0.00           O  
+HETATM 1905  O2  AET B  47      19.407   2.328  13.381  1.00  0.00           O  
+HETATM 1906  CA  AET B  47      18.378   2.096  14.098  1.00  0.00           C  
+HETATM 1907  CT  AET B  47      16.940   2.396  13.385  1.00  0.00           C  
+HETATM 1908  HT1 AET B  47      17.069   2.842  12.399  1.00  0.00           H  
+HETATM 1909  HT2 AET B  47      16.260   2.861  14.099  1.00  0.00           H  
+HETATM 1910  HT3 AET B  47      16.343   1.506  13.188  1.00  0.00           H  
+HETATM 1916  O1  AET B  48      15.576   7.542  20.598  1.00  0.00           O  
+HETATM 1917  O2  AET B  48      17.119   7.360  19.153  1.00  0.00           O  
+HETATM 1918  CA  AET B  48      16.208   8.053  19.605  1.00  0.00           C  
+HETATM 1919  CT  AET B  48      15.701   9.362  18.921  1.00  0.00           C  
+HETATM 1920  HT1 AET B  48      16.595   9.901  18.606  1.00  0.00           H  
+HETATM 1921  HT2 AET B  48      15.056  10.041  19.479  1.00  0.00           H  
+HETATM 1922  HT3 AET B  48      15.445   9.125  17.889  1.00  0.00           H  
+HETATM 1928  O1  AET B  49       8.939   0.398  19.355  1.00  0.00           O  
+HETATM 1929  O2  AET B  49       8.527   2.275  20.091  1.00  0.00           O  
+HETATM 1930  CA  AET B  49       8.433   1.048  20.276  1.00  0.00           C  
+HETATM 1931  CT  AET B  49       7.630   0.544  21.498  1.00  0.00           C  
+HETATM 1932  HT1 AET B  49       8.259   0.269  22.345  1.00  0.00           H  
+HETATM 1933  HT2 AET B  49       6.991  -0.308  21.263  1.00  0.00           H  
+HETATM 1934  HT3 AET B  49       6.962   1.341  21.824  1.00  0.00           H  
+HETATM 1940  O1  AET B  50       5.162   5.834  20.704  1.00  0.00           O  
+HETATM 1941  O2  AET B  50       6.673   6.816  19.784  1.00  0.00           O  
+HETATM 1942  CA  AET B  50       5.832   5.933  19.674  1.00  0.00           C  
+HETATM 1943  CT  AET B  50       5.576   5.085  18.378  1.00  0.00           C  
+HETATM 1944  HT1 AET B  50       6.415   4.860  17.720  1.00  0.00           H  
+HETATM 1945  HT2 AET B  50       5.027   5.711  17.675  1.00  0.00           H  
+HETATM 1946  HT3 AET B  50       5.024   4.189  18.660  1.00  0.00           H  
+TER    1952      AET B  50
+END

@@ -10,77 +10,77 @@
   <Reference/>
  </Info>
  <AtomTypes>
-  <Type name="EMIM-NI1" class="NI1" element="N" mass="14.0067"/>
-  <Type name="EMIM-DN1" class="Sh" mass="0.0"/>
-  <Type name="EMIM-NI" class="NI" element="N" mass="14.0067"/>
-  <Type name="EMIM-DN11" class="Sh" mass="0.0"/>
-  <Type name="EMIM-CI" class="CI" element="C" mass="12.011"/>
-  <Type name="EMIM-DC1" class="Sh" mass="0.0"/>
+  <Type name="EMIM-NI1" class="NI1" element="N" mass="13.6067"/>
+  <Type name="EMIM-DN1" class="Sh" mass="0.4"/>
+  <Type name="EMIM-NI" class="NI" element="N" mass="13.6067"/>
+  <Type name="EMIM-DN11" class="Sh" mass="0.4"/>
+  <Type name="EMIM-CI" class="CI" element="C" mass="11.611"/>
+  <Type name="EMIM-DC1" class="Sh" mass="0.4"/>
   <Type name="EMIM-HI" class="HI" element="H" mass="1.008"/>
-  <Type name="EMIM-CWI" class="CWI" element="C" mass="12.011"/>
-  <Type name="EMIM-DC2" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CWI" class="CWI" element="C" mass="11.611"/>
+  <Type name="EMIM-DC2" class="Sh" mass="0.4"/>
   <Type name="EMIM-HWI" class="HWI" element="H" mass="1.008"/>
-  <Type name="EMIM-CWI1" class="CWI1" element="C" mass="12.011"/>
-  <Type name="EMIM-DC21" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CWI1" class="CWI1" element="C" mass="11.611"/>
+  <Type name="EMIM-DC21" class="Sh" mass="0.4"/>
   <Type name="EMIM-HWI1" class="HWI1" element="H" mass="1.008"/>
-  <Type name="EMIM-CMI" class="CMI" element="C" mass="12.011"/>
-  <Type name="EMIM-DC3" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CMI" class="CMI" element="C" mass="11.611"/>
+  <Type name="EMIM-DC3" class="Sh" mass="0.4"/>
   <Type name="EMIM-HMI1" class="HMI" element="H" mass="1.008"/>
   <Type name="EMIM-HMI2" class="HMI" element="H" mass="1.008"/>
   <Type name="EMIM-HMI3" class="HMI" element="H" mass="1.008"/>
-  <Type name="EMIM-CAI" class="CAI" element="C" mass="12.011"/>
-  <Type name="EMIM-DC4" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CAI" class="CAI" element="C" mass="11.611"/>
+  <Type name="EMIM-DC4" class="Sh" mass="0.4"/>
   <Type name="EMIM-HAI1" class="HAI" element="H" mass="1.008"/>
   <Type name="EMIM-HAI2" class="HAI" element="H" mass="1.008"/>
-  <Type name="EMIM-CTI" class="CTI" element="C" mass="12.011"/>
-  <Type name="EMIM-DC5" class="Sh" mass="0.0"/>
+  <Type name="EMIM-CTI" class="CTI" element="C" mass="11.611"/>
+  <Type name="EMIM-DC5" class="Sh" mass="0.4"/>
   <Type name="EMIM-HTI1" class="HTI" element="H" mass="1.008"/>
   <Type name="EMIM-HTI2" class="HTI" element="H" mass="1.008"/>
   <Type name="EMIM-HTI3" class="HTI" element="H" mass="1.008"/>
-  <Type name="EHC-NI1" class="CN1" element="N" mass="14.0067"/>
-  <Type name="EHC-DN1" class="Sh" mass="0.0"/>
-  <Type name="EHC-NI" class="CNI" element="N" mass="14.0067"/>
-  <Type name="EHC-DN11" class="Sh" mass="0.0"/>
-  <Type name="EHC-CI" class="CCI" element="C" mass="12.011"/>
-  <Type name="EHC-DC1" class="Sh" mass="0.0"/>
-  <Type name="EHC-CWI" class="CCWI" element="C" mass="12.011"/>
-  <Type name="EHC-DC2" class="Sh" mass="0.0"/>
+  <Type name="EHC-NI1" class="CN1" element="N" mass="13.6067"/>
+  <Type name="EHC-DN1" class="Sh" mass="0.4"/>
+  <Type name="EHC-NI" class="CNI" element="N" mass="13.6067"/>
+  <Type name="EHC-DN11" class="Sh" mass="0.4"/>
+  <Type name="EHC-CI" class="CCI" element="C" mass="11.611"/>
+  <Type name="EHC-DC1" class="Sh" mass="0.4"/>
+  <Type name="EHC-CWI" class="CCWI" element="C" mass="11.611"/>
+  <Type name="EHC-DC2" class="Sh" mass="0.4"/>
   <Type name="EHC-HWI" class="CHWI" element="H" mass="1.008"/>
-  <Type name="EHC-CWI1" class="CCW1" element="C" mass="12.011"/>
-  <Type name="EHC-DC21" class="Sh" mass="0.0"/>
+  <Type name="EHC-CWI1" class="CCW1" element="C" mass="11.611"/>
+  <Type name="EHC-DC21" class="Sh" mass="0.4"/>
   <Type name="EHC-HWI1" class="CHW1" element="H" mass="1.008"/>
-  <Type name="EHC-CMI" class="CCMI" element="C" mass="12.011"/>
-  <Type name="EHC-DC3" class="Sh" mass="0.0"/>
+  <Type name="EHC-CMI" class="CCMI" element="C" mass="11.611"/>
+  <Type name="EHC-DC3" class="Sh" mass="0.4"/>
   <Type name="EHC-HMI1" class="CHMI" element="H" mass="1.008"/>
   <Type name="EHC-HMI2" class="CHMI" element="H" mass="1.008"/>
   <Type name="EHC-HMI3" class="CHMI" element="H" mass="1.008"/>
-  <Type name="EHC-CAI" class="CCAI" element="C" mass="12.011"/>
-  <Type name="EHC-DC4" class="Sh" mass="0.0"/>
+  <Type name="EHC-CAI" class="CCAI" element="C" mass="11.611"/>
+  <Type name="EHC-DC4" class="Sh" mass="0.4"/>
   <Type name="EHC-HAI1" class="CHAI" element="H" mass="1.008"/>
   <Type name="EHC-HAI2" class="CHAI" element="H" mass="1.008"/>
-  <Type name="EHC-CTI" class="CCTI" element="C" mass="12.011"/>
-  <Type name="EHC-DC5" class="Sh" mass="0.0"/>
+  <Type name="EHC-CTI" class="CCTI" element="C" mass="11.611"/>
+  <Type name="EHC-DC5" class="Sh" mass="0.4"/>
   <Type name="EHC-HTI1" class="CHTI" element="H" mass="1.008"/>
   <Type name="EHC-HTI2" class="CHTI" element="H" mass="1.008"/>
   <Type name="EHC-HTI3" class="CHTI" element="H" mass="1.008"/>
-  <Type name="AET-O1" class="O1" element="O" mass="15.99943"/>
-  <Type name="AET-DO1" class="Sh" mass="0.0"/>
-  <Type name="AET-O2" class="O1" element="O" mass="15.99943"/>
-  <Type name="AET-DO2" class="Sh" mass="0.0"/>
-  <Type name="AET-CT" class="CT" element="C" mass="12.011"/>
-  <Type name="AET-DCT" class="Sh" mass="0.0"/>
-  <Type name="AET-Ca" class="Ca" element="C" mass="12.011"/>
-  <Type name="AET-DCa" class="Sh" mass="0.0"/>
+  <Type name="AET-O1" class="O1" element="O" mass="15.59943"/>
+  <Type name="AET-DO1" class="Sh" mass="0.4"/>
+  <Type name="AET-O2" class="O1" element="O" mass="15.59943"/>
+  <Type name="AET-DO2" class="Sh" mass="0.4"/>
+  <Type name="AET-CT" class="CT" element="C" mass="11.611"/>
+  <Type name="AET-DCT" class="Sh" mass="0.4"/>
+  <Type name="AET-Ca" class="Ca" element="C" mass="11.611"/>
+  <Type name="AET-DCa" class="Sh" mass="0.4"/>
   <Type name="AET-HT" class="HT" element="H" mass="1.008"/>
   <Type name="AET-M" class="AM" mass="0.0000"/>
-  <Type name="ACI-OH" class="AOH" element="O" mass="15.99943"/>
-  <Type name="ACI-DOH" class="Sh" mass="0.0"/>
-  <Type name="ACI-O1" class="AO1" element="O" mass="15.99943"/>
-  <Type name="ACI-DO1" class="Sh" mass="0.0"/>
-  <Type name="ACI-Ca" class="ACa" element="C" mass="12.011"/>
-  <Type name="ACI-DCa" class="Sh" mass="0.0"/>
-  <Type name="ACI-CT" class="ACT" element="C" mass="12.011"/>
-  <Type name="ACI-DCT" class="Sh" mass="0.0"/>
+  <Type name="ACI-OH" class="AOH" element="O" mass="15.59943"/>
+  <Type name="ACI-DOH" class="Sh" mass="0.4"/>
+  <Type name="ACI-O1" class="AO1" element="O" mass="15.59943"/>
+  <Type name="ACI-DO1" class="Sh" mass="0.4"/>
+  <Type name="ACI-Ca" class="ACa" element="C" mass="11.611"/>
+  <Type name="ACI-DCa" class="Sh" mass="0.4"/>
+  <Type name="ACI-CT" class="ACT" element="C" mass="11.611"/>
+  <Type name="ACI-DCT" class="Sh" mass="0.4"/>
   <Type name="ACI-HT" class="AHT" element="H" mass="1.008"/>
   <Type name="ACI-HO" class="AHO" element="H" mass="1.008"/>
   <Type name="BF4-B" class="B" element="B" mass="10.411"/>
@@ -307,9 +307,9 @@
   <Bond class1="CSI" class2="CSI" length="0.1531" k="224262.4"/>
   <Bond class1="CSI" class2="CTI" length="0.1528" k="224262.4"/>
   <Bond class1="CSI" class2="HSI" length="0.1087" k="284512.0"/>
-  <Bond class1="Ca" class2="O1" length="1.274424933728e-01" k="3.625121344559e+05" parameterize="length,k"/>
-  <Bond class1="Ca" class2="CT" length="1.588350323049e-01" k="2.174785850485e+05" parameterize="length,k"/>
-  <Bond class1="HT" class2="CT" length="1.103500834516e-01" k="2.650382467383e+05" parameterize="length,k"/>
+  <Bond class1="Ca" class2="O1" length="1.258122711524e-01" k="2.776145532249e+05" parameterize="length,k"/>
+  <Bond class1="Ca" class2="CT" length="1.532698655765e-01" k="1.384398379544e+05" parameterize="length,k"/>
+  <Bond class1="HT" class2="CT" length="1.075321623196e-01" k="2.181628326145e+05" parameterize="length,k"/>
   <Bond class1="ACa" class2="AOH" length="0.1364" k="376560.0"/>
   <Bond class1="ACa" class2="AO1" length="0.125" k="548940.8"/>
   <Bond class1="ACa" class2="ACT" length="0.15220" k="265265.6"/>
@@ -370,10 +370,10 @@
   <Angle class1="CSI" class2="CSI" class3="CTI" angle="1.96000474998963" k="488.2728"/>
   <Angle class1="CSI" class2="CSI" class3="CSI" angle="1.96000474998963" k="488.2728"/>
   <Angle class1="CSI" class2="CTI" class3="HTI" angle="1.9390607989657" k="313.8"/>
-  <Angle class1="O1" class2="Ca" class3="O1" angle="2.561107548588e+00" k="8.079106388934e+02" parameterize="angle,k"/>
-  <Angle class1="O1" class2="Ca" class3="CT" angle="2.366236689952e+00" k="6.975698518460e+02" parameterize="angle,k"/>
-  <Angle class1="Ca" class2="CT" class3="HT" angle="2.099461760663e+00" k="4.601612935964e+02" parameterize="angle,k"/>
-  <Angle class1="HT" class2="CT" class3="HT" angle="2.148106378133e+00" k="3.524552981309e+02" parameterize="angle,k"/>
+  <Angle class1="O1" class2="Ca" class3="O1" angle="2.358851513863e+00" k="3.529527526652e+02" parameterize="angle,k"/>
+  <Angle class1="O1" class2="Ca" class3="CT" angle="2.038337605149e+00" k="3.068821851183e+02" parameterize="angle,k"/>
+  <Angle class1="Ca" class2="CT" class3="HT" angle="1.985312226194e+00" k="2.974497252838e+02" parameterize="angle,k"/>
+  <Angle class1="HT" class2="CT" class3="HT" angle="1.935102100600e+00" k="2.728876678353e+02" parameterize="angle,k"/>
   <Angle class1="AO1" class2="ACa" class3="AOH" angle="2.199114858" k="669.440"/>
   <Angle class1="ACT" class2="ACa" class3="AO1" angle="2.042035225" k="585.760"/>
   <Angle class1="ACT" class2="ACa" class3="AOH" angle="1.919862177" k="669.440"/>

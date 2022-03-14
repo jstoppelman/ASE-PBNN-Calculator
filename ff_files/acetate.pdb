@@ -1,0 +1,9 @@
+REMARK   1 CREATED WITH OPENMM 7.4.2, 2021-12-02
+HETATM 1082  O1  AET B   1      19.011  16.128   1.197  1.00  0.00           O  
+HETATM 1083  O2  AET B   1      17.046  15.368   1.035  1.00  0.00           O  
+HETATM 1084  CA  AET B   1      17.861  16.285   0.713  1.00  0.00           C  
+HETATM 1085  CT  AET B   1      17.630  17.480  -0.163  1.00  0.00           C  
+HETATM 1086  HT1 AET B   1      18.475  17.559  -0.848  1.00  0.00           H  
+HETATM 1087  HT2 AET B   1      17.451  18.394   0.403  1.00  0.00           H  
+HETATM 1088  HT3 AET B   1      16.624  17.491  -0.582  1.00  0.00           H 
+END
